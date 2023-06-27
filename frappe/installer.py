@@ -253,6 +253,7 @@ def install_app(name, verbose=False, set_as_patched=True, force=False):
 	from frappe.model.sync import sync_for
 	from frappe.modules.utils import sync_customizations
 	from frappe.utils.fixtures import sync_fixtures
+	from frappe.translate import compile
 
 	frappe.flags.in_install = name
 	frappe.flags.ignore_in_install = False
@@ -315,6 +316,9 @@ def install_app(name, verbose=False, set_as_patched=True, force=False):
 
 	for after_sync in app_hooks.after_sync or []:
 		frappe.get_attr(after_sync)()  #
+
+	## Compile Translation files
+	compile()
 
 	frappe.flags.in_install = False
 
