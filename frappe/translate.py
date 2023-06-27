@@ -258,7 +258,7 @@ def generate_pot(target_app: str | None = None):
 		subdir = os.path.basename(dirpath)
 		return not (subdir.startswith(".") or subdir.startswith("_"))
 
-	apps = [target_app] if target_app else frappe.get_all_apps(True)
+	apps = [target_app] if target_app else frappe.get_installed_apps(_ensure_on_bench=True)
 	method_map = [
 		("**.py", "frappe.translate.babel_extract_python"),
 		("**.js", "frappe.translate.babel_extract_javascript"),
@@ -271,6 +271,8 @@ def generate_pot(target_app: str | None = None):
 		app_path = frappe.get_pymodule_path(app)
 		catalog = get_catalog(app)
 
+		method_map.extend(get_extra_include_js_files(app))
+
 		for filename, lineno, message, comments, context in extract_from_dir(
 			app_path, method_map, directory_filter=directory_filter
 		):
@@ -278,6 +280,68 @@ def generate_pot(target_app: str | None = None):
 				continue
 
 			catalog.add(message, locations=[(filename, lineno)], auto_comments=comments, context=context)
+
+		## Load Message Injectors
+		messages = []
+		modules = [frappe.unscrub(m) for m in frappe.local.app_modules[app]]
+
+		# doctypes
+		if modules:
+			if isinstance(modules, str):
+				modules = [modules]
+			filtered_doctypes = (
+				frappe.qb.from_("DocType").where(Field("module").isin(modules)).select("name").run(pluck=True)
+			)
+			for name in filtered_doctypes:
+				messages.extend(extract_messages_from_doctype(name))
+
+			# reports
+			report = DocType("Report")
+			doctype = DocType("DocType")
+			names = (
+				frappe.qb.from_(doctype)
+				.from_(report)
+				.where((report.ref_doctype == doctype.name) & doctype.module.isin(modules))
+				.select(report.name)
+				.run(pluck=True)
+			)
+			for name in names:
+				messages.append((None, name))
+				messages.extend(extract_messages_from_report(name))
+				for i in messages:
+					if not isinstance(i, tuple):
+						raise Exception
+
+		# workflow based on app.hooks.fixtures
+		messages.extend(extract_messages_from_workflow(app_name=app))
+
+		# custom fields based on app.hooks.fixtures
+		messages.extend(extract_messages_from_custom_fields(app_name=app))
+
+		# app extras
+		messages.extend(extract_messages_from_extras(app))
+
+		# messages from navbar settings
+		messages.extend(extract_messages_from_navbar())
+
+		messages = deduplicate_messages(messages)
+
+		for app_message in messages:
+			if not app_message:
+				continue
+
+			context = None
+			lineno = 1
+			if len(app_message) == 2:
+				path, message = app_message
+			elif len(app_message) == 3:
+				path, message, lineno = app_message
+			elif len(app_message) == 4:
+				path, message, context, lineno = app_message
+			else:
+				continue
+
+			catalog.add(message, locations=[(path, lineno)], context=context)
 
 		pot_path = write_catalog(app, catalog)
 		print(f"POT file created at {pot_path}")
@@ -814,6 +878,203 @@ def babel_extract_workspace_json(fileobj, *args, **kwargs):
 		for shortcut in data.get("shortcuts", [])
 	)
 
+def extract_messages_from_doctype(name):
+	"""Extract all translatable messages for a doctype. Includes labels, Python code,
+	Javascript code, html templates"""
+	messages = []
+	meta = frappe.get_meta(name)
+
+	messages = [meta.name, meta.module]
+
+	if meta.description:
+		messages.append(meta.description)
+
+	# translations of field labels, description and options
+	for d in meta.get("fields"):
+		messages.extend([d.label, d.description])
+
+		if d.fieldtype == "Select" and d.options:
+			options = d.options.split("\n")
+			if not "icon" in options[0]:
+				messages.extend(options)
+		if d.fieldtype == "HTML" and d.options:
+			messages.append(d.options)
+
+	# translations of roles
+	for d in meta.get("permissions"):
+		if d.role:
+			messages.append(d.role)
+
+	messages = [message for message in messages if message]
+	messages = [("DocType: " + name, message) for message in messages if is_translatable(message)]
+
+	# workflow based on doctype
+	messages.extend(extract_messages_from_workflow(doctype=name))
+	return messages
+
+def get_extra_include_js_files(app_name=None):
+	"""Returns messages from js files included at time of boot like desk.min.js for desk and web"""
+	from frappe.utils.jinja_globals import bundled_asset
+
+	files = []
+	app_include_js = frappe.get_hooks("app_include_js", app_name=app_name) or []
+	web_include_js = frappe.get_hooks("web_include_js", app_name=app_name) or []
+	include_js = app_include_js + web_include_js
+
+	for js_path in include_js:
+		file_path = bundled_asset(js_path)
+		relative_path = os.path.join(frappe.local.sites_path, file_path.lstrip("/"))
+
+	return [(file, "frappe.translate.babel_extract_javascript") for file in files]
+
+def extract_messages_from_navbar():
+	"""Return all labels from Navbar Items, as specified in Navbar Settings."""
+	labels = frappe.get_all("Navbar Item", filters={"item_label": ("is", "set")}, pluck="item_label")
+	return [("Navbar:", label, "Label of a Navbar Item") for label in labels]
+
+def extract_messages_from_workflow(doctype=None, app_name=None):
+	assert doctype or app_name, "doctype or app_name should be provided"
+
+	# translations for Workflows
+	workflows = []
+	if doctype:
+		workflows = frappe.get_all("Workflow", filters={"document_type": doctype})
+	else:
+		fixtures = frappe.get_hooks("fixtures", app_name=app_name) or []
+		for fixture in fixtures:
+			if isinstance(fixture, str) and fixture == "Worflow":
+				workflows = frappe.get_all("Workflow")
+				break
+			elif isinstance(fixture, dict) and fixture.get("dt", fixture.get("doctype")) == "Workflow":
+				workflows.extend(frappe.get_all("Workflow", filters=fixture.get("filters")))
+
+	messages = []
+	document_state = DocType("Workflow Document State")
+	for w in workflows:
+		states = frappe.db.get_values(
+			document_state,
+			filters=document_state.parent == w["name"],
+			fieldname="state",
+			distinct=True,
+			as_dict=True,
+			order_by=None,
+		)
+		messages.extend(
+			[
+				("Workflow: " + w["name"], state["state"])
+				for state in states
+				if is_translatable(state["state"])
+			]
+		)
+		states = frappe.db.get_values(
+			document_state,
+			filters=(document_state.parent == w["name"]) & (document_state.message.isnotnull()),
+			fieldname="message",
+			distinct=True,
+			order_by=None,
+			as_dict=True,
+		)
+		messages.extend(
+			[
+				("Workflow: " + w["name"], state["message"])
+				for state in states
+				if is_translatable(state["message"])
+			]
+		)
+
+		actions = frappe.db.get_values(
+			"Workflow Transition",
+			filters={"parent": w["name"]},
+			fieldname="action",
+			as_dict=True,
+			distinct=True,
+			order_by=None,
+		)
+
+		messages.extend(
+			[
+				("Workflow: " + w["name"], action["action"])
+				for action in actions
+				if is_translatable(action["action"])
+			]
+		)
+
+	return messages
+
+def extract_messages_from_custom_fields(app_name):
+	fixtures = frappe.get_hooks("fixtures", app_name=app_name) or []
+	custom_fields = []
+
+	for fixture in fixtures:
+		if isinstance(fixture, str) and fixture == "Custom Field":
+			custom_fields = frappe.get_all(
+				"Custom Field", fields=["name", "label", "description", "fieldtype", "options"]
+			)
+			break
+		elif isinstance(fixture, dict) and fixture.get("dt", fixture.get("doctype")) == "Custom Field":
+			custom_fields.extend(
+				frappe.get_all(
+					"Custom Field",
+					filters=fixture.get("filters"),
+					fields=["name", "label", "description", "fieldtype", "options"],
+				)
+			)
+
+	messages = []
+	for cf in custom_fields:
+		for prop in ("label", "description"):
+			if not cf.get(prop) or not is_translatable(cf[prop]):
+				continue
+			messages.append(("Custom Field - {}: {}".format(prop, cf["name"]), cf[prop]))
+		if cf["fieldtype"] == "Selection" and cf.get("options"):
+			for option in cf["options"].split("\n"):
+				if option and "icon" not in option and is_translatable(option):
+					messages.append(("Custom Field - Description: " + cf["name"], option))
+
+	return messages
+
+def extract_messages_from_report(name):
+	"""Returns all translatable strings from a :class:`frappe.core.doctype.Report`"""
+	report = frappe.get_doc("Report", name)
+	messages = []
+
+	if report.columns:
+		context = (
+			"Column of report '%s'" % report.name
+		)  # context has to match context in `prepare_columns` in query_report.js
+		messages.extend([(None, report_column.label, context) for report_column in report.columns])
+
+	if report.filters:
+		messages.extend([(None, report_filter.label) for report_filter in report.filters])
+
+	if report.query:
+		messages.extend(
+			[
+				(None, message)
+				for message in REPORT_TRANSLATE_PATTERN.findall(report.query)
+				if is_translatable(message)
+			]
+		)
+
+	messages.append((None, report.report_name))
+	return messages
+
+def extract_messages_from_extras():
+	messages = []
+	messages += (
+		frappe.qb.from_("Print Format").select(PseudoColumn("'Print Format:'"), "name")
+	).run()
+	messages += (frappe.qb.from_("DocType").select(PseudoColumn("'DocType:'"), "name")).run()
+	messages += frappe.qb.from_("Role").select(PseudoColumn("'Role:'"), "name").run()
+	messages += (frappe.qb.from_("Module Def").select(PseudoColumn("'Module:'"), "name")).run()
+	messages += (
+		frappe.qb.from_("Workspace Shortcut")
+		.where(Field("format").isnotnull())
+		.select(PseudoColumn("''"), "format")
+	).run()
+	messages += (frappe.qb.from_("Onboarding Step").select(PseudoColumn("''"), "title")).run()
+
+	return messages
 
 @frappe.whitelist()
 def get_source_additional_info(source, language=""):
