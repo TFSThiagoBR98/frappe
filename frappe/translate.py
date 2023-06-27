@@ -21,12 +21,15 @@ from contextlib import contextmanager, suppress
 from datetime import datetime
 from pathlib import Path
 
+from pypika.terms import PseudoColumn
+
 from babel.messages.catalog import Catalog
 from babel.messages.extract import extract_from_dir, extract_python
 from babel.messages.mofile import read_mo, write_mo
 from babel.messages.pofile import read_po, write_po
 
 import frappe
+from frappe.query_builder import DocType, Field
 from frappe.utils import is_html, strip_html_tags, unique
 
 TRANSLATE_PATTERN = re.compile(
@@ -319,7 +322,7 @@ def generate_pot(target_app: str | None = None):
 		messages.extend(extract_messages_from_custom_fields(app_name=app))
 
 		# app extras
-		messages.extend(extract_messages_from_extras(app))
+		messages.extend(extract_messages_from_extras())
 
 		# messages from navbar settings
 		messages.extend(extract_messages_from_navbar())
@@ -341,7 +344,10 @@ def generate_pot(target_app: str | None = None):
 			else:
 				continue
 
-			catalog.add(message, locations=[(path, lineno)], context=context)
+			if not message:
+				continue
+
+			catalog.add(message, auto_comments=['{}:{}'.format(path, lineno)], context=context)
 
 		pot_path = write_catalog(app, catalog)
 		print(f"POT file created at {pot_path}")
@@ -470,12 +476,12 @@ def f(msg: str, context: str = None, lang: str = DEFAULT_LANG) -> str:
 		has_context = context is not None
 
 		if has_context:
-			t = get_translator(lang, localedir=locale_path, context=has_context)
+			t = get_translator(lang.replace("-", "_"), localedir=locale_path, context=has_context)
 			r = t(context, msg)
 			if r != msg:
 				return r
 
-		t = get_translator(lang, localedir=locale_path, context=False)
+		t = get_translator(lang.replace("-", "_"), localedir=locale_path, context=False)
 		r = t(msg)
 
 		if r != msg:
@@ -586,7 +592,7 @@ def get_translations_from_apps(lang, apps=None):
 	for app in apps or frappe.get_all_apps(_ensure_on_bench=True):
 		app_path = frappe.get_pymodule_path(app)
 		localedir = os.path.join(app_path, LOCALE_DIR)
-		mo_files = gettext.find(TRANSLATION_DOMAIN, localedir, (lang,), True)
+		mo_files = gettext.find(TRANSLATION_DOMAIN, localedir, (lang.replace("-", "_"),), True)
 
 		for file in mo_files:
 			with open(file, "rb") as f:
