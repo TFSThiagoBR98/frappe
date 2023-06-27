@@ -54,6 +54,10 @@ def build_missing_files():
 	development = frappe.local.conf.developer_mode or frappe.local.dev_server
 	build_mode = "development" if development else "production"
 
+	## Compile MO Files
+	from frappe.translate import compile
+	compile()
+
 	assets_json = frappe.read_file("assets/assets.json")
 	if assets_json:
 		assets_json = frappe.parse_json(assets_json)
