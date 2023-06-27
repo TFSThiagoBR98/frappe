@@ -189,3 +189,8 @@ cypress/videos
 
 # JetBrains IDEs
 .idea/
+
+# Translations
+*.mo
+*.pot
+locale
