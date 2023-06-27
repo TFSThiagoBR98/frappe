@@ -80,8 +80,8 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 
 		this.view = "List";
 		// initialize with saved order by
-		this.sort_by = this.view_user_settings.sort_by || "modified";
-		this.sort_order = this.view_user_settings.sort_order || "desc";
+		this.sort_by = this.view_user_settings.sort_by || this.sort_by || "modified";
+		this.sort_order = this.view_user_settings.sort_order || this.sort_order || "desc";
 
 		// build menu items
 		this.menu_items = this.menu_items.concat(this.get_menu_items());
@@ -456,22 +456,20 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	get_no_result_message() {
 		let help_link = this.get_documentation_link();
 		let filters = this.filter_area && this.filter_area.get();
-		let no_result_message =
-			filters && filters.length
-				? __("No {0} found", [__(this.doctype)])
-				: __("You haven't created a {0} yet", [__(this.doctype)]);
-		let new_button_label =
-			filters && filters.length
-				? __(
-						"Create a new {0}",
-						[__(this.doctype)],
-						"Create a new document from list view"
-				  )
-				: __(
-						"Create your first {0}",
-						[__(this.doctype)],
-						"Create a new document from list view"
-				  );
+
+		let has_filters_set = filters && filters.length;
+		let no_result_message = has_filters_set
+			? __("No {0} found with matching filters. Clear filters to see all {0}.", [
+					__(this.doctype),
+			  ])
+			: __("You haven't created a {0} yet", [__(this.doctype)]);
+		let new_button_label = has_filters_set
+			? __("Create a new {0}", [__(this.doctype)], "Create a new document from list view")
+			: __(
+					"Create your first {0}",
+					[__(this.doctype)],
+					"Create a new document from list view"
+			  );
 		let empty_state_image =
 			this.settings.empty_state_image ||
 			"/assets/frappe/images/ui-states/list-empty-state.svg";
@@ -1007,7 +1005,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 					href="${this.get_form_link(doc)}"
 					title="${escaped_subject}"
 					data-doctype="${this.doctype}"
-					data-name="${doc.name}">
+					data-name="${escaped_subject}">
 					${subject}
 				</a>
 			</span>
@@ -1029,7 +1027,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 			return `<span class="indicator-pill ${indicator[1]} filterable ellipsis"
 				data-filter='${indicator[2]}' title='${title}'>
 				<span class="ellipsis"> ${__(indicator[0])}</span>
-			<span>`;
+			</span>`;
 		}
 		return "";
 	}
@@ -1052,6 +1050,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	setup_events() {
 		this.setup_filterable();
 		this.setup_list_click();
+		this.setup_drag_click();
 		this.setup_tag_event();
 		this.setup_new_doc_event();
 		this.setup_check_events();
@@ -1226,6 +1225,36 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 				return false;
 			}
 		});
+	}
+
+	setup_drag_click() {
+		/*
+			Click on the check box in the list view and
+			drag through the rows to select.
+
+			Do it again to unselect.
+
+			If the first click is on checked checkbox, then it will unselect rows on drag,
+			else if it is unchecked checkbox, it will select rows on drag.
+		*/
+		this.dragClick = false;
+		this.$result.on("mousedown", ".list-row-checkbox", (e) => {
+			this.dragClick = true;
+			this.check = !e.target.checked;
+		});
+		$(document).on("mouseup", () => {
+			this.dragClick = false;
+		});
+		this.$result.on("mousemove", ".level.list-row", (e) => {
+			if (this.dragClick) {
+				this.check_row_on_drag(e, this.check);
+			}
+		});
+	}
+
+	check_row_on_drag(event, check = true) {
+		$(event.target).find(".list-row-checkbox").prop("checked", check);
+		this.on_row_checked();
 	}
 
 	setup_action_handler() {

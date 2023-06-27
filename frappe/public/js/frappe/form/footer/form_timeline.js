@@ -193,7 +193,7 @@ class FormTimeline extends BaseTimeline {
 		return view_timeline_contents;
 	}
 
-	get_communication_timeline_contents() {
+	get_communication_timeline_contents(more_items) {
 		let communication_timeline_contents = [];
 		let icon_set = {
 			Email: "mail",
@@ -201,7 +201,8 @@ class FormTimeline extends BaseTimeline {
 			Meeting: "calendar",
 			Other: "dot-horizontal",
 		};
-		(this.doc_info.communications || []).forEach((communication) => {
+		let items = more_items ? more_items : this.doc_info.communications || [];
+		items.forEach((communication) => {
 			let medium = communication.communication_medium;
 			communication_timeline_contents.push({
 				icon: icon_set[medium],
@@ -214,7 +215,32 @@ class FormTimeline extends BaseTimeline {
 				name: communication.name,
 			});
 		});
+
+		if (communication_timeline_contents.length >= 20) {
+			communication_timeline_contents[
+				communication_timeline_contents.length - 1
+			].append_load_more = true;
+		}
+
 		return communication_timeline_contents;
+	}
+
+	async get_more_communication_timeline_contents() {
+		let more_items = [];
+		let response = await frappe.call({
+			method: "frappe.desk.form.load.get_communications",
+			args: {
+				doctype: this.doc_info.doctype,
+				name: this.doc_info.name,
+				start: this.doc_info.communications.length,
+				limit: 20,
+			},
+		});
+		if (response.message) {
+			this.doc_info.communications.push(...response.message);
+			more_items = this.get_communication_timeline_contents(response.message);
+		}
+		return more_items;
 	}
 
 	get_communication_timeline_content(doc, allow_reply = true) {
@@ -608,30 +634,26 @@ class FormTimeline extends BaseTimeline {
 	}
 
 	get_last_email(from_recipient) {
-		let last_email = null;
-		let communications = this.frm.get_docinfo().communications || [];
-		let email = this.get_recipient();
-		// REDESIGN TODO: What is this? Check again
-		communications
-			.sort((a, b) => (a.creation > b.creation ? -1 : 1))
-			.forEach((c) => {
-				if (
-					c.communication_type === "Communication" &&
-					c.communication_medium === "Email"
-				) {
-					if (from_recipient) {
-						if (c.sender.indexOf(email) !== -1) {
-							last_email = c;
-							return false;
-						}
-					} else {
-						last_email = c;
-						return false;
-					}
-				}
-			});
+		/**
+		 * Return the latest email communication.
+		 *
+		 * @param {boolean} from_recipient If true, only considers emails where current form's recipient is the sender.
+		 * @returns {object|null} The latest email communication, or null if no communication is found.
+		 */
 
-		return last_email;
+		const communications = this.frm.get_docinfo().communications || [];
+		const recipient = this.get_recipient();
+
+		const filtered_records = communications
+			.filter(
+				(record) =>
+					record.communication_type === "Communication" &&
+					record.communication_medium === "Email" &&
+					(!from_recipient || record.sender === recipient)
+			)
+			.sort((a, b) => b.creation - a.creation);
+
+		return filtered_records[0] || null;
 	}
 
 	delete_comment(comment_name) {

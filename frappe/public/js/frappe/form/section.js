@@ -84,7 +84,7 @@ export default class Section {
 
 	add_field(fieldobj) {
 		this.fields_list.push(fieldobj);
-		this.fields_dict[fieldobj.fieldname] = fieldobj;
+		this.fields_dict[fieldobj.df.fieldname] = fieldobj;
 		fieldobj.section = this;
 	}
 
@@ -110,12 +110,7 @@ export default class Section {
 
 		this.set_icon(hide);
 
-		// refresh signature fields
-		this.fields_list.forEach((f) => {
-			if (f.df.fieldtype == "Signature") {
-				f.refresh();
-			}
-		});
+		this.fields_list.forEach((f) => f.on_section_collapse && f.on_section_collapse(hide));
 
 		// save state for next reload ('' is falsy)
 		if (this.df.css_class)

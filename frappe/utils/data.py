@@ -15,10 +15,12 @@ from typing import Any, Literal, Optional, TypeVar, Union
 from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlparse, urlunparse
 
 from click import secho
+from dateutil import parser
+from dateutil.parser import ParserError
+from dateutil.relativedelta import relativedelta
 
 import frappe
 from frappe.desk.utils import slug
-from frappe.utils.deprecations import deprecation_warning
 
 DateTimeLikeObject = Union[str, datetime.date, datetime.datetime]
 NumericType = Union[int, float]
@@ -81,9 +83,6 @@ def getdate(
 	Converts string date (yyyy-mm-dd) to datetime.date object.
 	If no input is provided, current date is returned.
 	"""
-	from dateutil import parser
-	from dateutil.parser._parser import ParserError
-
 	if not string_date:
 		return get_datetime().date()
 	if isinstance(string_date, datetime.datetime):
@@ -106,7 +105,6 @@ def getdate(
 def get_datetime(
 	datetime_str: Optional["DateTimeLikeObject"] = None,
 ) -> datetime.datetime | None:
-	from dateutil import parser
 
 	if datetime_str is None:
 		return now_datetime()
@@ -142,9 +140,6 @@ def get_timedelta(time: str | None = None) -> datetime.timedelta | None:
 	Returns:
 	        datetime.timedelta: Timedelta object equivalent of the passed `time` string
 	"""
-	from dateutil import parser
-	from dateutil.parser import ParserError
-
 	time = time or "0:0:0"
 
 	try:
@@ -162,8 +157,6 @@ def get_timedelta(time: str | None = None) -> datetime.timedelta | None:
 
 
 def to_timedelta(time_str: str | datetime.time) -> datetime.timedelta:
-	from dateutil import parser
-
 	if isinstance(time_str, datetime.time):
 		time_str = str(time_str)
 
@@ -238,9 +231,6 @@ def add_to_date(
 	as_datetime=False,
 ) -> DateTimeLikeObject:
 	"""Adds `days` to the given date"""
-	from dateutil import parser
-	from dateutil.parser._parser import ParserError
-	from dateutil.relativedelta import relativedelta
 
 	if date is None:
 		date = now_datetime()
@@ -326,7 +316,7 @@ def get_system_timezone():
 	if frappe.local.flags.in_test:
 		return _get_system_timezone()
 
-	return frappe.cache().get_value("time_zone", _get_system_timezone)
+	return frappe.cache.get_value("time_zone", _get_system_timezone)
 
 
 def convert_utc_to_timezone(utc_timestamp, time_zone):
@@ -501,9 +491,6 @@ def get_year_ending(date) -> datetime.date:
 
 
 def get_time(time_str: str) -> datetime.time:
-	from dateutil import parser
-	from dateutil.parser import ParserError
-
 	if isinstance(time_str, datetime.datetime):
 		return time_str.time()
 	elif isinstance(time_str, datetime.time):
@@ -1117,11 +1104,11 @@ def _round_away_from_zero(num, precision):
 
 
 def _bankers_rounding(num, precision):
-	if num == 0:
-		return 0.0
-
 	multiplier = 10**precision
 	num = round(num * multiplier, 12)
+
+	if num == 0:
+		return 0.0
 
 	floor_num = math.floor(num)
 	decimal_part = num - floor_num
@@ -1514,55 +1501,20 @@ def escape_html(text: str) -> str:
 
 def pretty_date(iso_datetime: datetime.datetime | str) -> str:
 	"""
-	Takes an ISO time and returns a string representing how
-	long ago the date represents.
-	Ported from PrettyDate by John Resig
-	"""
-	from frappe import _
+	Return a localized string representation of the delta to the current system time.
 
+	For example, "1 hour ago", "2 days ago", "in 5 seconds", etc.
+	"""
 	if not iso_datetime:
 		return ""
-	import math
+
+	from babel.dates import format_timedelta
 
 	if isinstance(iso_datetime, str):
 		iso_datetime = datetime.datetime.strptime(iso_datetime, DATETIME_FORMAT)
 	now_dt = datetime.datetime.strptime(now(), DATETIME_FORMAT)
-	dt_diff = now_dt - iso_datetime
-
-	# available only in python 2.7+
-	# dt_diff_seconds = dt_diff.total_seconds()
-
-	dt_diff_seconds = dt_diff.days * 86400.0 + dt_diff.seconds
-
-	dt_diff_days = math.floor(dt_diff_seconds / 86400.0)
-
-	# differnt cases
-	if dt_diff_seconds < 60.0:
-		return _("just now")
-	elif dt_diff_seconds < 120.0:
-		return _("1 minute ago")
-	elif dt_diff_seconds < 3600.0:
-		return _("{0} minutes ago").format(cint(math.floor(dt_diff_seconds / 60.0)))
-	elif dt_diff_seconds < 7200.0:
-		return _("1 hour ago")
-	elif dt_diff_seconds < 86400.0:
-		return _("{0} hours ago").format(cint(math.floor(dt_diff_seconds / 3600.0)))
-	elif dt_diff_days == 1.0:
-		return _("Yesterday")
-	elif dt_diff_days < 7.0:
-		return _("{0} days ago").format(cint(dt_diff_days))
-	elif dt_diff_days < 12:
-		return _("1 week ago")
-	elif dt_diff_days < 31.0:
-		return _("{0} weeks ago").format(dt_diff_days // 7)
-	elif dt_diff_days < 46:
-		return _("1 month ago")
-	elif dt_diff_days < 365.0:
-		return _("{0} months ago").format(dt_diff_days // 30)
-	elif dt_diff_days < 550.0:
-		return _("1 year ago")
-	else:
-		return _("{0} years ago").format(dt_diff_days // 365)
+	locale = frappe.local.lang.replace("-", "_") if frappe.local.lang else None
+	return format_timedelta(iso_datetime - now_dt, add_direction=True, locale=locale)
 
 
 def comma_or(some_list, add_quotes=True):
@@ -1801,6 +1753,7 @@ def get_filter(doctype: str, f: dict | list | tuple, filters_config=None) -> "fr
 	        "fieldtype":
 	}
 	"""
+	from frappe.database.utils import NestedSetHierarchy
 	from frappe.model import child_table_fields, default_fields, optional_fields
 
 	if isinstance(f, dict):
@@ -1840,14 +1793,10 @@ def get_filter(doctype: str, f: dict | list | tuple, filters_config=None) -> "fr
 		"not in",
 		"is",
 		"between",
-		"descendants of",
-		"ancestors of",
-		"not descendants of",
-		"not ancestors of",
 		"timespan",
 		"previous",
 		"next",
-	)
+	) + NestedSetHierarchy
 
 	if filters_config:
 		additional_operators = []
@@ -2273,3 +2222,11 @@ def add_trackers_to_url(url: str, source: str, campaign: str, medium: str = "ema
 
 	url_parts[4] = urlencode(query)
 	return urlunparse(url_parts)
+
+
+# This is used in test to count memory overhead of default imports.
+def _get_rss_memory_usage():
+	import psutil
+
+	rss = psutil.Process().memory_info().rss // (1024 * 1024)
+	return rss

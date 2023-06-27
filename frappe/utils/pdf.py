@@ -8,12 +8,13 @@ from distutils.version import LooseVersion
 
 import pdfkit
 from bs4 import BeautifulSoup
-from PyPDF2 import PdfReader, PdfWriter
+from pypdf import PdfReader, PdfWriter
 
 import frappe
 from frappe import _
 from frappe.utils import scrub_urls
 from frappe.utils.jinja_globals import bundled_asset, is_rtl
+from frappe.utils.logger import pipe_to_log
 
 PDF_CONTENT_ERRORS = [
 	"ContentNotFoundError",
@@ -21,6 +22,34 @@ PDF_CONTENT_ERRORS = [
 	"UnknownContentError",
 	"RemoteHostClosedError",
 ]
+
+logger = frappe.logger("wkhtmltopdf", max_size=100000, file_count=3)
+logger.setLevel("INFO")
+
+
+def pdf_header_html(soup, head, content, styles, html_id, css):
+	return frappe.render_template(
+		"templates/print_formats/pdf_header_footer.html",
+		{
+			"head": head,
+			"content": content,
+			"styles": styles,
+			"html_id": html_id,
+			"css": css,
+			"lang": frappe.local.lang,
+			"layout_direction": "rtl" if is_rtl() else "ltr",
+		},
+	)
+
+
+def pdf_body_html(template, args, **kwargs):
+	return template.render(args, filters={"len": len})
+
+
+def pdf_footer_html(soup, head, content, styles, html_id, css):
+	return pdf_header_html(
+		soup=soup, head=head, content=content, styles=styles, html_id=html_id, css=css
+	)
 
 
 def get_pdf(html, options=None, output: PdfWriter | None = None):
@@ -34,8 +63,13 @@ def get_pdf(html, options=None, output: PdfWriter | None = None):
 		options.update({"disable-smart-shrinking": ""})
 
 	try:
+		# wkhtmltopdf writes the pdf to stdout and errors to stderr
+		# pdfkit v1.0.0 writes the pdf to file or returns it
+		# stderr is written to sys.stdout if verbose=True is supplied
 		# Set filename property to false, so no file is actually created
-		filedata = pdfkit.from_string(html, options=options or {}, verbose=True)
+		# defaults to redirecting stdout
+		with pipe_to_log(logger.info):
+			filedata = pdfkit.from_string(html, False, options=options or {}, verbose=True)
 
 		# create in-memory binary streams from filedata and create a PdfReader object
 		reader = PdfReader(io.BytesIO(filedata))
@@ -93,7 +127,6 @@ def prepare_options(html, options):
 			"print-media-type": None,
 			"background": None,
 			"images": None,
-			"quiet": None,
 			# 'no-outline': None,
 			"encoding": "UTF-8",
 			# 'load-error-handling': 'ignore'
@@ -196,17 +229,15 @@ def prepare_header_footer(soup):
 				tag.extract()
 
 			toggle_visible_pdf(content)
-			html = frappe.render_template(
-				"templates/print_formats/pdf_header_footer.html",
-				{
-					"head": head,
-					"content": content,
-					"styles": styles,
-					"html_id": html_id,
-					"css": css,
-					"lang": frappe.local.lang,
-					"layout_direction": "rtl" if is_rtl() else "ltr",
-				},
+			id_map = {"header-html": "pdf_header_html", "footer-html": "pdf_footer_html"}
+			hook_func = frappe.get_hooks(id_map.get(html_id))
+			html = frappe.get_attr(hook_func[-1])(
+				soup=soup,
+				head=head,
+				content=content,
+				styles=styles,
+				html_id=html_id,
+				css=css,
 			)
 
 			# create temp file
@@ -242,13 +273,13 @@ def toggle_visible_pdf(soup):
 
 
 def get_wkhtmltopdf_version():
-	wkhtmltopdf_version = frappe.cache().hget("wkhtmltopdf_version", None)
+	wkhtmltopdf_version = frappe.cache.hget("wkhtmltopdf_version", None)
 
 	if not wkhtmltopdf_version:
 		try:
 			res = subprocess.check_output(["wkhtmltopdf", "--version"])
 			wkhtmltopdf_version = res.decode("utf-8").split(" ")[1]
-			frappe.cache().hset("wkhtmltopdf_version", None, wkhtmltopdf_version)
+			frappe.cache.hset("wkhtmltopdf_version", None, wkhtmltopdf_version)
 		except Exception:
 			pass
 

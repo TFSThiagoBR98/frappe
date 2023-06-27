@@ -151,7 +151,8 @@ def set_new_name(doc):
 
 	if getattr(doc, "amended_from", None):
 		_set_amended_name(doc)
-		return
+		if doc.name:
+			return
 
 	elif getattr(doc.meta, "issingle", False):
 		doc.name = doc.doctype
@@ -304,6 +305,7 @@ def parse_naming_series(
 	"""
 
 	name = ""
+	_sentinel = object()
 	if isinstance(parts, str):
 		parts = parts.split(".")
 
@@ -336,10 +338,8 @@ def parse_naming_series(
 			part = str(today)
 		elif e == "FY":
 			part = frappe.defaults.get_user_default("fiscal_year")
-		elif e.startswith("{") and doc:
+		elif doc and (e.startswith("{") or doc.get(e, _sentinel) is not _sentinel):
 			e = e.replace("{", "").replace("}", "")
-			part = doc.get(e)
-		elif doc and doc.get(e):
 			part = doc.get(e)
 		else:
 			part = e
@@ -507,6 +507,17 @@ def append_number_if_name_exists(doctype, value, fieldname="name", separator="-"
 
 
 def _set_amended_name(doc):
+	amend_naming_rule = frappe.db.get_value(
+		"Amended Document Naming Settings", {"document_type": doc.doctype}, "action", cache=True
+	)
+	if not amend_naming_rule:
+		amend_naming_rule = frappe.db.get_single_value(
+			"Document Naming Settings", "default_amend_naming", cache=True
+		)
+
+	if amend_naming_rule == "Default Naming":
+		return
+
 	am_id = 1
 	am_prefix = doc.amended_from
 	if frappe.db.get_value(doc.doctype, doc.amended_from, "amended_from"):
@@ -550,9 +561,7 @@ def _format_autoname(autoname, doc):
 
 	def get_param_value_for_match(match):
 		param = match.group()
-		# trim braces
-		trimmed_param = param[1:-1]
-		return parse_naming_series([trimmed_param], doc=doc)
+		return parse_naming_series([param[1:-1]], doc=doc)
 
 	# Replace braced params with their parsed value
 	name = BRACED_PARAMS_PATTERN.sub(get_param_value_for_match, autoname_value)

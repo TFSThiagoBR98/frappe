@@ -56,7 +56,6 @@ TRANSLATE_PATTERN = re.compile(
 REPORT_TRANSLATE_PATTERN = re.compile('"([^:,^"]*):')
 CSV_STRIP_WHITESPACE_PATTERN = re.compile(r"{\s?([0-9]+)\s?}")
 
-APP_TRANSLATION_KEY = "translations_from_apps"
 DEFAULT_LANG = "en"
 LOCALE_DIR = "locale"
 MERGED_TRANSLATION_KEY = "merged_translations"
@@ -131,7 +130,7 @@ def get_parent_language(lang: str) -> str:
 def get_user_lang(user: str = None) -> str:
 	"""Set frappe.local.lang from user preferences on session beginning or resumption"""
 	user = user or frappe.session.user
-	lang = frappe.cache().hget("lang", user)
+	lang = frappe.cache.hget("lang", user)
 
 	if not lang:
 		# User.language => Session Defaults => frappe.local.lang => 'en'
@@ -142,7 +141,7 @@ def get_user_lang(user: str = None) -> str:
 			or "en"
 		)
 
-		frappe.cache().hset("lang", user, lang)
+		frappe.cache.hset("lang", user, lang)
 
 	return lang
 
@@ -285,7 +284,7 @@ def generate_pot(target_app: str | None = None):
 
 
 def new_po(locale, target_app: str | None = None):
-	apps = [target_app] if target_app else frappe.get_all_apps(True)
+	apps = [target_app] if target_app else frappe.get_installed_apps(_ensure_on_bench=True)
 
 	for target_app in apps:
 		po_path = get_po_path(target_app, locale)
@@ -304,7 +303,7 @@ def new_po(locale, target_app: str | None = None):
 
 
 def compile(target_app: str | None = None, locale: str | None = None):
-	apps = [target_app] if target_app else frappe.get_all_apps(True)
+	apps = [target_app] if target_app else frappe.get_installed_apps(_ensure_on_bench=True)
 
 	for app in apps:
 		locales = [locale] if locale else get_locales(app)
@@ -321,7 +320,7 @@ def update_po(target_app: str | None = None, locale: str | None = None):
 
 	:param target_app: Limit operation to `app`, if specified
 	"""
-	apps = [target_app] if target_app else frappe.get_all_apps(True)
+	apps = [target_app] if target_app else frappe.get_installed_apps(_ensure_on_bench=True)
 
 	for app in apps:
 		locales = [locale] if locale else get_locales(app)
@@ -399,7 +398,7 @@ def f(msg: str, context: str = None, lang: str = DEFAULT_LANG) -> str:
 	if is_html(msg):
 		msg = strip_html_tags(msg)
 
-	apps = frappe.get_all_apps()
+	apps = frappe.get_installed_apps(_ensure_on_bench=True)
 
 	for app in apps:
 		app_path = frappe.get_pymodule_path(app)
@@ -502,7 +501,7 @@ def get_all_translations(lang: str) -> dict[str, str]:
 		return all_translations
 
 	try:
-		return frappe.cache().hget(MERGED_TRANSLATION_KEY, lang, generator=t)
+		return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=t)
 	except Exception:
 		# People mistakenly call translation function on global variables where
 		# locals are not initialized, translations don't make much sense there
@@ -518,24 +517,20 @@ def get_translations_from_apps(lang, apps=None):
 	if not lang or lang == DEFAULT_LANG:
 		return {}
 
-	def t():
-		translations = {}
+	translations = {}
 
-		for app in apps or frappe.get_all_apps(True):
-			app_path = frappe.get_pymodule_path(app)
-			localedir = os.path.join(app_path, LOCALE_DIR)
-			mo_files = gettext.find(TRANSLATION_DOMAIN, localedir, (lang,), True)
+	for app in apps or frappe.get_all_apps(_ensure_on_bench=True):
+		app_path = frappe.get_pymodule_path(app)
+		localedir = os.path.join(app_path, LOCALE_DIR)
+		mo_files = gettext.find(TRANSLATION_DOMAIN, localedir, (lang,), True)
 
-			for file in mo_files:
-				with open(file, "rb") as f:
-					po = read_mo(f)
-					for m in po:
-						translations[m.id] = m.string
+		for file in mo_files:
+			with open(file, "rb") as f:
+				po = read_mo(f)
+				for m in po:
+					translations[m.id] = m.string
 
-		return translations
-
-	return frappe.cache().hget(APP_TRANSLATION_KEY, lang, shared=True, generator=t)
-
+	return translations
 
 def get_user_translations(lang: str) -> dict[str, str]:
 	"""
@@ -564,20 +559,18 @@ def get_user_translations(lang: str) -> dict[str, str]:
 
 		return user_translations
 
-	return frappe.cache().hget(USER_TRANSLATION_KEY, lang, generator=f)
+	return frappe.cache.hget(USER_TRANSLATION_KEY, lang, generator=f)
 
 
 def clear_cache():
 	"""Clear all translation assets from :meth:`frappe.cache`"""
-	cache = frappe.cache()
-	cache.delete_key("langinfo")
+	frappe.cache.delete_key("langinfo")
 
 	# clear translations saved in boot cache
-	cache.delete_key("bootinfo")
-	cache.delete_key("translation_assets", shared=True)
-	cache.delete_key(APP_TRANSLATION_KEY, shared=True)
-	cache.delete_key(USER_TRANSLATION_KEY)
-	cache.delete_key(MERGED_TRANSLATION_KEY)
+	frappe.cache.delete_key("bootinfo")
+	frappe.cache.delete_key("translation_assets")
+	frappe.cache.delete_key(USER_TRANSLATION_KEY)
+	frappe.cache.delete_key(MERGED_TRANSLATION_KEY)
 
 
 def is_translatable(m):
@@ -872,9 +865,9 @@ def get_all_languages(with_language_name: bool = False) -> list:
 		frappe.connect()
 
 	if with_language_name:
-		return frappe.cache().get_value("languages_with_name", get_all_language_with_name)
+		return frappe.cache.get_value("languages_with_name", get_all_language_with_name)
 	else:
-		return frappe.cache().get_value("languages", get_language_codes)
+		return frappe.cache.get_value("languages", get_language_codes)
 
 
 @frappe.whitelist(allow_guest=True)

@@ -48,7 +48,6 @@ def has_permission(
 	doctype,
 	ptype="read",
 	doc=None,
-	verbose=False,
 	user=None,
 	raise_exception=True,
 	*,
@@ -60,7 +59,6 @@ def has_permission(
 	:param doctype: DocType to check permission for
 	:param ptype: Permission Type to check
 	:param doc: Check User Permissions for specified document.
-	:param verbose: DEPRECATED, will be removed in a future release.
 	:param user: User to check permission for. Defaults to current user.
 	:param raise_exception:
 	        DOES NOT raise an exception.
@@ -76,6 +74,9 @@ def has_permission(
 
 	if user == "Administrator":
 		return True
+
+	if ptype == "share" and frappe.get_system_settings("disable_document_sharing"):
+		return False
 
 	if not doc and hasattr(doctype, "doctype"):
 		# first argument can be doc or doctype
@@ -94,6 +95,7 @@ def has_permission(
 		if not perm:
 			push_perm_check_log(
 				_("User {0} does not have access to this document").format(frappe.bold(user))
+				+ f": {_(doc.doctype)} - {doc.name}"
 			)
 	else:
 		if ptype == "submit" and not cint(meta.is_submittable):
@@ -203,7 +205,7 @@ def get_role_permissions(doctype_meta, user=None, is_owner=None):
 	if not user:
 		user = frappe.session.user
 
-	cache_key = (doctype_meta.name, user)
+	cache_key = (doctype_meta.name, user, bool(is_owner))
 
 	if user == "Administrator":
 		return allow_everything()
@@ -430,7 +432,7 @@ def get_roles(user=None, with_standard=True):
 			)
 			return roles + ["All", "Guest"]
 
-	roles = frappe.cache().hget("roles", user, get)
+	roles = frappe.cache.hget("roles", user, get)
 
 	# filter standard if required
 	if not with_standard:
@@ -530,7 +532,7 @@ def update_permission_property(doctype, role, permlevel, ptype, value=None, vali
 
 	out = setup_custom_perms(doctype)
 
-	name = frappe.get_value("Custom DocPerm", dict(parent=doctype, role=role, permlevel=permlevel))
+	name = frappe.db.get_value("Custom DocPerm", dict(parent=doctype, role=role, permlevel=permlevel))
 	table = DocType("Custom DocPerm")
 	frappe.qb.update(table).set(ptype, value).where(table.name == name).run()
 

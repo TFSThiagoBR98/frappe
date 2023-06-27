@@ -79,6 +79,23 @@ def connect_to_site(site):
 	connect(site=site)
 
 
+@click.command("migrate-translations")
+@click.argument("source-app")
+@click.argument("target-app")
+@pass_context
+def migrate_translations(context, source_app, target_app):
+	"Migrate target-app-specific translations from source-app to target-app"
+	import frappe.translate
+
+	site = get_site(context)
+	try:
+		frappe.init(site=site)
+		frappe.connect()
+		frappe.translate.migrate_translations(source_app, target_app)
+	finally:
+		frappe.destroy()
+
+
 commands = [
 	compile_translation,
 	generate_pot,
