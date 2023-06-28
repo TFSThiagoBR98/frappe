@@ -756,7 +756,7 @@ def babel_extract_jinja(fileobj, keywords, comment_tags, options):
 	from jinja2.ext import babel_extract
 
 	# We use `__` as our translation function
-	keywords = DEFAULT_KEYWORDS + {
+	keywords = DEFAULT_KEYWORDS | {
 		'__': None,
 	}
 
