@@ -16,7 +16,7 @@ import json
 import operator
 import os
 import re
-import typing as t
+
 from collections import defaultdict
 from contextlib import contextmanager, suppress
 from datetime import datetime
@@ -28,10 +28,7 @@ from babel.messages.catalog import Catalog
 from babel.messages.extract import extract_from_dir, extract_python
 from babel.messages.mofile import read_mo, write_mo
 from babel.messages.pofile import read_po, write_po
-
-from jinja2 import defaults, Environment, TemplateSyntaxError
-from jinja2.ext import Extension, InternationalizationExtension, _CommentFinder, extract_from_ast
-from jinja2.utils import import_string
+from babel.messages.extract import DEFAULT_KEYWORDS
 
 import frappe
 from frappe.query_builder import DocType, Field
@@ -70,17 +67,6 @@ MERGED_TRANSLATION_KEY = "merged_translations"
 POT_FILE = "main.pot"
 TRANSLATION_DOMAIN = "messages"
 USER_TRANSLATION_KEY = "lang_user_translations"
-
-# I18N functions available in Jinja templates. If the I18N library
-# provides ugettext, it will be assigned to gettext.
-JINJA_GETTEXT_FUNCTIONS: t.Tuple[str, ...] = (
-    "_",
-    "__",
-    "gettext",
-    "ngettext",
-    "pgettext",
-    "npgettext",
-)
 
 
 def get_language(lang_list: list = None) -> str:
@@ -766,97 +752,29 @@ def get_messages(language, start=0, page_length=100, search_text=""):
 
 	return translated_dict
 
-## Customized to fetch double _ translation function
-def babel_extract_jinja(
-    fileobj: t.BinaryIO,
-    keywords: t.Sequence[str],
-    comment_tags: t.Sequence[str],
-    options: t.Dict[str, t.Any],
-) -> t.Iterator[
-    t.Tuple[
-        int, str, t.Union[t.Optional[str], t.Tuple[t.Optional[str], ...]], t.List[str]
-    ]
-]:
-    """Babel extraction method for Jinja templates.
+def babel_extract_jinja(fileobj, keywords, comment_tags, options):
+	from jinja2.ext import babel_extract
 
-    .. versionchanged:: 2.3
-       Basic support for translation comments was added.  If `comment_tags`
-       is now set to a list of keywords for extraction, the extractor will
-       try to find the best preceding comment that begins with one of the
-       keywords.  For best results, make sure to not have more than one
-       gettext call in one line of code and the matching comment in the
-       same line or the line before.
+	# We use `__` as our translation function
+	keywords = DEFAULT_KEYWORDS + {
+		'__': None,
+	}
 
-    .. versionchanged:: 2.5.1
-       The `newstyle_gettext` flag can be set to `True` to enable newstyle
-       gettext calls.
+	for lineno, funcname, messages, comments in babel_extract(
+		fileobj, keywords, comment_tags, options
+	):
+		# `funcname` here will be `__` which is our translation function. We
+		# have to convert it back to usual function names
+		funcname = "gettext"
 
-    .. versionchanged:: 2.7
-       A `silent` option can now be provided.  If set to `False` template
-       syntax errors are propagated instead of being ignored.
+		if isinstance(messages, tuple):
+			if len(messages) == 3:
+				funcname = "pgettext"
+				messages = (messages[2], messages[0])
+			else:
+				messages = messages[0]
 
-    :param fileobj: the file-like object the messages should be extracted from
-    :param keywords: a list of keywords (i.e. function names) that should be
-                     recognized as translation functions
-    :param comment_tags: a list of translator tags to search for and include
-                         in the results.
-    :param options: a dictionary of additional options (optional)
-    :return: an iterator over ``(lineno, funcname, message, comments)`` tuples.
-             (comments will be empty currently)
-    """
-    extensions: t.Dict[t.Type[Extension], None] = {}
-
-    for extension_name in options.get("extensions", "").split(","):
-        extension_name = extension_name.strip()
-
-        if not extension_name:
-            continue
-
-        extensions[import_string(extension_name)] = None
-
-    if InternationalizationExtension not in extensions:
-        extensions[InternationalizationExtension] = None
-
-    def getbool(options: t.Mapping[str, str], key: str, default: bool = False) -> bool:
-        return options.get(key, str(default)).lower() in {"1", "on", "yes", "true"}
-
-    silent = getbool(options, "silent", True)
-    environment = Environment(
-        options.get("block_start_string", defaults.BLOCK_START_STRING),
-        options.get("block_end_string", defaults.BLOCK_END_STRING),
-        options.get("variable_start_string", defaults.VARIABLE_START_STRING),
-        options.get("variable_end_string", defaults.VARIABLE_END_STRING),
-        options.get("comment_start_string", defaults.COMMENT_START_STRING),
-        options.get("comment_end_string", defaults.COMMENT_END_STRING),
-        options.get("line_statement_prefix") or defaults.LINE_STATEMENT_PREFIX,
-        options.get("line_comment_prefix") or defaults.LINE_COMMENT_PREFIX,
-        getbool(options, "trim_blocks", defaults.TRIM_BLOCKS),
-        getbool(options, "lstrip_blocks", defaults.LSTRIP_BLOCKS),
-        defaults.NEWLINE_SEQUENCE,
-        getbool(options, "keep_trailing_newline", defaults.KEEP_TRAILING_NEWLINE),
-        tuple(extensions),
-        cache_size=0,
-        auto_reload=False,
-    )
-
-    if getbool(options, "trimmed"):
-        environment.policies["ext.i18n.trimmed"] = True
-    if getbool(options, "newstyle_gettext"):
-        environment.newstyle_gettext = True  # type: ignore
-
-    source = fileobj.read().decode(options.get("encoding", "utf-8"))
-    try:
-        node = environment.parse(source)
-        tokens = list(environment.lex(environment.preprocess(source)))
-    except TemplateSyntaxError:
-        if not silent:
-            raise
-        # skip templates with syntax errors
-        return
-
-    finder = _CommentFinder(tokens, comment_tags)
-    for lineno, func, message in extract_from_ast(node, keywords, gettext_functions=JINJA_GETTEXT_FUNCTIONS):
-        yield lineno, func, message, finder.find_comments(lineno)
+		yield lineno, funcname, messages, comments
 
 def babel_extract_python(*args, **kwargs):
 	"""
