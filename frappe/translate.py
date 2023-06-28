@@ -261,7 +261,7 @@ def generate_pot(target_app: str | None = None):
 		subdir = os.path.basename(dirpath)
 		return not (subdir.startswith(".") or subdir.startswith("_"))
 
-	apps = [target_app] if target_app else frappe.get_installed_apps(_ensure_on_bench=True)
+	apps = [target_app] if target_app else frappe.get_all_apps(with_internal_apps=True)
 	method_map = [
 		("**.py", "frappe.translate.babel_extract_python"),
 		("**.js", "frappe.translate.babel_extract_javascript"),
@@ -354,7 +354,7 @@ def generate_pot(target_app: str | None = None):
 
 
 def new_po(locale, target_app: str | None = None):
-	apps = [target_app] if target_app else frappe.get_installed_apps(_ensure_on_bench=True)
+	apps = [target_app] if target_app else frappe.get_all_apps(with_internal_apps=True)
 
 	for target_app in apps:
 		po_path = get_po_path(target_app, locale)
@@ -373,7 +373,7 @@ def new_po(locale, target_app: str | None = None):
 
 
 def compile(target_app: str | None = None, locale: str | None = None):
-	apps = [target_app] if target_app else frappe.get_installed_apps(_ensure_on_bench=True)
+	apps = [target_app] if target_app else frappe.get_all_apps(with_internal_apps=True)
 
 	for app in apps:
 		locales = [locale] if locale else get_locales(app)
@@ -390,7 +390,7 @@ def update_po(target_app: str | None = None, locale: str | None = None):
 
 	:param target_app: Limit operation to `app`, if specified
 	"""
-	apps = [target_app] if target_app else frappe.get_installed_apps(_ensure_on_bench=True)
+	apps = [target_app] if target_app else frappe.get_all_apps(with_internal_apps=True)
 
 	for app in apps:
 		locales = [locale] if locale else get_locales(app)
@@ -403,7 +403,7 @@ def update_po(target_app: str | None = None, locale: str | None = None):
 
 
 def migrate(app: str | None = None, locale: str | None = None):
-	apps = [app] if app else frappe.get_all_apps(True)
+	apps = [app] if app else frappe.get_all_apps(with_internal_apps=True)
 
 	for app in apps:
 		if locale:
@@ -468,7 +468,7 @@ def f(msg: str, context: str = None, lang: str = DEFAULT_LANG) -> str:
 	if is_html(msg):
 		msg = strip_html_tags(msg)
 
-	apps = frappe.get_installed_apps(_ensure_on_bench=True)
+	apps = frappe.get_all_apps(with_internal_apps=True)
 
 	for app in apps:
 		app_path = frappe.get_pymodule_path(app)
@@ -589,7 +589,7 @@ def get_translations_from_apps(lang, apps=None):
 
 	translations = {}
 
-	for app in apps or frappe.get_all_apps(_ensure_on_bench=True):
+	for app in apps or frappe.get_all_apps(with_internal_apps=True):
 		app_path = frappe.get_pymodule_path(app)
 		localedir = os.path.join(app_path, LOCALE_DIR)
 		mo_files = gettext.find(TRANSLATION_DOMAIN, localedir, (lang.replace("-", "_"),), True)
