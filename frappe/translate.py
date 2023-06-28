@@ -266,7 +266,10 @@ def generate_pot(target_app: str | None = None):
 		("**.py", "frappe.translate.babel_extract_python"),
 		("**.js", "frappe.translate.babel_extract_javascript"),
 		("**/doctype/*/*.json", "frappe.translate.babel_extract_doctype_json"),
+		("**/form_tour/*/*.json", "frappe.translate.babel_extract_form_tour_json"),
 		("**/workspace/*/*.json", "frappe.translate.babel_extract_workspace_json"),
+		("**/public/**/*.html", "jinja2.ext:babel_extract"),
+		("**/templates/**/*.html", "jinja2.ext:babel_extract"),
 		("**/www/**/*.html", "jinja2.ext:babel_extract"),
 	]
 
@@ -883,6 +886,49 @@ def babel_extract_workspace_json(fileobj, *args, **kwargs):
 		)
 		for shortcut in data.get("shortcuts", [])
 	)
+
+
+def babel_extract_form_tour_json(fileobj, *args, **kwargs):
+	"""
+	Extract messages from DocType JSON files. To be used to babel extractor
+
+	:param fileobj: the file-like object the messages should be extracted from
+	:rtype: `iterator`
+	"""
+	data = json.load(fileobj)
+
+	if isinstance(data, list):
+		return
+
+	if data.get("doctype") != "Form Tour":
+		return
+
+	doctype = data.get("name")
+	yield None, "_", doctype, ["Name of a DocType"]
+
+	title = data.get("title")
+	yield None, "_", title, ["Title of a Form Tour"]
+
+	view_name = data.get("view_name")
+	yield None, "_", view_name, ["View Name of a Form Tour"]
+
+	messages = []
+	steps = data.get("steps", [])
+	for step in steps:
+		if title := step.get("title"):
+			messages.append((title, f"Title of a step of '{doctype}' Form Tour"))
+
+		if description := step.get("description"):
+			messages.append((description, f"Description of a step of '{doctype}' Form Tour"))
+
+		if label := step.get("label"):
+			messages.append((label, f"Label of a step of '{doctype}' Form Tour"))
+
+		if ondemand_description := step.get("ondemand_description"):
+			messages.append((ondemand_description, f"On Demand Description of a step of '{doctype}' Form Tour"))
+
+	# By using "pgettext" as the function name we can supply the doctype as context
+	yield from ((None, "pgettext", (doctype, message), [comment]) for message, comment in messages)
 
 def extract_messages_from_doctype(name):
 	"""Extract all translatable messages for a doctype. Includes labels, Python code,
