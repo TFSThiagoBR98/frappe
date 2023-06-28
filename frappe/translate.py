@@ -271,8 +271,6 @@ def generate_pot(target_app: str | None = None):
 		("**/doctype/*/*.json", "frappe.translate.babel_extract_doctype_json"),
 		("**/form_tour/*/*.json", "frappe.translate.babel_extract_form_tour_json"),
 		("**/workspace/*/*.json", "frappe.translate.babel_extract_workspace_json"),
-		("**/public/**/*.html", "frappe.translate.babel_extract_jinja"),
-		("**/templates/**/*.html", "frappe.translate.babel_extract_jinja"),
 		("**.html", "frappe.translate.babel_extract_generic"),
 		("**.vue", "frappe.translate.babel_extract_generic"),
 	]
@@ -671,7 +669,7 @@ def add_line_number(messages, code):
 		while newline_i < len(newlines) and pos > newlines[newline_i]:
 			lineno += 1
 			newline_i += 1
-		ret.append([lineno, "gettext", message, "", context])
+		ret.append([lineno, "gettext", message, [context if context != None else ""]])
 	return ret
 
 
@@ -784,13 +782,13 @@ def extract_messages_from_code(code):
 
 def babel_extract_generic(fileobj, keywords, comment_tags, options):
 	try:
-		file_contents = fileobj.read()
+		file_contents = fileobj.read().decode('utf-8')
 	except Exception:
 		print(f"Could not scan file for translation")
 		return
 
-	for lineno, funcname, messages, comments, context in extract_messages_from_code(file_contents):
-		yield lineno, funcname, messages, comments, context
+	for lineno, funcname, messages, comments in extract_messages_from_code(file_contents):
+		yield lineno, funcname, messages, comments
 
 def babel_extract_python(*args, **kwargs):
 	"""
