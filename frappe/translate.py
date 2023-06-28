@@ -31,6 +31,7 @@ from babel.messages.pofile import read_po, write_po
 from babel.messages.extract import DEFAULT_KEYWORDS
 
 import frappe
+from frappe.model.utils import InvalidIncludePath, render_include
 from frappe.query_builder import DocType, Field
 from frappe.utils import is_html, strip_html_tags, unique
 
@@ -272,7 +273,8 @@ def generate_pot(target_app: str | None = None):
 		("**/workspace/*/*.json", "frappe.translate.babel_extract_workspace_json"),
 		("**/public/**/*.html", "frappe.translate.babel_extract_jinja"),
 		("**/templates/**/*.html", "frappe.translate.babel_extract_jinja"),
-		("**/www/**/*.html", "frappe.translate.babel_extract_jinja"),
+		("**.html", "frappe.translate.babel_extract_generic"),
+		("**.vue", "frappe.translate.babel_extract_generic"),
 	]
 
 	for app in apps:
@@ -663,13 +665,13 @@ def add_line_number(messages, code):
 	ret = []
 	messages = sorted(messages, key=lambda x: x[0])
 	newlines = [m.start() for m in re.compile(r"\n").finditer(code)]
-	line = 1
+	lineno = 1
 	newline_i = 0
 	for pos, message, context in messages:
 		while newline_i < len(newlines) and pos > newlines[newline_i]:
-			line += 1
+			lineno += 1
 			newline_i += 1
-		ret.append([line, message, context])
+		ret.append([lineno, "gettext", message, "", context])
 	return ret
 
 
@@ -752,29 +754,43 @@ def get_messages(language, start=0, page_length=100, search_text=""):
 
 	return translated_dict
 
-def babel_extract_jinja(fileobj, keywords, comment_tags, options):
-	from jinja2.ext import babel_extract
+def extract_messages_from_code(code):
+	"""
+	Extracts translatable strings from a code file
+	Since we use a custom Template Engine in JS Side, it's not compatible with jinja extractor
+	:param code: code from which translatable files are to be extracted
+	"""
+	from jinja2 import TemplateError
 
-	# We use `__` as our translation function
-	keywords = DEFAULT_KEYWORDS | {
-		'__': None,
-	}
+	try:
+		code = frappe.as_unicode(render_include(code))
 
-	for lineno, funcname, messages, comments in babel_extract(
-		fileobj, keywords, comment_tags, options
-	):
-		# `funcname` here will be `__` which is our translation function. We
-		# have to convert it back to usual function names
-		funcname = "gettext"
+	# Exception will occur when it encounters John Resig's microtemplating code
+	except (TemplateError, ImportError, InvalidIncludePath, OSError) as e:
+		if isinstance(e, InvalidIncludePath):
+			frappe.clear_last_message()
 
-		if isinstance(messages, tuple):
-			if len(messages) == 3:
-				funcname = "pgettext"
-				messages = (messages[2], messages[0])
-			else:
-				messages = messages[0]
+	messages = []
 
-		yield lineno, funcname, messages, comments
+	for m in TRANSLATE_PATTERN.finditer(code):
+		message = m.group("message")
+		context = m.group("py_context") or m.group("js_context")
+		pos = m.start()
+
+		if is_translatable(message):
+			messages.append([pos, message, context])
+
+	return add_line_number(messages, code)
+
+def babel_extract_generic(fileobj, keywords, comment_tags, options):
+	try:
+		file_contents = fileobj.read()
+	except Exception:
+		print(f"Could not scan file for translation")
+		return
+
+	for lineno, funcname, messages, comments, context in extract_messages_from_code(file_contents):
+		yield lineno, funcname, messages, comments, context
 
 def babel_extract_python(*args, **kwargs):
 	"""
