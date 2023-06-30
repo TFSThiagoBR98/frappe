@@ -270,6 +270,8 @@ def generate_pot(target_app: str | None = None):
 		("**.js", "frappe.translate.babel_extract_javascript"),
 		("**/doctype/*/*.json", "frappe.translate.babel_extract_doctype_json"),
 		("**/form_tour/*/*.json", "frappe.translate.babel_extract_form_tour_json"),
+		("**/module_onboarding/*/*.json", "frappe.translate.babel_extract_module_onboarding_json"),
+		("**/onboarding_step/*/*.json", "frappe.translate.babel_extract_onboarding_step_json"),
 		("**/workspace/*/*.json", "frappe.translate.babel_extract_workspace_json"),
 		("**.html", "frappe.translate.babel_extract_generic"),
 		("**.vue", "frappe.translate.babel_extract_generic"),
@@ -968,6 +970,63 @@ def babel_extract_form_tour_json(fileobj, *args, **kwargs):
 
 	# By using "pgettext" as the function name we can supply the doctype as context
 	yield from ((None, "pgettext", (doctype, message), [comment]) for message, comment in messages)
+
+def babel_extract_module_onboarding_json(fileobj, *args, **kwargs):
+	"""
+	Extract messages from DocType JSON files. To be used to babel extractor
+
+	:param fileobj: the file-like object the messages should be extracted from
+	:rtype: `iterator`
+	"""
+	data = json.load(fileobj)
+
+	if isinstance(data, list):
+		return
+
+	if data.get("doctype") != "Module Onboarding":
+		return
+
+	doctype = data.get("name")
+	yield None, "_", doctype, ["Name of a DocType"]
+
+	title = data.get("title")
+	yield None, "_", title, ["Title of a Module Onboarding"]
+
+	subtitle = data.get("subtitle")
+	yield None, "_", subtitle, ["Subtitle of a Module Onboarding"]
+
+	success_message = data.get("success_message")
+	yield None, "_", success_message, ["Success Message of a Module Onboarding"]
+
+	messages = []
+	steps = data.get("steps", [])
+	for step in steps:
+		if step := step.get("step"):
+			messages.append((title, f"Step Content of '{doctype}' Module Onboarding"))
+
+	# By using "pgettext" as the function name we can supply the doctype as context
+	yield from ((None, "pgettext", (doctype, message), [comment]) for message, comment in messages)
+
+def babel_extract_onboarding_step_json(fileobj, *args, **kwargs):
+	"""
+	Extract messages from DocType JSON files. To be used to babel extractor
+
+	:param fileobj: the file-like object the messages should be extracted from
+	:rtype: `iterator`
+	"""
+	data = json.load(fileobj)
+
+	if isinstance(data, list):
+		return
+
+	if data.get("doctype") != "Onboarding Step":
+		return
+
+	doctype = data.get("name")
+	yield None, "_", doctype, ["Name of a DocType"]
+
+	title = data.get("title")
+	yield None, "_", title, ["Title of a Module Onboarding"]
 
 def extract_messages_from_doctype(name):
 	"""Extract all translatable messages for a doctype. Includes labels, Python code,
