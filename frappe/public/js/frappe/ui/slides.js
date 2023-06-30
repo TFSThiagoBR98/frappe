@@ -27,7 +27,7 @@ frappe.ui.Slide = class Slide {
 				<div class="form"></div>
 				<div class="add-more text-center" style="margin-top: 5px;">
 					<button class="form-more-btn hide btn btn-default btn-xs">
-						<span>Add More</span>
+						<span>${__("Add More", null, "Finish the setup wizard")}</span>
 					</button>
 				</div>
 			</div>
@@ -350,23 +350,17 @@ frappe.ui.Slides = class Slides {
 
 		$(`<div class="row">
 			<div class="col-sm-4 text-left prev-div">
-				<button class="prev-btn btn btn-secondary btn-sm" tabindex="0">${__(
-					"Previous",
-					null,
-					"Go to previous slide"
-				)}</button>
+				<button class="prev-btn btn btn-secondary btn-sm" tabindex="0">
+					${__("Previous", null, "Go to previous slide")}
+				</button>
 			</div>
 			<div class="col-sm-8 text-right next-div">
-				<button class="complete-btn btn btn-sm primary">${__(
-					"Complete Setup",
-					null,
-					"Finish the setup wizard"
-				)}</button>
-				<button class="next-btn btn btn-default btn-sm" tabindex="0">${__(
-					"Next",
-					null,
-					"Go to next slide"
-				)}</button>
+				<button class="complete-btn btn btn-sm primary">
+					${__("Complete Setup", null, "Finish the setup wizard")}
+				</button>
+				<button class="next-btn btn btn-default btn-sm" tabindex="0">
+					${__("Next", null, "Go to next slide")}
+				</button>
 			</div>
 		</div>`).appendTo(this.$footer);
 
