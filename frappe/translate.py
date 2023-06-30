@@ -272,6 +272,7 @@ def generate_pot(target_app: str | None = None):
 		("**/form_tour/*/*.json", "frappe.translate.babel_extract_form_tour_json"),
 		("**/module_onboarding/*/*.json", "frappe.translate.babel_extract_module_onboarding_json"),
 		("**/onboarding_step/*/*.json", "frappe.translate.babel_extract_onboarding_step_json"),
+		("**/web_form/*/*.json", "frappe.translate.babel_extract_web_form_json"),
 		("**/workspace/*/*.json", "frappe.translate.babel_extract_workspace_json"),
 		("**.html", "frappe.translate.babel_extract_generic"),
 		("**.vue", "frappe.translate.babel_extract_generic"),
@@ -1027,6 +1028,38 @@ def babel_extract_onboarding_step_json(fileobj, *args, **kwargs):
 
 	title = data.get("title")
 	yield None, "_", title, ["Title of a Module Onboarding"]
+
+
+def babel_extract_web_form_json(fileobj, *args, **kwargs):
+	"""
+	Extract messages from DocType JSON files. To be used to babel extractor
+
+	:param fileobj: the file-like object the messages should be extracted from
+	:rtype: `iterator`
+	"""
+	data = json.load(fileobj)
+
+	if isinstance(data, list):
+		return
+
+	if data.get("doctype") != "Web Form":
+		return
+
+
+	title = data.get("title")
+	yield None, "_", title, ["Title of a Web Form"]
+
+	doctype = data.get("name")
+	yield None, "_", doctype, ["Name of a Web Form"]
+
+	success_message = data.get("success_message")
+	yield None, "_", success_message, ["Success Message of a Web Form"]
+
+	introduction_text = data.get("introduction_text")
+	yield None, "_", introduction_text, ["Introduction Text of a Web Form"]
+
+	button_label = data.get("button_label")
+	yield None, "_", button_label, ["Submit Button Label of a Web Form"]
 
 def extract_messages_from_doctype(name):
 	"""Extract all translatable messages for a doctype. Includes labels, Python code,
