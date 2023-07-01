@@ -1189,19 +1189,22 @@ def extract_messages_from_custom_fields(app_name):
 	custom_fields = []
 
 	for fixture in fixtures:
-		if isinstance(fixture, str) and fixture == "Custom Field":
-			custom_fields = frappe.get_all(
-				"Custom Field", fields=["name", "label", "description", "fieldtype", "options"]
-			)
-			break
-		elif isinstance(fixture, dict) and fixture.get("dt", fixture.get("doctype")) == "Custom Field":
-			custom_fields.extend(
-				frappe.get_all(
-					"Custom Field",
-					filters=fixture.get("filters"),
-					fields=["name", "label", "description", "fieldtype", "options"],
+		try:
+			if isinstance(fixture, str) and fixture == "Custom Field":
+				custom_fields = frappe.get_all(
+					"Custom Field", fields=["name", "label", "description", "fieldtype", "options"]
 				)
-			)
+				break
+			elif isinstance(fixture, dict) and fixture.get("dt", fixture.get("doctype")) == "Custom Field":
+				custom_fields.extend(
+					frappe.get_all(
+						"Custom Field",
+						filters=fixture.get("filters"),
+						fields=["name", "label", "description", "fieldtype", "options"],
+					)
+				)
+		except Exception:
+			continue
 
 	messages = []
 	for cf in custom_fields:
