@@ -387,8 +387,12 @@ def compile(target_app: str | None = None, locale: str | None = None):
 		locales = [locale] if locale else get_locales(app)
 		for locale in locales:
 			catalog = get_catalog(app, locale)
-			mo_path = write_binary(app, catalog, locale)
-			print(f"MO file created at {mo_path}")
+			try:
+				mo_path = write_binary(app, catalog, locale)
+				print(f"MO file created at {mo_path}")
+			except Exception:
+				print(f"Failed to create a MO file at {mo_path}")
+				continue
 
 
 def update_po(target_app: str | None = None, locale: str | None = None):
