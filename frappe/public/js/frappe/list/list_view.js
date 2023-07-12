@@ -711,7 +711,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	}
 
 	get_column_html(col, doc) {
-		if (col.type === "Status") {
+		if (col.type === "Status" || col.df?.options == "Workflow State") {
 			return `
 				<div class="list-row-col hidden-xs ellipsis">
 					${this.get_indicator_html(doc)}
@@ -1362,7 +1362,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		if (this.list_view_settings?.disable_auto_refresh || this.realtime_events_setup) {
 			return;
 		}
-		frappe.socketio.doctype_subscribe(this.doctype);
+		frappe.realtime.doctype_subscribe(this.doctype);
 		frappe.realtime.off("list_update");
 		frappe.realtime.on("list_update", (data) => {
 			if (data?.doctype !== this.doctype) {
@@ -1385,7 +1385,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	}
 
 	disable_realtime_updates() {
-		frappe.socketio.doctype_unsubscribe(this.doctype);
+		frappe.realtime.doctype_unsubscribe(this.doctype);
 		this.realtime_events_setup = false;
 	}
 
@@ -1544,24 +1544,29 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	}
 
 	get_url_with_filters() {
-		const query_params = this.get_filters_for_args()
-			.map((filter) => {
-				if (filter[2] === "=") {
-					return `${filter[1]}=${encodeURIComponent(filter[3])}`;
-				}
-				return [
-					filter[1],
-					"=",
-					encodeURIComponent(JSON.stringify([filter[2], filter[3]])),
-				].join("");
-			})
-			.join("&");
+		let search_params = this.get_search_params();
 
 		let full_url = window.location.href.replace(window.location.search, "");
-		if (query_params) {
-			full_url += "?" + query_params;
+		if (search_params.size) {
+			full_url += "?" + search_params.toString();
 		}
 		return full_url;
+	}
+
+	get_search_params() {
+		let search_params = new URLSearchParams();
+
+		this.get_filters_for_args().forEach((filter) => {
+			if (filter[2] === "=") {
+				search_params.append(filter[1], encodeURIComponent(filter[3]));
+			} else {
+				search_params.append(
+					filter[1],
+					encodeURIComponent(JSON.stringify([filter[2], filter[3]]))
+				);
+			}
+		});
+		return search_params;
 	}
 
 	get_menu_items() {
