@@ -267,7 +267,7 @@ def generate_pot(target_app: str | None = None):
 	apps = [target_app] if target_app else frappe.get_all_apps(with_internal_apps=True)
 	method_map = [
 		("**.py", "frappe.translate.babel_extract_python"),
-		("**.js", "frappe.translate.babel_extract_javascript"),
+		("**.js", "frappe.translate.babel_extract_generic"),
 		("**/doctype/*/*.json", "frappe.translate.babel_extract_doctype_json"),
 		("**/form_tour/*/*.json", "frappe.translate.babel_extract_form_tour_json"),
 		("**/module_onboarding/*/*.json", "frappe.translate.babel_extract_module_onboarding_json"),
@@ -1112,7 +1112,7 @@ def get_extra_include_js_files(app_name=None):
 		file_path = bundled_asset(js_path)
 		relative_path = os.path.join(frappe.local.sites_path, file_path.lstrip("/"))
 
-	return [(file, "frappe.translate.babel_extract_javascript") for file in files]
+	return [(file, "frappe.translate.babel_extract_generic") for file in files]
 
 def extract_messages_from_navbar():
 	"""Return all labels from Navbar Items, as specified in Navbar Settings."""
