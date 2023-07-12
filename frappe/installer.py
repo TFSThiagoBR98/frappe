@@ -318,7 +318,7 @@ def install_app(name, verbose=False, set_as_patched=True, force=False):
 		frappe.get_attr(after_sync)()  #
 
 	## Compile Translation files
-	compile()
+	compile(name)
 
 	frappe.flags.in_install = False
 
