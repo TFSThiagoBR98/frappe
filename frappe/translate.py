@@ -329,12 +329,6 @@ def generate_pot(target_app: str | None = None):
 		# custom fields based on app.hooks.fixtures
 		messages.extend(extract_messages_from_custom_fields(app_name=app))
 
-		# app extras
-		messages.extend(extract_messages_from_extras())
-
-		# messages from navbar settings
-		messages.extend(extract_messages_from_navbar())
-
 		messages = deduplicate_messages(messages)
 
 		for app_message in messages:
@@ -1114,11 +1108,6 @@ def get_extra_include_js_files(app_name=None):
 
 	return [(file, "frappe.translate.babel_extract_generic") for file in files]
 
-def extract_messages_from_navbar():
-	"""Return all labels from Navbar Items, as specified in Navbar Settings."""
-	labels = frappe.get_all("Navbar Item", filters={"item_label": ("is", "set")}, pluck="item_label")
-	return [("Navbar:", label, "Label of a Navbar Item") for label in labels]
-
 def extract_messages_from_workflow(doctype=None, app_name=None):
 	assert doctype or app_name, "doctype or app_name should be provided"
 
@@ -1247,23 +1236,6 @@ def extract_messages_from_report(name):
 		)
 
 	messages.append((None, report.report_name))
-	return messages
-
-def extract_messages_from_extras():
-	messages = []
-	messages += (
-		frappe.qb.from_("Print Format").select(PseudoColumn("'Print Format:'"), "name")
-	).run()
-	messages += (frappe.qb.from_("DocType").select(PseudoColumn("'DocType:'"), "name")).run()
-	messages += frappe.qb.from_("Role").select(PseudoColumn("'Role:'"), "name").run()
-	messages += (frappe.qb.from_("Module Def").select(PseudoColumn("'Module:'"), "name")).run()
-	messages += (
-		frappe.qb.from_("Workspace Shortcut")
-		.where(Field("format").isnotnull())
-		.select(PseudoColumn("''"), "format")
-	).run()
-	messages += (frappe.qb.from_("Onboarding Step").select(PseudoColumn("''"), "title")).run()
-
 	return messages
 
 @frappe.whitelist()
