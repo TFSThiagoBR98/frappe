@@ -192,5 +192,3 @@ cypress/videos
 
 # Translations
 *.mo
-*.pot
-locale

@@ -260,6 +260,8 @@ def generate_pot(target_app: str | None = None):
 	def directory_filter(dirpath: str | os.PathLike[str]) -> bool:
 		if "public/dist" in dirpath:
 			return False
+		if "public/desk" in dirpath:
+			return False
 
 		subdir = os.path.basename(dirpath)
 		return not (subdir.startswith(".") or subdir.startswith("_"))
