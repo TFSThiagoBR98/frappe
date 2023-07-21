@@ -9,12 +9,16 @@ msgstr ""
 "Project-Id-Version: Frappe Framework VERSION\n"
 "Report-Msgid-Bugs-To: developers@frappe.io\n"
 "POT-Creation-Date: 2023-03-27 23:10+0053\n"
-"PO-Revision-Date: 2023-03-27 23:10+0053\n"
-"Last-Translator: developers@frappe.io\n"
-"Language-Team: developers@frappe.io\n"
+"PO-Revision-Date: 2023-07-22 15:55+0000\n"
+"Last-Translator: Weblate Admin <admin@tfs.dev.br>\n"
+"Language-Team: Portuguese (Brazil) <http://localhost:4755/projects/frappe/"
+"frappe-framework/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.18.2\n"
 "Generated-By: Babel 2.12.1\n"
 
 #: templates/emails/download_data.html:9
@@ -25,17 +29,17 @@ msgstr " para o seu navegador"
 #: core/doctype/document_naming_rule_condition/document_naming_rule_condition.json
 msgctxt "Document Naming Rule Condition"
 msgid "!="
-msgstr ""
+msgstr "!="
 
 #. DocType: About Us Settings:1
 msgid "\"Company History\""
-msgstr ""
+msgstr "\"Histórico da empresa\""
 
 #. Description of a Data field in DocType 'About Us Settings'
 #: website/doctype/about_us_settings/about_us_settings.json
 msgctxt "About Us Settings"
 msgid "\"Company History\""
-msgstr ""
+msgstr "\"Histórico da empresa\""
 
 #: core/doctype/data_export/exporter.py:202
 #: core/doctype/data_export/exporter.py:203
@@ -44,13 +48,13 @@ msgstr "\"Pai\" significa a tabela pai no qual deve ser acrescentado nesta linha
 
 #. DocType: About Us Settings:1
 msgid "\"Team Members\" or \"Management\""
-msgstr ""
+msgstr "\"Membros da equipe\" ou \"Gerência\""
 
 #. Description of a Data field in DocType 'About Us Settings'
 #: website/doctype/about_us_settings/about_us_settings.json
 msgctxt "About Us Settings"
 msgid "\"Team Members\" or \"Management\""
-msgstr ""
+msgstr "\"Membros da equipe\" ou \"Gerência\""
 
 #: public/js/frappe/form/form.js:1008 public/js/frappe/form/form.js:1014
 msgid "\"amended_from\" field must be present to do an amendment."
@@ -66,121 +70,121 @@ msgstr "&quot;{0}&quot; não é um URL válido do Planilhas Google"
 #: geo/doctype/currency/currency.json
 msgctxt "Currency"
 msgid "# ###,##"
-msgstr ""
+msgstr "# ###,##"
 
 #. Option for a Select field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "# ###,##"
-msgstr ""
+msgstr "# ###,##"
 
 #. Option for a Select field in DocType 'Currency'
 #: geo/doctype/currency/currency.json
 msgctxt "Currency"
 msgid "# ###.##"
-msgstr ""
+msgstr "# ###.##"
 
 #. Option for a Select field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "# ###.##"
-msgstr ""
+msgstr "# ###.##"
 
 #. Option for a Select field in DocType 'Currency'
 #: geo/doctype/currency/currency.json
 msgctxt "Currency"
 msgid "#'###.##"
-msgstr ""
+msgstr "#'###.##"
 
 #. Option for a Select field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "#'###.##"
-msgstr ""
+msgstr "#'###.##"
 
 #. Option for a Select field in DocType 'Currency'
 #: geo/doctype/currency/currency.json
 msgctxt "Currency"
 msgid "#, ###.##"
-msgstr ""
+msgstr "#, ###.##"
 
 #. Option for a Select field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "#, ###.##"
-msgstr ""
+msgstr "#, ###.##"
 
 #. Option for a Select field in DocType 'Currency'
 #: geo/doctype/currency/currency.json
 msgctxt "Currency"
 msgid "#,###"
-msgstr ""
+msgstr "#,###"
 
 #. Option for a Select field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "#,###"
-msgstr ""
+msgstr "#,###"
 
 #. Option for a Select field in DocType 'Currency'
 #: geo/doctype/currency/currency.json
 msgctxt "Currency"
 msgid "#,###.##"
-msgstr ""
+msgstr "#,###.##"
 
 #. Option for a Select field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "#,###.##"
-msgstr ""
+msgstr "#,###.##"
 
 #. Option for a Select field in DocType 'Currency'
 #: geo/doctype/currency/currency.json
 msgctxt "Currency"
 msgid "#,###.###"
-msgstr ""
+msgstr "#,###.###"
 
 #. Option for a Select field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "#,###.###"
-msgstr ""
+msgstr "#,###.###"
 
 #. Option for a Select field in DocType 'Currency'
 #: geo/doctype/currency/currency.json
 msgctxt "Currency"
 msgid "#,##,###.##"
-msgstr ""
+msgstr "#,##,###.##"
 
 #. Option for a Select field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "#,##,###.##"
-msgstr ""
+msgstr "#,##,###.##"
 
 #. Option for a Select field in DocType 'Currency'
 #: geo/doctype/currency/currency.json
 msgctxt "Currency"
 msgid "#.###"
-msgstr ""
+msgstr "#.###"
 
 #. Option for a Select field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "#.###"
-msgstr ""
+msgstr "#.###"
 
 #. Option for a Select field in DocType 'Currency'
 #: geo/doctype/currency/currency.json
 msgctxt "Currency"
 msgid "#.###,##"
-msgstr ""
+msgstr "#.###,##"
 
 #. Option for a Select field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "#.###,##"
-msgstr ""
+msgstr "#.###,##"
 
 #: public/js/frappe/ui/toolbar/tag_utils.js:17
 #: public/js/frappe/ui/toolbar/tag_utils.js:18
@@ -189,7 +193,7 @@ msgstr "#{0}"
 
 #: public/js/frappe/ui/toolbar/about.js:28
 msgid "&copy; Frappe Technologies Pvt. Ltd. and contributors"
-msgstr ""
+msgstr "&copy; Frappe Technologies Pvt. Ltd. e colaboradores"
 
 #. DocType: Website Settings:1
 msgid "&lt;head&gt; HTML"
@@ -203,7 +207,7 @@ msgstr "&lt;head&gt; HTML"
 
 #: public/js/form_builder/store.js:182 public/js/form_builder/store.js:204
 msgid "'In Global Search' is not allowed for field {0} of type {1}"
-msgstr ""
+msgstr "'Na Pesquisa Global' não é permitido para o campo {0} do tipo {1}"
 
 #: core/doctype/doctype/doctype.py:1157 core/doctype/doctype/doctype.py:1158
 msgid "'In Global Search' not allowed for type {0} in row {1}"
@@ -211,7 +215,7 @@ msgstr "&#39;Na Pesquisa Global&#39; não é permitido para o tipo {0} na linha 
 
 #: public/js/form_builder/store.js:172 public/js/form_builder/store.js:194
 msgid "'In List View' is not allowed for field {0} of type {1}"
-msgstr ""
+msgstr "'Na Visualização em Lista' não é permitido para o campo {0} do tipo {1}"
 
 #: custom/doctype/customize_form/customize_form.py:259
 #: custom/doctype/customize_form/customize_form.py:300
@@ -294,7 +298,7 @@ msgstr ""
 
 #: public/js/frappe/form/reminders.js:19
 msgid "1 Day"
-msgstr ""
+msgstr "1 dia"
 
 #: integrations/doctype/google_calendar/google_calendar.py:343
 #: integrations/doctype/google_calendar/google_calendar.py:344
@@ -311,11 +315,11 @@ msgstr "1 comentário"
 
 #: tests/test_utils.py:619
 msgid "1 day ago"
-msgstr ""
+msgstr "1 dia atrás"
 
 #: public/js/frappe/form/reminders.js:17
 msgid "1 hour"
-msgstr ""
+msgstr "1 hora"
 
 #: public/js/frappe/utils/pretty_date.js:52 tests/test_utils.py:617
 #: utils/data.py:1547
@@ -342,7 +346,7 @@ msgstr "1 registro será exportado"
 
 #: tests/test_utils.py:614
 msgid "1 second ago"
-msgstr ""
+msgstr "1 segundo atrás"
 
 #: public/js/frappe/utils/pretty_date.js:62 tests/test_utils.py:621
 #: utils/data.py:1555
@@ -356,31 +360,31 @@ msgstr "1 ano atrás"
 
 #: tests/test_utils.py:618
 msgid "2 hours ago"
-msgstr ""
+msgstr "2 horas atrás"
 
 #: tests/test_utils.py:624
 msgid "2 months ago"
-msgstr ""
+msgstr "2 meses atrás"
 
 #: tests/test_utils.py:622
 msgid "2 weeks ago"
-msgstr ""
+msgstr "2 semanas atrás"
 
 #: tests/test_utils.py:626
 msgid "2 years ago"
-msgstr ""
+msgstr "2 anos atrás"
 
 #: tests/test_utils.py:616
 msgid "3 minutes ago"
-msgstr ""
+msgstr "3 minutos atrás"
 
 #: public/js/frappe/form/reminders.js:16
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minutos"
 
 #: public/js/frappe/form/reminders.js:18
 msgid "4 hours"
-msgstr ""
+msgstr "4 horas"
 
 #: public/js/frappe/data_import/data_exporter.js:37
 msgid "5 Records"
@@ -388,7 +392,7 @@ msgstr "5 registros"
 
 #: tests/test_utils.py:620
 msgid "5 days ago"
-msgstr ""
+msgstr "5 dias atrás"
 
 #: desk/doctype/bulk_update/bulk_update.py:21
 #: desk/doctype/bulk_update/bulk_update.py:25
@@ -399,13 +403,13 @@ msgstr "; não permitido na condição"
 #: core/doctype/document_naming_rule_condition/document_naming_rule_condition.json
 msgctxt "Document Naming Rule Condition"
 msgid "<"
-msgstr ""
+msgstr "<"
 
 #. Option for a Select field in DocType 'Document Naming Rule Condition'
 #: core/doctype/document_naming_rule_condition/document_naming_rule_condition.json
 msgctxt "Document Naming Rule Condition"
 msgid "<="
-msgstr ""
+msgstr "<="
 
 #: public/js/frappe/widgets/widget_dialog.js:517
 msgid "<b>{0}</b> is not a valid URL"
@@ -967,19 +971,20 @@ msgstr ""
 
 #. DocType: Data Import:1
 msgid "<h5 class=\"text-muted uppercase\">Or</h5>"
-msgstr ""
+msgstr "<h5 class=\"text-muted uppercase\">Ou</h5>"
 
 #. Content of an HTML field in DocType 'Data Import'
 #: core/doctype/data_import/data_import.json
 msgctxt "Data Import"
 msgid "<h5 class=\"text-muted uppercase\">Or</h5>"
-msgstr ""
+msgstr "<h5 class=\"text-muted uppercase\">Ou</h5>"
 
 #. Description of a step of 'Main Workspace Tour' Form Tour
 #: desk/form_tour/main_workspace_tour/main_workspace_tour.json
 msgctxt "Main Workspace Tour"
 msgid "<h5 style=\"line-height:1.5;\">Click to visit the Workspace</h5>"
 msgstr ""
+"<h5 style=\"line-height:1.5;\">Clique para visitar a Área de trabalho</h5>"
 
 #. DocType: Notification:1
 #, python-format
@@ -1189,24 +1194,26 @@ msgid ""
 "<strong>Warning:</strong> This field is system generated and may be "
 "overwritten by a future update. Modify it using {0} instead."
 msgstr ""
+"<strong>Aviso:</strong> Esse campo é gerado pelo sistema e pode ser "
+"substituído por uma atualização futura. Em vez disso, modifique-o usando {0}."
 
 #. Option for a Select field in DocType 'Document Naming Rule Condition'
 #: core/doctype/document_naming_rule_condition/document_naming_rule_condition.json
 msgctxt "Document Naming Rule Condition"
 msgid "="
-msgstr ""
+msgstr "="
 
 #. Option for a Select field in DocType 'Document Naming Rule Condition'
 #: core/doctype/document_naming_rule_condition/document_naming_rule_condition.json
 msgctxt "Document Naming Rule Condition"
 msgid ">"
-msgstr ""
+msgstr ">"
 
 #. Option for a Select field in DocType 'Document Naming Rule Condition'
 #: core/doctype/document_naming_rule_condition/document_naming_rule_condition.json
 msgctxt "Document Naming Rule Condition"
 msgid ">="
-msgstr ""
+msgstr ">="
 
 #: core/doctype/doctype/doctype.py:867 core/doctype/doctype/doctype.py:868
 msgid ""
@@ -1232,6 +1239,8 @@ msgid ""
 "A download link with your data will be sent to the email address "
 "associated with your account."
 msgstr ""
+"Um link para download com seus dados será enviado para o endereço de e-mail "
+"associado à sua conta."
 
 #: website/doctype/blog_post/blog_post.py:62
 msgid "A featured post must have a cover image"
@@ -1749,11 +1758,11 @@ msgstr "Tipo de acão"
 
 #: core/doctype/submission_queue/submission_queue.py:102
 msgid "Action {0} completed successfully on {1} {2}. View it {3}"
-msgstr ""
+msgstr "A ação {0} foi concluída com êxito em {1} {2}. Visualize-a {3}"
 
 #: core/doctype/submission_queue/submission_queue.py:98
 msgid "Action {0} failed on {1} {2}. View it {3}"
-msgstr ""
+msgstr "A ação {0} falhou em {1} {2}. Visualize-a {3}"
 
 #. DocType: DocType:1
 #: core/doctype/communication/communication.js:66
@@ -2005,11 +2014,11 @@ msgstr "Adicionar tags personalizadas"
 
 #: core/doctype/doctype/doctype_list.js:15
 msgid "Add DocType"
-msgstr ""
+msgstr "Adicionar Tipo de Documento"
 
 #: core/doctype/doctype/doctype_list.js:10
 msgid "Add DocType (Form Builder)"
-msgstr ""
+msgstr "Adicionar Tipo de Documento (Criador de formulários)"
 
 #: public/js/frappe/recorder/RecorderDetail.vue:8
 msgid "Add Filter"
@@ -2040,7 +2049,7 @@ msgstr "Adicionar grupo"
 #. Finish the setup wizard
 #: public/js/frappe/ui/slides.js:30
 msgid "Add More"
-msgstr ""
+msgstr "Adicionar mais"
 
 #: public/js/frappe/form/grid.js:97
 msgid "Add Multiple"
@@ -2212,7 +2221,7 @@ msgstr "Adicionar coluna"
 #: public/js/form_builder/components/Tabs.vue:144
 #: public/js/form_builder/components/Tabs.vue:149
 msgid "Add new tab"
-msgstr ""
+msgstr "Adicionar nova guia"
 
 #: public/js/print_format_builder/PrintFormatSection.vue:137
 msgid "Add page break"
@@ -2438,7 +2447,7 @@ msgstr "Adiciona um script de cliente personalizado a um Tipo de documento"
 
 #. DocType: Custom Field:1
 msgid "Adds a custom field to a DocType"
-msgstr "Adiciona um campo personalizado para um Tipo de Documento (DocType)"
+msgstr "Adiciona um campo personalizado para um Tipo de Documento"
 
 #: public/js/frappe/desk.js:5 public/js/frappe/ui/toolbar/search_utils.js:530
 msgid "Administration"
@@ -2479,6 +2488,9 @@ msgid ""
 "<br>\n"
 "Click on \"Apply Filters\" to continue."
 msgstr ""
+"Os filtros avançados são aplicados em campos com diferentes operadores. \n"
+"<br>\n"
+"Clique em \"Aplicar Filtros\" para continuar."
 
 #. DocType: DocType:1
 msgid "Advanced"
@@ -2504,7 +2516,7 @@ msgstr "Controle Avançado"
 #: core/form_tour/user_list_tour/user_list_tour.json
 msgctxt "User List Tour"
 msgid "Advanced Filters"
-msgstr ""
+msgstr "Filtros avançados"
 
 #: public/js/frappe/form/controls/link.js:312
 #: public/js/frappe/form/controls/link.js:314
@@ -2594,7 +2606,7 @@ msgstr "Após o envio"
 
 #. DocType: Contact:1
 msgid "Agent"
-msgstr ""
+msgstr "Agente"
 
 #: desk/doctype/number_card/number_card.py:30
 msgid "Aggregate Field is required to create a number card"
@@ -2758,7 +2770,7 @@ msgstr "Todos os resultados"
 
 #: public/js/frappe/form/form.js:2098
 msgid "All Submissions"
-msgstr ""
+msgstr "Todas as Submissões"
 
 #: desk/page/leaderboard/leaderboard.js:54
 msgid "All Time"
@@ -3322,7 +3334,7 @@ msgstr "Módulos permitidos"
 
 #: public/js/frappe/form/form.js:1174 public/js/frappe/form/form.js:1180
 msgid "Allowing DocType, DocType. Be careful!"
-msgstr "Permitindo DocType , DocType . Tenha cuidado !"
+msgstr "Permitindo Tipo de Documento com Tipo de Documento. Tenha cuidado !"
 
 #: core/doctype/user/user.py:849 core/doctype/user/user.py:894
 msgid "Already Registered"
@@ -3408,35 +3420,35 @@ msgstr "Corrigir"
 
 #. DocType: Amended Document Naming Settings:1
 msgid "Amend Counter"
-msgstr ""
+msgstr "Alterar contador"
 
 #. Option for a Select field in DocType 'Amended Document Naming Settings'
 #: core/doctype/amended_document_naming_settings/amended_document_naming_settings.json
 msgctxt "Amended Document Naming Settings"
 msgid "Amend Counter"
-msgstr ""
+msgstr "Alterar contador"
 
 #. Option for a Select field in DocType 'Document Naming Settings'
 #: core/doctype/document_naming_settings/document_naming_settings.json
 msgctxt "Document Naming Settings"
 msgid "Amend Counter"
-msgstr ""
+msgstr "Alterar contador"
 
 #. Name of a DocType
 #. DocType: Amended Document Naming Settings:1
 #: core/doctype/amended_document_naming_settings/amended_document_naming_settings.json
 msgid "Amended Document Naming Settings"
-msgstr ""
+msgstr "Configurações de nomenclatura de documentos alteradas"
 
 #. DocType: Document Naming Settings:1
 msgid "Amended Documents"
-msgstr ""
+msgstr "Documentos alterados"
 
 #. Label of a Section Break field in DocType 'Document Naming Settings'
 #: core/doctype/document_naming_settings/document_naming_settings.json
 msgctxt "Document Naming Settings"
 msgid "Amended Documents"
-msgstr ""
+msgstr "Documentos alterados"
 
 #. DocType: Transaction Log:1
 msgid "Amended From"
@@ -3466,17 +3478,17 @@ msgstr "Correção"
 
 #. DocType: Document Naming Settings:1
 msgid "Amendment Naming Override"
-msgstr ""
+msgstr "Substituição de nome de emenda"
 
 #. Label of a Table field in DocType 'Document Naming Settings'
 #: core/doctype/document_naming_settings/document_naming_settings.json
 msgctxt "Document Naming Settings"
 msgid "Amendment Naming Override"
-msgstr ""
+msgstr "Substituição de nome de emenda"
 
 #: core/doctype/document_naming_settings/document_naming_settings.py:187
 msgid "Amendment naming rules updated."
-msgstr ""
+msgstr "Atualização das regras de nomeação de emendas."
 
 #. DocType: Web Form:1
 msgid "Amount"
@@ -3496,6 +3508,8 @@ msgid ""
 "An email to verify your request has been sent to your email address. "
 "Please verify your request to complete the process."
 msgstr ""
+"Um e-mail para verificar sua solicitação foi enviado para seu endereço de e-"
+"mail. Verifique sua solicitação para concluir o processo."
 
 #: public/js/frappe/ui/toolbar/toolbar.js:278
 #: public/js/frappe/ui/toolbar/toolbar.js:287
@@ -3526,13 +3540,13 @@ msgstr "Ocorreu um erro inesperado ao autorizar {}."
 
 #. DocType: Website Settings:1
 msgid "Analytics"
-msgstr ""
+msgstr "Análises"
 
 #. Label of a Section Break field in DocType 'Website Settings'
 #: website/doctype/website_settings/website_settings.json
 msgctxt "Website Settings"
 msgid "Analytics"
-msgstr ""
+msgstr "Análises"
 
 #: public/js/frappe/ui/filters/filter.js:34
 #: public/js/frappe/ui/filters/filter.js:35
@@ -3728,7 +3742,7 @@ msgstr "App chave secreta"
 
 #: modules/utils.py:264 modules/utils.py:269
 msgid "App not found for module: {0}"
-msgstr ""
+msgstr "Aplicativo não encontrado para o módulo: {0}"
 
 #: __init__.py:1567 __init__.py:1596
 msgid "App {0} is not installed"
@@ -4018,6 +4032,8 @@ msgid ""
 "Are you sure you want to delete the column? All the fields in the column "
 "will be moved to the previous column."
 msgstr ""
+"Tem certeza de que deseja excluir a coluna? Todos os campos da coluna serão "
+"movidos para a coluna anterior."
 
 #. Confirmation dialog message
 #: public/js/form_builder/components/Section.vue:37
@@ -4025,6 +4041,8 @@ msgid ""
 "Are you sure you want to delete the section? All the columns along with "
 "fields in the section will be moved to the previous section."
 msgstr ""
+"Tem certeza de que deseja excluir a seção? Todas as colunas e os campos da "
+"seção serão movidos para a seção anterior."
 
 #. Confirmation dialog message
 #: public/js/form_builder/components/Tabs.vue:69
@@ -4032,6 +4050,8 @@ msgid ""
 "Are you sure you want to delete the tab? All the sections along with "
 "fields in the tab will be moved to the previous tab."
 msgstr ""
+"Tem certeza de que deseja excluir a guia? Todas as seções e os campos da "
+"guia serão movidos para a guia anterior."
 
 #: public/js/frappe/web_form/web_form.js:183
 #: public/js/frappe/web_form/web_form.js:185
@@ -4476,13 +4496,13 @@ msgstr "Arquivo anexo"
 
 #. DocType: File:1
 msgid "Attached To DocType"
-msgstr "Anexado ao Doctype"
+msgstr "Anexado ao Tipo de Documento"
 
 #. Label of a Link field in DocType 'File'
 #: core/doctype/file/file.json
 msgctxt "File"
 msgid "Attached To DocType"
-msgstr "Anexado ao Doctype"
+msgstr "Anexado ao Tipo de Documento"
 
 #. DocType: File:1
 msgid "Attached To Field"
@@ -5108,12 +5128,12 @@ msgstr "Incrível, agora tente fazer uma entrada você mesmo"
 #: desk/form_tour/main_workspace_tour/main_workspace_tour.json
 msgctxt "Main Workspace Tour"
 msgid "Awesomebar"
-msgstr ""
+msgstr "Awesomebar"
 
 #. Number system
 #: public/js/frappe/utils/number_systems.js:9
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: public/js/frappe/utils/number_systems.js:9
 msgctxt "Number system"
@@ -5932,7 +5952,7 @@ msgstr "Bot"
 
 #: printing/page/print_format_builder/print_format_builder.js:126
 msgid "Both DocType and Name required"
-msgstr "Ambos DocType e Nome é obrigatório"
+msgstr "Tanto Tipo de Documento e o Nome são obrigatórios"
 
 #: templates/includes/login/login.js:23 templates/includes/login/login.js:95
 msgid "Both login and password required"
@@ -6053,6 +6073,10 @@ msgid ""
 "has a transparent background and use the &lt;img /&gt; tag. Keep size as "
 "200px x 30px"
 msgstr ""
+"A Marca é o que aparece na parte superior esquerda da barra de ferramentas. "
+"Se for uma imagem, certifique-se de que ela\n"
+"tenha um fundo transparente e use a tag &lt;img /&gt;. Mantenha o tamanho de "
+"200px x 30px"
 
 #. DocType: Web Form:1
 msgid "Breadcrumbs"
@@ -6138,7 +6162,7 @@ msgstr "Personalização"
 
 #: workflow/doctype/workflow/workflow_list.js:18
 msgid "Build {0}"
-msgstr ""
+msgstr "Build {0}"
 
 #. DocType: Role:1
 msgid "Bulk Actions"
@@ -6552,13 +6576,13 @@ msgstr "URL de apelo à ação"
 
 #. DocType: Blog Settings:1
 msgid "Call to Action"
-msgstr ""
+msgstr "Chamada para ação"
 
 #. Label of a Section Break field in DocType 'Blog Settings'
 #: website/doctype/blog_settings/blog_settings.json
 msgctxt "Blog Settings"
 msgid "Call to Action"
-msgstr ""
+msgstr "Chamada para ação"
 
 #. DocType: Onboarding Step:1
 msgid "Callback Message"
@@ -6589,29 +6613,29 @@ msgstr "câmera"
 #: public/js/frappe/utils/utils.js:1632 public/js/frappe/utils/utils.js:1692
 #: website/report/website_analytics/website_analytics.js:40
 msgid "Campaign"
-msgstr ""
+msgstr "Campanha"
 
 #. Label of a Link field in DocType 'Newsletter'
 #: email/doctype/newsletter/newsletter.json
 msgctxt "Newsletter"
 msgid "Campaign"
-msgstr ""
+msgstr "Campanha"
 
 #. Label of a Data field in DocType 'Web Page View'
 #: website/doctype/web_page_view/web_page_view.json
 msgctxt "Web Page View"
 msgid "Campaign"
-msgstr ""
+msgstr "Campanha"
 
 #. DocType: Marketing Campaign:1
 msgid "Campaign Description (Optional)"
-msgstr ""
+msgstr "Descrição da campanha (opcional)"
 
 #. Label of a Small Text field in DocType 'Marketing Campaign'
 #: website/doctype/marketing_campaign/marketing_campaign.json
 msgctxt "Marketing Campaign"
 msgid "Campaign Description (Optional)"
-msgstr ""
+msgstr "Descrição da campanha (opcional)"
 
 #: public/js/frappe/form/templates/set_sharing.html:4
 #: public/js/frappe/form/templates/set_sharing.html:50
@@ -6827,6 +6851,8 @@ msgid ""
 "Cannot cancel before submitting while transitioning from <b>{0} State</b>"
 " to <b>{1} State</b>"
 msgstr ""
+"Não é possível cancelar antes de enviar durante a transição de <b>Estado "
+"{0}</b> para <b>Estado {1}</b>"
 
 #: workflow/doctype/workflow/workflow.py:115
 msgid "Cannot cancel before submitting. See Transition {0}"
@@ -6891,6 +6917,8 @@ msgid ""
 "Cannot delete standard field <strong>{0}</strong>. You can hide it "
 "instead."
 msgstr ""
+"Não é possível excluir o campo padrão <strong>{0}</strong>. Em vez disso, "
+"você pode ocultá-lo."
 
 #: public/js/form_builder/components/Column.vue:25
 #: public/js/form_builder/components/Field.vue:17
@@ -6910,6 +6938,8 @@ msgid ""
 "Cannot delete system generated field <strong>{0}</strong>. You can hide "
 "it instead."
 msgstr ""
+"Não é possível excluir o campo gerado pelo sistema <strong>{0}</strong>. Em "
+"vez disso, você pode ocultá-lo."
 
 #: public/js/frappe/list/bulk_operations.js:164
 #: public/js/frappe/list/bulk_operations.js:171
@@ -7221,6 +7251,10 @@ msgid ""
 "Warning: Incorrectly updating counters can prevent documents from getting"
 " created. "
 msgstr ""
+"Alterar o número de sequência inicial/atual de uma série existente.\n"
+"\n"
+"AVISO: A atualização incorreta dos contadores pode impedir a criação de "
+"documentos. "
 
 #. Description of a Section Break field in DocType 'Document Naming Settings'
 #: core/doctype/document_naming_settings/document_naming_settings.json
@@ -7232,6 +7266,10 @@ msgid ""
 "Warning: Incorrectly updating counters can prevent documents from getting"
 " created. "
 msgstr ""
+"Alterar o número de sequência inicial/atual de uma série existente.\n"
+"\n"
+"AVISO: A atualização incorreta dos contadores pode impedir a criação de "
+"documentos. "
 
 #: email/doctype/email_domain/email_domain.js:5
 msgid ""
@@ -7438,6 +7476,8 @@ msgid ""
 "Check this if you want to add custom Jinja Code or JavaScript to your "
 "Print Format"
 msgstr ""
+"Marque esta opção se quiser adicionar código Jinja ou JavaScript "
+"personalizado ao seu formato de impressão"
 
 #. DocType: Document Naming Settings:1
 msgid ""
@@ -7461,13 +7501,13 @@ msgstr ""
 #: custom/form_tour/custom_field/custom_field.json
 msgctxt "Custom Field"
 msgid "Check this to make it a mandatory field"
-msgstr ""
+msgstr "Marque esta opção para torná-la um campo obrigatório"
 
 #. Description of a step of 'Doctype' Form Tour
 #: core/form_tour/doctype/doctype.json
 msgctxt "Doctype"
 msgid "Check this to make the DocType as Custom"
-msgstr ""
+msgstr "Marque esta opção para que o Tipo de Documento seja personalizado"
 
 #: email/doctype/newsletter/newsletter.js:20
 msgid "Checking broken links..."
@@ -7486,16 +7526,16 @@ msgstr ""
 #. DocType: Workspace:1
 msgid "Checking this will hide custom doctypes and reports cards in Links section"
 msgstr ""
-"Marcar isto irá esconder doctypes personalizados e cartões de relatórios "
-"na seção Links"
+"Marcar isto irá esconder os Tipos de Documento personalizados e cartões de "
+"relatórios na seção Links"
 
 #. Description of a Check field in DocType 'Workspace'
 #: desk/doctype/workspace/workspace.json
 msgctxt "Workspace"
 msgid "Checking this will hide custom doctypes and reports cards in Links section"
 msgstr ""
-"Marcar isto irá esconder doctypes personalizados e cartões de relatórios "
-"na seção Links"
+"Marcar isto irá esconder Tipos de Documento personalizados e cartões de "
+"relatórios na seção Links"
 
 #: website/doctype/web_page/web_page.js:78
 msgid ""
@@ -7538,13 +7578,15 @@ msgstr "Tipo de Tipo de documento filho"
 #. DocType: DocType:1
 #: desk/page/form_builder/form_builder.js:138
 msgid "Child Tables are shown as a Grid in other DocTypes"
-msgstr "Tabelas secundárias são mostradas como uma grade em outros DocTypes"
+msgstr ""
+"Tabelas secundárias são mostradas como uma grade em outros Tipos de Documento"
 
 #. Description of a Check field in DocType 'DocType'
 #: core/doctype/doctype/doctype.json
 msgctxt "DocType"
 msgid "Child Tables are shown as a Grid in other DocTypes"
-msgstr "Tabelas secundárias são mostradas como uma grade em outros DocTypes"
+msgstr ""
+"Tabelas secundárias são mostradas como uma grade em outros Tipos de Documento"
 
 #: public/js/frappe/widgets/widget_dialog.js:543
 #: public/js/frappe/widgets/widget_dialog.js:567
@@ -7709,7 +7751,7 @@ msgstr "Clique no ícone de cadeado para alternar entre público / privado"
 
 #: website/doctype/web_form/templates/web_form.html:141
 msgid "Click on this {0} if you are not redirected within 5 seconds"
-msgstr ""
+msgstr "Clique neste {0} se você não for redirecionado em 5 segundos"
 
 #: integrations/doctype/google_calendar/google_calendar.py:83
 #: integrations/doctype/google_contacts/google_contacts.py:23
@@ -8232,7 +8274,7 @@ msgstr "Nome da coluna não pode estar em branco"
 
 #: public/js/form_builder/components/Column.vue:118
 msgid "Column Title"
-msgstr ""
+msgstr "Título da coluna"
 
 #: public/js/frappe/form/grid_row.js:436
 msgid "Column Width"
@@ -9215,7 +9257,7 @@ msgstr "Núcleo"
 #: custom/doctype/customize_form/customize_form.py:58
 #: desk/page/form_builder/form_builder.js:77
 msgid "Core DocTypes cannot be customized."
-msgstr "DocTypes principais não podem ser personalizados."
+msgstr "Tipos de Documento principais não podem ser personalizados."
 
 #: desk/doctype/global_search_settings/global_search_settings.py:24
 msgid "Core Modules {0} cannot be searched in Global Search."
@@ -9343,7 +9385,7 @@ msgstr "Município"
 #. Number system
 #: public/js/frappe/utils/number_systems.js:23
 msgid "Cr"
-msgstr ""
+msgstr "Cr"
 
 #: public/js/frappe/utils/number_systems.js:23
 msgctxt "Number system"
@@ -9384,7 +9426,7 @@ msgstr "Criar"
 
 #: desk/page/form_builder/form_builder.js:165
 msgid "Create & Continue"
-msgstr ""
+msgstr "Criar e continuar"
 
 #. Name of a DocType
 #. Title of a Module Onboarding
@@ -9419,7 +9461,7 @@ msgstr "Criar contatos de e-mails recebidos"
 #. Title of a Module Onboarding
 #: custom/onboarding_step/custom_field/custom_field.json
 msgid "Create Custom Fields"
-msgstr ""
+msgstr "Criar campos personalizados"
 
 #: public/js/frappe/views/workspace/workspace.js:872
 #: public/js/frappe/views/workspace/workspace.js:876
@@ -9462,7 +9504,7 @@ msgstr "Criar Novo"
 #: desk/page/form_builder/form_builder.js:93
 #: desk/page/form_builder/form_builder.js:107
 msgid "Create New DocType"
-msgstr ""
+msgstr "Criar novo Tipo de Documento"
 
 #: public/js/frappe/list/list_view_select.js:199
 msgid "Create New Kanban Board"
@@ -9483,7 +9525,7 @@ msgstr "Criar um novo formato"
 
 #: public/js/frappe/form/reminders.js:9
 msgid "Create a Reminder"
-msgstr ""
+msgstr "Criar um lembrete"
 
 #: public/js/frappe/ui/toolbar/search_utils.js:515
 msgid "Create a new ..."
@@ -9491,7 +9533,7 @@ msgstr "Criar um novo ..."
 
 #: core/doctype/doctype/doctype_list.js:16
 msgid "Create a new DocType"
-msgstr ""
+msgstr "Criar novo Tipo de Documento"
 
 #: public/js/frappe/ui/toolbar/awesome_bar.js:142
 msgid "Create a new record"
@@ -9521,7 +9563,7 @@ msgstr "Criar ou editar formato de impressão"
 
 #: workflow/page/workflow_builder/workflow_builder.js:34
 msgid "Create or Edit Workflow"
-msgstr ""
+msgstr "Criar ou editar fluxo de trabalho"
 
 #: public/js/frappe/list/list_view.js:468
 msgid "Create your first {0}"
@@ -9535,6 +9577,8 @@ msgstr "Crie seu primeiro {0}"
 #: workflow/doctype/workflow/workflow.js:16
 msgid "Create your workflow visually using the Workflow Builder."
 msgstr ""
+"Crie seu fluxo de trabalho visualmente usando o Construtor de Fluxo de "
+"Trabalho."
 
 #. DocType: Comment:1
 #: public/js/frappe/views/file/file_view.js:323
@@ -9555,13 +9599,13 @@ msgstr "Criado"
 
 #. DocType: Submission Queue:1
 msgid "Created At"
-msgstr ""
+msgstr "Criado em"
 
 #. Label of a Datetime field in DocType 'Submission Queue'
 #: core/doctype/submission_queue/submission_queue.json
 msgctxt "Submission Queue"
 msgid "Created At"
-msgstr ""
+msgstr "Criado em"
 
 #: model/meta.py:50 public/js/frappe/list/list_sidebar_group_by.js:73
 #: public/js/frappe/model/meta.js:204 public/js/frappe/model/model.js:113
@@ -9906,12 +9950,12 @@ msgstr "DocPerm personalizado"
 #. Name of a DocType
 #: custom/onboarding_step/custom_doctype/custom_doctype.json
 msgid "Custom Doctype"
-msgstr ""
+msgstr "Customizar "
 
 #. Title of a Module Onboarding
 #: custom/onboarding_step/custom_doctype/custom_doctype.json
 msgid "Custom Document Types"
-msgstr ""
+msgstr "Tipos de documentos personalizados"
 
 #. DocType: User Type:1
 msgid "Custom Document Types (Select Permission)"
@@ -9973,26 +10017,31 @@ msgid ""
 "Custom Field, Custom Doctype, Naming Series, Role Permission, Workflow, "
 "Print Formats, Reports"
 msgstr ""
+"Campo personalizado, Tipo de Documento personalizado, Série de nomes, "
+"Permissão de Função, Fluxo de Trabalho, Formatos de Impressão, Relatórios"
 
 #: custom/doctype/custom_field/custom_field.py:157
 #: custom/doctype/custom_field/custom_field.py:158
 msgid "Custom Fields can only be added to a standard DocType."
-msgstr "Campos personalizados só podem ser adicionados a um DocType padrão."
+msgstr ""
+"Campos personalizados só podem ser adicionados a um Tipo de Documento padrão."
 
 #: custom/doctype/custom_field/custom_field.py:154
 #: custom/doctype/custom_field/custom_field.py:155
 msgid "Custom Fields cannot be added to core DocTypes."
-msgstr "Campos personalizados não podem ser adicionados aos principais DocTypes."
+msgstr ""
+"Campos personalizados não podem ser adicionados aos principais Tipos de "
+"Documento."
 
 #. DocType: Website Settings:1
 msgid "Custom Footer"
-msgstr ""
+msgstr "Rodapé personalizado"
 
 #. Label of a Section Break field in DocType 'Website Settings'
 #: website/doctype/website_settings/website_settings.json
 msgctxt "Website Settings"
 msgid "Custom Footer"
-msgstr ""
+msgstr "Rodapé personalizado"
 
 #. DocType: Print Format:1
 msgid "Custom Format"
@@ -10208,7 +10257,7 @@ msgstr "Personalização"
 #. Success Message of a Module Onboarding
 #: custom/module_onboarding/customization/customization.json
 msgid "Customization onboarding is all done!"
-msgstr ""
+msgstr "A integração da personalização está concluída!"
 
 #: public/js/frappe/views/workspace/workspace.js:472
 #: public/js/frappe/views/workspace/workspace.js:475
@@ -10246,7 +10295,7 @@ msgstr "Personalizar tabela filho"
 
 #: public/js/frappe/views/dashboard/dashboard_view.js:37
 msgid "Customize Dashboard"
-msgstr "Personalizar painel de controle"
+msgstr "Personalizar Painel de controle"
 
 #. Name of a DocType
 #. DocType: Customize Form:1
@@ -10289,7 +10338,7 @@ msgstr "Personalizar Etiquetas, Cabeçalhos, Padrões, etc."
 #. Title of a Module Onboarding
 #: custom/onboarding_step/print_format/print_format.json
 msgid "Customize Print Formats"
-msgstr ""
+msgstr "Personalizar formatos de impressão"
 
 #: public/js/frappe/views/file/file_view.js:146
 msgid "Cut"
@@ -10734,7 +10783,7 @@ msgstr "Processos de banco de dados"
 
 #: public/js/frappe/doctype/index.js:38
 msgid "Database Row Size Utilization"
-msgstr ""
+msgstr "Utilização do tamanho da linha da tabela banco de dados"
 
 #. None:1
 msgid "Database Storage Usage By Tables"
@@ -10742,13 +10791,15 @@ msgstr "Uso do armazenamento do banco de dados por tabelas"
 
 #: custom/doctype/customize_form/customize_form.py:184
 msgid "Database Table Row Size Limit"
-msgstr ""
+msgstr "Limite de tamanho de linha da tabela do banco de dados"
 
 #: public/js/frappe/doctype/index.js:40
 msgid ""
 "Database Table Row Size Utilization: {0}%, this limits number of fields "
 "you can add."
 msgstr ""
+"Utilização do tamanho da linha da tabela do banco de dados: {0}%, isso "
+"limita o número de campos que você pode adicionar."
 
 #. DocType: Activity Log:1
 #: desk/report/todo/todo.py:38 email/doctype/newsletter/newsletter.js:109
@@ -11008,13 +11059,13 @@ msgstr "Template endereço padrão não pode ser excluído"
 
 #. DocType: Document Naming Settings:1
 msgid "Default Amendment Naming"
-msgstr ""
+msgstr "Nomes de emendas padrão"
 
 #. Label of a Select field in DocType 'Document Naming Settings'
 #: core/doctype/document_naming_settings/document_naming_settings.json
 msgctxt "Document Naming Settings"
 msgid "Default Amendment Naming"
-msgstr ""
+msgstr "Nomes de emendas padrão"
 
 #. DocType: DocType:1
 msgid "Default Email Template"
@@ -11062,19 +11113,19 @@ msgstr "Cabeçalho de Carta Padrão"
 
 #. DocType: Amended Document Naming Settings:1
 msgid "Default Naming"
-msgstr ""
+msgstr "Nomeação padrão"
 
 #. Option for a Select field in DocType 'Amended Document Naming Settings'
 #: core/doctype/amended_document_naming_settings/amended_document_naming_settings.json
 msgctxt "Amended Document Naming Settings"
 msgid "Default Naming"
-msgstr ""
+msgstr "Nomeação padrão"
 
 #. Option for a Select field in DocType 'Document Naming Settings'
 #: core/doctype/document_naming_settings/document_naming_settings.json
 msgctxt "Document Naming Settings"
 msgid "Default Naming"
-msgstr ""
+msgstr "Nomeação padrão"
 
 #. DocType: Email Account:1
 #: email/doctype/email_account/email_account.py:139
@@ -11355,7 +11406,7 @@ msgstr "Excluir tudo"
 #. Title of confirmation dialog
 #: public/js/form_builder/components/Column.vue:31
 msgid "Delete Column"
-msgstr ""
+msgstr "Excluir coluna"
 
 #: website/doctype/personal_data_deletion_request/personal_data_deletion_request.js:10
 msgid "Delete Data"
@@ -11368,12 +11419,12 @@ msgstr "Excluir Quadro Kanban"
 #. Title of confirmation dialog
 #: public/js/form_builder/components/Section.vue:36
 msgid "Delete Section"
-msgstr ""
+msgstr "Excluir seção"
 
 #. Title of confirmation dialog
 #: public/js/form_builder/components/Tabs.vue:68
 msgid "Delete Tab"
-msgstr ""
+msgstr "Excluir guia"
 
 #: public/js/frappe/views/workspace/workspace.js:771
 #: public/js/frappe/views/workspace/workspace.js:775
@@ -11387,7 +11438,7 @@ msgstr "Excluir e gerar novo"
 #. Button text
 #: public/js/form_builder/components/Column.vue:34
 msgid "Delete column"
-msgstr ""
+msgstr "Excluir coluna"
 
 #: public/js/frappe/form/footer/form_timeline.js:638
 #: public/js/frappe/form/footer/form_timeline.js:699
@@ -11397,27 +11448,27 @@ msgstr "Excluir comentário?"
 #. Button text
 #: public/js/form_builder/components/Column.vue:36
 msgid "Delete entire column with fields"
-msgstr ""
+msgstr "Excluir coluna inteira com campos"
 
 #. Button text
 #: public/js/form_builder/components/Section.vue:41
 msgid "Delete entire section with columns"
-msgstr ""
+msgstr "Excluir toda a seção com colunas"
 
 #. Button text
 #: public/js/form_builder/components/Tabs.vue:73
 msgid "Delete entire tab with sections"
-msgstr ""
+msgstr "Excluir toda a guia com seções"
 
 #. Button text
 #: public/js/form_builder/components/Section.vue:39
 msgid "Delete section"
-msgstr ""
+msgstr "Excluir seção"
 
 #. Button text
 #: public/js/form_builder/components/Tabs.vue:71
 msgid "Delete tab"
-msgstr ""
+msgstr "Excluir guia"
 
 #: email/doctype/email_unsubscribe/email_unsubscribe.py:17
 msgid "Delete this record to allow sending to this email address"
@@ -11426,7 +11477,7 @@ msgstr "Excluir este registro para permitir o envio para esse endereço de email
 #. Title of confirmation dialog
 #: public/js/frappe/list/list_view.js:1799
 msgid "Delete {0} item permanently?"
-msgstr ""
+msgstr "Excluir o item {0} permanentemente?"
 
 #: public/js/frappe/list/list_view.js:1765
 msgctxt "Title of confirmation dialog"
@@ -11473,13 +11524,13 @@ msgstr "Excluído(a)"
 
 #. DocType: Deleted Document:1
 msgid "Deleted DocType"
-msgstr "DocType Excluído"
+msgstr "Tipo de Documento Excluído"
 
 #. Label of a Data field in DocType 'Deleted Document'
 #: core/doctype/deleted_document/deleted_document.json
 msgctxt "Deleted Document"
 msgid "Deleted DocType"
-msgstr "DocType Excluído"
+msgstr "Tipo de Documento Excluído"
 
 #. Name of a DocType
 #. DocType: Deleted Document:1
@@ -11519,18 +11570,18 @@ msgstr "Excluindo {0}..."
 
 #. DocType: Personal Data Deletion Request:1
 msgid "Deletion Steps "
-msgstr ""
+msgstr "Etapas de exclusão "
 
 #. Label of a Table field in DocType 'Personal Data Deletion Request'
 #: website/doctype/personal_data_deletion_request/personal_data_deletion_request.json
 msgctxt "Personal Data Deletion Request"
 msgid "Deletion Steps "
-msgstr ""
+msgstr "Etapas de exclusão "
 
 #: public/js/frappe/views/reports/report_utils.js:270
 #: public/js/frappe/views/reports/report_utils.js:277
 msgid "Delimiter must be a single character"
-msgstr ""
+msgstr "O delimitador deve ser um único caractere"
 
 #. DocType: Communication:1
 msgid "Delivery Status"
@@ -11588,7 +11639,7 @@ msgstr "Descendentes De"
 
 #: public/js/frappe/ui/filters/filter.js:33
 msgid "Descendants Of (inclusive)"
-msgstr ""
+msgstr "Descendentes de (inclusivo)"
 
 #. DocType: Assignment Rule:1
 #: desk/report/todo/todo.py:39 public/js/frappe/form/reminders.js:44
@@ -11750,13 +11801,13 @@ msgstr "Acesso ao Ambiente de Trabalho"
 
 #. DocType: User:1
 msgid "Desk Settings"
-msgstr ""
+msgstr "Configurações da área de trabalho"
 
 #. Label of a Section Break field in DocType 'User'
 #: core/doctype/user/user.json
 msgctxt "User"
 msgid "Desk Settings"
-msgstr ""
+msgstr "Configurações da área de trabalho"
 
 #. DocType: User:1
 msgid "Desk Theme"
@@ -11871,13 +11922,13 @@ msgstr "Desativar notificação do registro de mudanças"
 
 #. DocType: List View Settings:1
 msgid "Disable Comment Count"
-msgstr ""
+msgstr "Desativar a contagem de comentários"
 
 #. Label of a Check field in DocType 'List View Settings'
 #: desk/doctype/list_view_settings/list_view_settings.json
 msgctxt "List View Settings"
 msgid "Disable Comment Count"
-msgstr ""
+msgstr "Desativar a contagem de comentários"
 
 #. DocType: Blog Post:1
 msgid "Disable Comments"
@@ -12160,13 +12211,13 @@ msgstr "Divisor"
 
 #. DocType: LDAP Settings:1
 msgid "Do Not Create New User "
-msgstr ""
+msgstr "Não criar novo usuário "
 
 #. Label of a Check field in DocType 'LDAP Settings'
 #: integrations/doctype/ldap_settings/ldap_settings.json
 msgctxt "LDAP Settings"
 msgid "Do Not Create New User "
-msgstr ""
+msgstr "Não criar novo usuário "
 
 #. DocType: LDAP Settings:1
 msgid "Do not create new user if user with email does not exist in the system"
@@ -12340,8 +12391,8 @@ msgid ""
 "DocType <b>{0}</b> provided for the field <b>{1}</b> must have atleast "
 "one Link field"
 msgstr ""
-"O DocType <b>{0}</b> fornecido para o campo <b>{1}</b> deve ter pelo "
-"menos um campo Link"
+"O Tipo de Documento <b>{0}</b> fornecido para o campo <b>{1}</b> deve ter "
+"pelo menos um campo Link"
 
 #. Name of a DocType
 #. DocType: DocType Action:1
@@ -12392,7 +12443,7 @@ msgstr "Link do Tipo de Documento"
 
 #: desk/page/form_builder/form_builder.js:110
 msgid "DocType Name"
-msgstr ""
+msgstr "Nome do Tipo de Documento"
 
 #. Name of a DocType
 #. DocType: DocType State:1
@@ -12431,7 +12482,8 @@ msgstr "Tipo de Documento é uma Tabela / Formulário na aplicação."
 #: integrations/doctype/webhook/webhook.py:42
 #: integrations/doctype/webhook/webhook.py:43
 msgid "DocType must be Submittable for the selected Doc Event"
-msgstr "DocType deve ser enviado para o Evento de Doc selecionado"
+msgstr ""
+"Tipo de Documento deve ser enviado para o Evento de Documento selecionado"
 
 #: client.py:420
 msgid "DocType must be a string"
@@ -12444,13 +12496,13 @@ msgstr "Tipo de documento não é compatível com as configurações de log."
 
 #. DocType: Workflow:1
 msgid "DocType on which this Workflow is applicable."
-msgstr "DocType em que este fluxo de trabalho é aplicável."
+msgstr "Tipo de Documento em que este fluxo de trabalho é aplicável."
 
 #. Description of a Link field in DocType 'Workflow'
 #: workflow/doctype/workflow/workflow.json
 msgctxt "Workflow"
 msgid "DocType on which this Workflow is applicable."
-msgstr "DocType em que este fluxo de trabalho é aplicável."
+msgstr "Tipo de Documento em que este fluxo de trabalho é aplicável."
 
 #: public/js/frappe/views/kanban/kanban_settings.js:4
 msgid "DocType required"
@@ -12466,7 +12518,9 @@ msgstr "Tipo de documento {} não encontrado"
 
 #: core/doctype/doctype/doctype.py:861 core/doctype/doctype/doctype.py:862
 msgid "DocType's name should not start or end with whitespace"
-msgstr "O nome de DocType não deve começar ou terminar com um espaço em branco"
+msgstr ""
+"O nome do Tipo de Documento não deve começar ou terminar com um espaço em "
+"branco"
 
 #: core/doctype/doctype/doctype.js:44 core/doctype/doctype/doctype.js:47
 msgid "DocTypes can not be modified, please use {0} instead"
@@ -12499,7 +12553,7 @@ msgstr "O nome do Tipo de documento é limitado a {0} caracteres ({1})"
 
 #: public/js/frappe/list/bulk_operations.js:3
 msgid "Doctype required"
-msgstr "Doctype obrigatório"
+msgstr "Tipo de Documento obrigatório"
 
 #: public/js/frappe/views/workspace/workspace.js:1226
 #: public/js/frappe/views/workspace/workspace.js:1231
@@ -12975,7 +13029,7 @@ msgstr "Tipos de documentos e permissões"
 
 #: core/doctype/submission_queue/submission_queue.py:145
 msgid "Document Unlocked"
-msgstr ""
+msgstr "Documento desbloqueado"
 
 #: public/js/frappe/list/list_view.js:1023
 #: public/js/frappe/list/list_view.js:1025
@@ -13223,7 +13277,7 @@ msgstr "Rosquinha"
 
 #: public/js/form_builder/components/EditableInput.vue:41
 msgid "Double click to edit label"
-msgstr ""
+msgstr "Clique duas vezes para editar o rótulo"
 
 #. Export report
 #: core/doctype/file/file.js:5
@@ -13295,7 +13349,7 @@ msgstr "Arrastar"
 
 #: public/js/form_builder/components/Tabs.vue:188
 msgid "Drag & Drop a section here from another tab"
-msgstr ""
+msgstr "Arraste e solte uma seção de outra guia para cá"
 
 #: public/js/frappe/file_uploader/FileUploader.vue:13
 msgid "Drag and drop files here or upload from"
@@ -13633,12 +13687,12 @@ msgstr "Editar HTML Personalizado"
 #: public/js/frappe/form/toolbar.js:500 public/js/frappe/form/toolbar.js:513
 #: public/js/frappe/list/list_view.js:1641
 msgid "Edit DocType"
-msgstr "Editar DocType"
+msgstr "Editar Tipo de Documento"
 
 #: public/js/frappe/list/list_view.js:1607
 msgctxt "Button in list view menu"
 msgid "Edit DocType"
-msgstr "Editar DocType"
+msgstr "Editar Tipo de Documento"
 
 #: printing/page/print_format_builder_beta/print_format_builder_beta.js:42
 #: workflow/page/workflow_builder/workflow_builder.js:42
@@ -13703,7 +13757,7 @@ msgstr "Editar Propriedades"
 #. Button in web form
 #: website/doctype/web_form/templates/web_form.html:19
 msgid "Edit Response"
-msgstr ""
+msgstr "Editar resposta"
 
 #: public/js/frappe/widgets/widget_dialog.js:36
 msgid "Edit Shortcut"
@@ -13733,7 +13787,7 @@ msgstr "Editar área de trabalho"
 
 #: desk/doctype/note/note.js:11
 msgid "Edit mode"
-msgstr ""
+msgstr "Modo de edição"
 
 #: printing/page/print_format_builder/print_format_builder.js:712
 msgid "Edit to add content"
@@ -13742,11 +13796,13 @@ msgstr "Edite para adicionar conteúdo"
 #. Button in web form
 #: public/js/frappe/web_form/web_form.js:444
 msgid "Edit your response"
-msgstr ""
+msgstr "Edite sua resposta"
 
 #: workflow/doctype/workflow/workflow.js:18
 msgid "Edit your workflow visually using the Workflow Builder."
 msgstr ""
+"Edite seu fluxo de trabalho visualmente usando o Construtor de Fluxo de "
+"Trabalho."
 
 #: public/js/frappe/views/reports/report_view.js:652
 msgid "Edit {0}"
@@ -13949,6 +14005,8 @@ msgid ""
 "Email Account not setup. Please create a new Email Account from Settings "
 "> Email Account"
 msgstr ""
+"Conta de e-mail não configurada. Crie uma nova conta de e-mail em "
+"Configurações > Conta de e-mail"
 
 #: email/smtp.py:72
 msgid ""
@@ -14324,7 +14382,7 @@ msgstr ""
 
 #. DocType: Gender:1
 msgid "Employee Self Service"
-msgstr ""
+msgstr "Autoatendimento para funcionários"
 
 #. DocType: Google Calendar:1
 msgid "Enable"
@@ -14498,13 +14556,13 @@ msgstr "Ativar política de senha"
 
 #. DocType: Role Permission for Page and Report:1
 msgid "Enable Prepared Report"
-msgstr ""
+msgstr "Ativar relatório preparado"
 
 #. Label of a Check field in DocType 'Role Permission for Page and Report'
 #: core/doctype/role_permission_for_page_and_report/role_permission_for_page_and_report.json
 msgctxt "Role Permission for Page and Report"
 msgid "Enable Prepared Report"
-msgstr ""
+msgstr "Ativar relatório preparado"
 
 #. DocType: Print Settings:1
 msgid "Enable Print Server"
@@ -14518,13 +14576,13 @@ msgstr "Ativar servidor de impressão"
 
 #. DocType: Server Script:1
 msgid "Enable Rate Limit"
-msgstr ""
+msgstr "Ativar limite de taxa"
 
 #. Label of a Check field in DocType 'Server Script'
 #: core/doctype/server_script/server_script.json
 msgctxt "Server Script"
 msgid "Enable Rate Limit"
-msgstr ""
+msgstr "Ativar limite de taxa"
 
 #. DocType: Print Settings:1
 msgid "Enable Raw Printing"
@@ -14774,13 +14832,13 @@ msgstr ""
 
 #. DocType: DocType:1
 msgid "Enabling this will submit documents in background"
-msgstr ""
+msgstr "Ao ativar essa opção, os documentos serão enviados em segundo plano"
 
 #. Description of a Check field in DocType 'DocType'
 #: core/doctype/doctype/doctype.json
 msgctxt "DocType"
 msgid "Enabling this will submit documents in background"
-msgstr ""
+msgstr "Ao ativar essa opção, os documentos serão enviados em segundo plano"
 
 #. DocType: System Settings:1
 msgid "Encrypt Backups"
@@ -14937,13 +14995,13 @@ msgstr "Pontos de energia"
 
 #. DocType: Submission Queue:1
 msgid "Enqueued By"
-msgstr ""
+msgstr "Enfileirado por"
 
 #. Label of a Data field in DocType 'Submission Queue'
 #: core/doctype/submission_queue/submission_queue.json
 msgctxt "Submission Queue"
 msgid "Enqueued By"
-msgstr ""
+msgstr "Enfileirado por"
 
 #: integrations/doctype/ldap_settings/ldap_settings.py:67
 msgid "Ensure the user and group search paths are correct."
@@ -14986,7 +15044,7 @@ msgstr "Digite o Valor"
 #: custom/form_tour/custom_field/custom_field.json
 msgctxt "Custom Field"
 msgid "Enter a Label for this field"
-msgstr ""
+msgstr "Digite um rótulo para esse campo"
 
 #: public/js/frappe/form/form_tour.js:56 public/js/frappe/form/form_tour.js:57
 msgid "Enter a name for this {0}"
@@ -16291,7 +16349,7 @@ msgstr "Fieldname não definida para campo personalizado"
 
 #: custom/doctype/custom_field/custom_field.js:106
 msgid "Fieldname which will be the DocType for this link field."
-msgstr "Nome do campo que será o DocType para este campo link."
+msgstr "Nome do campo que será o Tipo de Documento para este campo link."
 
 #: public/js/form_builder/store.js:147 public/js/form_builder/store.js:171
 msgid "Fieldname {0} appears multiple times"
@@ -16675,7 +16733,9 @@ msgstr "O filtro deve ser uma tupla ou lista (em uma lista)"
 
 #: utils/data.py:1772 utils/data.py:1819
 msgid "Filter must have 4 values (doctype, fieldname, operator, value): {0}"
-msgstr "O filtro deve ter 4 valores (doctype, fieldname, operador, valor): {0}"
+msgstr ""
+"O filtro deve ter 4 valores (Tipo de Documento, Nome do Campo, operador, "
+"valor): {0}"
 
 #: printing/page/print_format_builder/print_format_builder_sidebar.html:3
 msgid "Filter..."
@@ -17309,13 +17369,13 @@ msgstr "Rodapé será exibido corretamente somente em PDF"
 
 #. DocType: Property Setter:1
 msgid "For DocType Link / DocType Action"
-msgstr "Para DocType Link / DocType Action"
+msgstr "Para um Link / Ação do Tipo de Documento"
 
 #. Description of a Data field in DocType 'Property Setter'
 #: custom/doctype/property_setter/property_setter.json
 msgctxt "Property Setter"
 msgid "For DocType Link / DocType Action"
-msgstr "Para DocType Link / DocType Action"
+msgstr "Para um Link / Ação do Tipo de Documento"
 
 #. DocType: Energy Point Rule:1
 msgid "For Document Event"
@@ -18212,7 +18272,7 @@ msgstr "Dê pontos de revisão"
 #. DocType: Global Search DocType:1
 #: desk/doctype/global_search_doctype/global_search_doctype.json
 msgid "Global Search DocType"
-msgstr "DocType de pesquisa global"
+msgstr "Tipo de Documento de pesquisa global"
 
 #: desk/doctype/global_search_settings/global_search_settings.js:24
 msgid "Global Search Document Types Reset."
@@ -19989,9 +20049,9 @@ msgid ""
 " is blank, will not be shown to that User"
 msgstr ""
 "Se a opção Aplicar permissão de usuário estrito estiver marcada e a "
-"permissão de usuário for definida para um DocType para um usuário, todos "
-"os documentos onde o valor do link estiver em branco não serão exibidos "
-"para esse usuário"
+"permissão de usuário for definida para um Tipo de Documento de um usuário, "
+"todos os documentos onde o valor do link estiver em branco não serão "
+"exibidos para esse usuário"
 
 #. Description of a Check field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
@@ -20002,9 +20062,9 @@ msgid ""
 " is blank, will not be shown to that User"
 msgstr ""
 "Se a opção Aplicar permissão de usuário estrito estiver marcada e a "
-"permissão de usuário for definida para um DocType para um usuário, todos "
-"os documentos onde o valor do link estiver em branco não serão exibidos "
-"para esse usuário"
+"permissão de usuário for definida para um Tipo de Documento de um usuário, "
+"todos os documentos onde o valor do link estiver em branco não serão "
+"exibidos para esse usuário"
 
 #. DocType: Workflow:1
 msgid "If Checked workflow status will not override status in list view"
@@ -23963,31 +24023,31 @@ msgstr "Detalhes do link"
 
 #. DocType: Activity Log:1
 msgid "Link DocType"
-msgstr "Relacionar ao DocType"
+msgstr "Relacionar ao Tipo de Documento"
 
 #. Label of a Link field in DocType 'Activity Log'
 #: core/doctype/activity_log/activity_log.json
 msgctxt "Activity Log"
 msgid "Link DocType"
-msgstr "Relacionar ao DocType"
+msgstr "Relacionar ao Tipo de Documento"
 
 #. Label of a Link field in DocType 'Comment'
 #: core/doctype/comment/comment.json
 msgctxt "Comment"
 msgid "Link DocType"
-msgstr "Relacionar ao DocType"
+msgstr "Relacionar ao Tipo de Documento"
 
 #. Label of a Link field in DocType 'Communication Link'
 #: core/doctype/communication_link/communication_link.json
 msgctxt "Communication Link"
 msgid "Link DocType"
-msgstr "Relacionar ao DocType"
+msgstr "Relacionar ao Tipo de Documento"
 
 #. Label of a Link field in DocType 'DocType Link'
 #: core/doctype/doctype_link/doctype_link.json
 msgctxt "DocType Link"
 msgid "Link DocType"
-msgstr "Relacionar ao DocType"
+msgstr "Relacionar ao Tipo de Documento"
 
 #. DocType: Dynamic Link:1
 msgid "Link Document Type"
@@ -27850,7 +27910,7 @@ msgstr "Você não está no modo de desenvolvedor"
 msgid "Not in Developer Mode! Set in site_config.json or make 'Custom' DocType."
 msgstr ""
 "Você não está no modo de desenvolvedor! Configure em site_config.json ou "
-"faça um DocType 'Personalizado'."
+"faça um Tipo de Documento 'Personalizado'."
 
 #: api.py:120 api.py:125 core/doctype/system_settings/system_settings.py:96
 #: core/doctype/system_settings/system_settings.py:99 handler.py:110
@@ -28756,7 +28816,9 @@ msgstr "Somente relatórios criados no Construtor de relatórios podem ser edita
 #: custom/doctype/customize_form/customize_form.py:64
 #: desk/page/form_builder/form_builder.js:83
 msgid "Only standard DocTypes are allowed to be customized from Customize Form."
-msgstr "Somente DocTypes padrão podem ser personalizados no Custom Form."
+msgstr ""
+"Somente Tipo de Documento padrão podem ser personalizados no Formulário "
+"Personalizado."
 
 #: public/js/frappe/form/sidebar/review.js:54
 msgid "Only users involved in the document are listed"
@@ -30733,7 +30795,7 @@ msgstr "Por favor, selecione a Empresa"
 
 #: printing/doctype/print_format/print_format.js:30
 msgid "Please select DocType first"
-msgstr "Por favor, selecione DocType primeiro"
+msgstr "Por favor, selecione o Tipo de Documento primeiro"
 
 #: contacts/report/addresses_and_contacts/addresses_and_contacts.js:27
 msgid "Please select Entity Type first"
@@ -30766,7 +30828,7 @@ msgstr "Selecione um filtro de data válido"
 
 #: core/doctype/user_permission/user_permission_list.js:203
 msgid "Please select applicable Doctypes"
-msgstr "Por favor selecione Doctypes aplicáveis"
+msgstr "Por favor selecione os Tipos de Documento aplicáveis"
 
 #: model/db_query.py:1071 model/db_query.py:1093
 msgid "Please select atleast 1 column from {0} to sort/group"
@@ -31762,8 +31824,8 @@ msgid ""
 "ProTip: Add <code>Reference: {{ reference_doctype }} {{ reference_name "
 "}}</code> to send document reference"
 msgstr ""
-"Protip: Adicionar <code>Reference: {{ reference_doctype }} {{ "
-"reference_name }}</code> para enviar referência do documento"
+"Dica: Adicionar <code>Reference: {{ reference_doctype }} {{ reference_name "
+"}}</code> para enviar referência do documento"
 
 #. Description of a Text Editor field in DocType 'Email Account'
 #: email/doctype/email_account/email_account.json
@@ -31772,8 +31834,8 @@ msgid ""
 "ProTip: Add <code>Reference: {{ reference_doctype }} {{ reference_name "
 "}}</code> to send document reference"
 msgstr ""
-"Protip: Adicionar <code>Reference: {{ reference_doctype }} {{ "
-"reference_name }}</code> para enviar referência do documento"
+"Dica: Adicionar <code>Reference: {{ reference_doctype }} {{ reference_name "
+"}}</code> para enviar referência do documento"
 
 #: core/doctype/document_naming_rule/document_naming_rule.js:22
 msgid "Proceed"
@@ -31856,8 +31918,8 @@ msgstr "Configurador de Propriedades"
 #. DocType: Property Setter:1
 msgid "Property Setter overrides a standard DocType or Field property"
 msgstr ""
-"O configurador de propriedades substitui o DocType padrão ou propriedade "
-"de campo"
+"O configurador de propriedades substitui o Tipo de Documento padrão ou "
+"propriedade de campo"
 
 #. DocType: Property Setter:1
 msgid "Property Type"
@@ -32899,7 +32961,7 @@ msgstr "O registrador está inativo."
 
 #: core/doctype/user_permission/user_permission_help.html:2
 msgid "Records for following doctypes will be filtered"
-msgstr "Registros para seguir doctypes serão filtrados"
+msgstr "Registros para seguir Tipo de Documento serão filtrados"
 
 #. DocType: DocType State:1
 msgid "Red"
@@ -32988,13 +33050,13 @@ msgstr "Refazer a última ação"
 
 #. DocType: Report:1
 msgid "Ref DocType"
-msgstr "DocType de Ref."
+msgstr "Tipo de Documento de Ref."
 
 #. Label of a Link field in DocType 'Report'
 #: core/doctype/report/report.json
 msgctxt "Report"
 msgid "Ref DocType"
-msgstr "DocType de Ref."
+msgstr "Tipo de Documento de Ref."
 
 #: desk/doctype/form_tour/form_tour.js:38
 msgid "Referance Doctype and Dashboard Name both can't be used at the same time."
@@ -33082,7 +33144,7 @@ msgstr "Tipo de documento de referência"
 
 #: email/doctype/email_unsubscribe/email_unsubscribe.py:12
 msgid "Reference DocType and Reference Name are required"
-msgstr "Referência DocType e nome de referência são necessários"
+msgstr "Tipo de Documento de Referência e o nome de referência são necessários"
 
 #. DocType: Submission Queue:1
 msgid "Reference Docname"
@@ -33104,13 +33166,13 @@ msgstr "Nome do Documento de Referência"
 #: core/doctype/communication/communication.js:143
 #: core/report/transaction_log_report/transaction_log_report.py:88
 msgid "Reference Doctype"
-msgstr "DocType de Referência"
+msgstr "Tipo de Documento de Referência"
 
 #. Label of a Link field in DocType 'Discussion Topic'
 #: website/doctype/discussion_topic/discussion_topic.json
 msgctxt "Discussion Topic"
 msgid "Reference Doctype"
-msgstr "DocType de Referência"
+msgstr "Tipo de Documento de Referência"
 
 #. DocType: Auto Repeat:1
 #: automation/doctype/auto_repeat/auto_repeat_schedule.html:4
@@ -36553,23 +36615,23 @@ msgstr "Selecionar período"
 #: public/js/form_builder/components/controls/TextControl.vue:35
 #: public/js/frappe/doctype/index.js:149 public/js/frappe/doctype/index.js:172
 msgid "Select DocType"
-msgstr "Selecione DocType"
+msgstr "Selecione Tipo de Documento"
 
 #. Label of a Link field in DocType 'Web Form'
 #: website/doctype/web_form/web_form.json
 msgctxt "Web Form"
 msgid "Select DocType"
-msgstr "Selecione DocType"
+msgstr "Selecione Tipo de Documento"
 
 #. DocType: Data Export:1
 msgid "Select Doctype"
-msgstr "Selecione o DocType"
+msgstr "Selecione o Tipo de Documento"
 
 #. Label of a Link field in DocType 'Data Export'
 #: core/doctype/data_export/data_export.json
 msgctxt "Data Export"
 msgid "Select Doctype"
-msgstr "Selecione o DocType"
+msgstr "Selecione o Tipo de Documento"
 
 #. DocType: Webhook:1
 msgid "Select Document"
@@ -38622,7 +38684,7 @@ msgstr "Sessões simultâneas"
 #: custom/doctype/customize_form/customize_form.py:61
 #: desk/page/form_builder/form_builder.js:79
 msgid "Single DocTypes cannot be customized."
-msgstr "DocTypes únicos não podem ser personalizados."
+msgstr "Tipo de Documento únicos não podem ser personalizados."
 
 #. DocType: DocType:1
 #: desk/page/form_builder/form_builder.js:152
@@ -39163,7 +39225,7 @@ msgstr ""
 #: core/doctype/doctype/doctype.py:134
 msgid "Standard DocType cannot have default print format, use Customize Form"
 msgstr ""
-"DocType padrão não pode ter o formato de impressão padrão, use "
+"Tipo de Documento padrão não pode ter o formato de impressão padrão, use "
 "Personalizar formulário"
 
 #: desk/doctype/dashboard/dashboard.py:41
@@ -42277,13 +42339,13 @@ msgstr "Linha do tempo"
 
 #. DocType: Activity Log:1
 msgid "Timeline DocType"
-msgstr "DocType Timeline"
+msgstr "Linha do tempo do Tipo de Documento"
 
 #. Label of a Link field in DocType 'Activity Log'
 #: core/doctype/activity_log/activity_log.json
 msgctxt "Activity Log"
 msgid "Timeline DocType"
-msgstr "DocType Timeline"
+msgstr "Linha do tempo do Tipo de Documento"
 
 #. DocType: DocType:1
 msgid "Timeline Field"
@@ -43347,8 +43409,8 @@ msgid ""
 "Trigger on valid methods like \"before_insert\", \"after_update\", etc "
 "(will depend on the DocType selected)"
 msgstr ""
-"Gatilho em métodos válidos como \"before_insert\", \"after_update\", etc."
-" (dependerá do DocType selecionado)"
+"Gatilho em métodos válidos como \"before_insert\", \"after_update\", etc. ("
+"dependerá do Tipo de Documento selecionado)"
 
 #. Description of a Data field in DocType 'Notification'
 #: email/doctype/notification/notification.json
@@ -43357,8 +43419,8 @@ msgid ""
 "Trigger on valid methods like \"before_insert\", \"after_update\", etc "
 "(will depend on the DocType selected)"
 msgstr ""
-"Gatilho em métodos válidos como \"before_insert\", \"after_update\", etc."
-" (dependerá do DocType selecionado)"
+"Gatilho em métodos válidos como \"before_insert\", \"after_update\", etc. ("
+"dependerá do Tipo de Documento selecionado)"
 
 #: public/js/frappe/widgets/onboarding_widget.js:299
 #: public/js/frappe/widgets/onboarding_widget.js:305
@@ -46394,13 +46456,17 @@ msgstr ""
 #: public/js/frappe/widgets/widget_dialog.js:413
 #: public/js/frappe/widgets/widget_dialog.js:424
 msgid "Which view of the associated DocType should this shortcut take you to?"
-msgstr "Para qual visualização do DocType associado esse atalho deve levar você?"
+msgstr ""
+"Para qual visualização do Tipo de Documento associado esse atalho deve levar "
+"você?"
 
 #. Description of a Select field in DocType 'Workspace Shortcut'
 #: desk/doctype/workspace_shortcut/workspace_shortcut.json
 msgctxt "Workspace Shortcut"
 msgid "Which view of the associated DocType should this shortcut take you to?"
-msgstr "Para qual visualização do DocType associado esse atalho deve levar você?"
+msgstr ""
+"Para qual visualização do Tipo de Documento associado esse atalho deve levar "
+"você?"
 
 #. DocType: DocField:1
 #: printing/page/print_format_builder/print_format_builder_column_selector.html:8
@@ -47093,7 +47159,7 @@ msgstr "Você não tem permissão para editar o relatório."
 
 #: permissions.py:523 permissions.py:532
 msgid "You are not allowed to export {} doctype"
-msgstr "Você não tem permissão para exportar {} doctype"
+msgstr "Você não tem permissão para exportar o Tipo de Documento {}"
 
 #: public/js/frappe/views/treeview.js:404
 msgid "You are not allowed to print this report"
@@ -47297,7 +47363,9 @@ msgstr ""
 
 #: desk/doctype/dashboard_chart/dashboard_chart.py:378
 msgid "You cannot create a dashboard chart from single DocTypes"
-msgstr "Você não pode criar um gráfico de Dashboard de DocTypes únicos"
+msgstr ""
+"Você não pode criar um gráfico para Área de Trabalho de Tipo de Documento "
+"únicos"
 
 #: social/doctype/energy_point_log/energy_point_log.py:25
 msgid "You cannot give review points to yourself"
@@ -50459,7 +50527,7 @@ msgstr "{0} não é um arquivo zip"
 
 #: printing/doctype/print_format/print_format.py:128
 msgid "{0} is now default print format for {1} doctype"
-msgstr "{0} agora é o formato de impressão padrão para o doctype {1}"
+msgstr "{0} agora é o formato de impressão padrão para o Tipo de Documento {1}"
 
 #: email/doctype/email_account/email_account.py:204 model/naming.py:219
 #: model/naming.py:222 printing/doctype/print_format/print_format.py:55
@@ -50819,7 +50887,9 @@ msgstr "{0}: Apenas uma regra de permissão com a mesma função, nível e {1}"
 
 #: core/doctype/doctype/doctype.py:1118 core/doctype/doctype/doctype.py:1119
 msgid "{0}: Options must be a valid DocType for field {1} in row {2}"
-msgstr "{0}: as opções devem ser um DocType válido para o campo {1} na linha {2}"
+msgstr ""
+"{0}: as opções devem ser um Tipo de Documento válido para o campo {1} na "
+"linha {2}"
 
 #: core/doctype/doctype/doctype.py:1107 core/doctype/doctype/doctype.py:1108
 msgid "{0}: Options required for Link or Table type field {1} in row {2}"
@@ -50934,4 +51004,3 @@ msgstr "{} deseja acessar os seguintes detalhes de sua conta"
 #: public/js/frappe/file_uploader/WebLink.vue:6
 msgid "← Back to upload files"
 msgstr "← Voltar para upload de arquivos"
-
