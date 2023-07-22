@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Frappe Framework VERSION\n"
 "Report-Msgid-Bugs-To: developers@frappe.io\n"
 "POT-Creation-Date: 2023-03-27 23:10+0053\n"
-"PO-Revision-Date: 2023-07-22 15:55+0000\n"
+"PO-Revision-Date: 2023-07-22 16:41+0000\n"
 "Last-Translator: Weblate Admin <admin@tfs.dev.br>\n"
 "Language-Team: Portuguese (Brazil) <http://localhost:4755/projects/frappe/"
 "frappe-framework/pt_BR/>\n"
@@ -1183,23 +1183,23 @@ msgstr ""
 #. Workspace Header Text
 #: automation/workspace/tools/tools.json
 msgid "<span class=\"h4\"><b>Documents</b></span>"
-msgstr ""
+msgstr "<span class=\"h4\"><b>Documentos</b></span>"
 
 #. Workspace Header Text
 #: core/workspace/build/build.json
 msgid "<span class=\"h4\"><b>Elements</b></span>"
-msgstr ""
+msgstr "<span class=\"h4\"><b>Elementos</b></span>"
 
 #. Workspace Header Text
 #: core/workspace/users/users.json website/workspace/website/website.json
 msgid "<span class=\"h4\"><b>Reports & Masters</b></span>"
-msgstr ""
+msgstr "<span class=\"h4\"><b>Relatórios e Cadastros</b></span>"
 
 #. Workspace Header Text
 #: core/workspace/settings/settings.json
 #: integrations/workspace/integrations/integrations.json
 msgid "<span class=\"h4\"><b>Reports &amp; Masters</b></span>"
-msgstr ""
+msgstr "<span class=\"h4\"><b>Relatórios e Cadastros</b></span>"
 
 #. Workspace Header Text
 #: core/workspace/settings/settings.json
@@ -1210,7 +1210,7 @@ msgstr ""
 #: automation/workspace/tools/tools.json core/workspace/build/build.json
 #: core/workspace/users/users.json website/workspace/website/website.json
 msgid "<span class=\"h4\"><b>Your Shortcuts</b></span>"
-msgstr ""
+msgstr "<span class=\"h4\"><b>Seus Atalhos</b></span>"
 
 #: custom/doctype/custom_field/custom_field.js:38
 msgid ""
