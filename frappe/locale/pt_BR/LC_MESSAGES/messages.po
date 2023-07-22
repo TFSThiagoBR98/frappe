@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Frappe Framework VERSION\n"
 "Report-Msgid-Bugs-To: developers@frappe.io\n"
 "POT-Creation-Date: 2023-07-22 17:12+0000\n"
-"PO-Revision-Date: 2023-07-22 18:06+0000\n"
+"PO-Revision-Date: 2023-07-23 00:27+0000\n"
 "Last-Translator: Weblate Admin <admin@tfs.dev.br>\n"
 "Language-Team: Portuguese (Brazil) <http://localhost:4755/projects/frappe/"
 "frappe-framework/pt_BR/>\n"
@@ -1125,6 +1125,9 @@ msgid ""
 "and did not request it, please contact your System Administrator immediately."
 "</p>"
 msgstr ""
+"<p>Seu segredo OTP em {0} foi redefinido. Se você não realizou essa "
+"redefinição e não a solicitou, entre em contato com o Administrador do "
+"Sistema imediatamente.</p>"
 
 #. DocType: Workflow Transition:1
 msgid ""
@@ -1194,7 +1197,7 @@ msgstr "<span class=\"h4\"><b>Relatórios e Cadastros</b></span>"
 #. Workspace Header Text
 #: core/workspace/settings/settings.json
 msgid "<span class=\"h4\"><b>Settings</b></span>"
-msgstr ""
+msgstr "<span class=\"h4\"><b>Configurações</b></span>"
 
 #. Workspace Header Text
 #: automation/workspace/tools/tools.json core/workspace/build/build.json
@@ -1245,6 +1248,11 @@ msgid ""
 "doctype has fields description, status and priority. These ultimately become "
 "columns in the database table tabToDo."
 msgstr ""
+"Um Campo (ou um campo de documento) define uma propriedade de um Tipo de "
+"Documento. Você pode definir o nome da coluna, o rótulo, o tipo de dados e "
+"muito mais para Campos de Documento. Por exemplo, um Tipo de Documento ToDo "
+"tem descrição de campos, estado e prioridade. Esses campos se tornam colunas "
+"na tabela de banco de dados tabToDo."
 
 #. Success Message of a Web Form
 #: website/web_form/request_data/request_data.json
@@ -1533,11 +1541,9 @@ msgid "ASC"
 msgstr "ASC"
 
 #: utils/install.py:213
-#, fuzzy
-#| msgid "About Us"
 msgctxt "Frappe NavBar"
 msgid "About"
-msgstr "Sobre nós"
+msgstr "Sobre"
 
 #: www/about.html:11 www/about.html:18
 msgid "About Us"
@@ -2865,13 +2871,13 @@ msgstr "Permitir Comentários"
 
 #. DocType: System Settings:1
 msgid "Allow Consecutive Login Attempts "
-msgstr "Permitir tentativas de login consecutivas"
+msgstr "Permitir tentativas de login consecutivas "
 
 #. Label of a Int field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "Allow Consecutive Login Attempts "
-msgstr "Permitir tentativas de login consecutivas"
+msgstr "Permitir tentativas de login consecutivas "
 
 #. DocType: Web Form:1
 msgid "Allow Delete"
@@ -3014,13 +3020,13 @@ msgstr "Permitir Login usando o nome de usuário"
 
 #. DocType: User:1
 msgid "Allow Modules"
-msgstr "Módulos Permitidos "
+msgstr "Módulos Permitidos"
 
 #. Label of a Section Break field in DocType 'User'
 #: core/doctype/user/user.json
 msgctxt "User"
 msgid "Allow Modules"
-msgstr "Módulos Permitidos "
+msgstr "Módulos Permitidos"
 
 #. DocType: Web Form:1
 msgid "Allow Multiple Responses"
@@ -4619,7 +4625,7 @@ msgstr "Autenticação"
 
 #: www/qrcode.html:19
 msgid "Authentication Apps you can use are: "
-msgstr "Os aplicativos de autenticação que você pode usar são:"
+msgstr "Os aplicativos de autenticação que você pode usar são: "
 
 #: email/doctype/email_account/email_account.py:235
 msgid "Authentication failed while receiving emails from Email Account: {0}."
@@ -6799,10 +6805,9 @@ msgstr ""
 "Não é possível alterar o estado do documento de 1 (Enviado) para 0 (Rascunho)"
 
 #: public/js/workflow_builder/utils.js:89
-#, fuzzy
-#| msgid "Cannot change state of Cancelled Document. Transition row {0}"
 msgid "Cannot change state of Cancelled Document <b>({0} State)</b>"
-msgstr "Não é possível alterar o estado de Documento Cancelado ."
+msgstr ""
+"Não é possível alterar o estado do documento cancelado <b>(Estado {0})</b>"
 
 #: workflow/doctype/workflow/workflow.py:104
 msgid "Cannot change state of Cancelled Document. Transition row {0}"
@@ -8677,6 +8682,13 @@ msgid ""
 "Default Naming will make the amended document to behave same as new "
 "documents."
 msgstr ""
+"Configure como os documentos alterados serão nomeados.<br>\n"
+"\n"
+"O comportamento padrão é seguir um contador de alterações que adiciona um "
+"número ao final do nome original, indicando a versão alterada.\n"
+"\n"
+"A nomeação padrão fará com que o documento alterado se comporte da mesma "
+"forma que novos documentos."
 
 #. Description of a Section Break field in DocType 'Document Naming Settings'
 #: core/doctype/document_naming_settings/document_naming_settings.json
@@ -8690,6 +8702,13 @@ msgid ""
 "Default Naming will make the amended document to behave same as new "
 "documents."
 msgstr ""
+"Configure como os documentos alterados serão nomeados.<br>\n"
+"\n"
+"O comportamento padrão é seguir um contador de alterações que adiciona um "
+"número ao final do nome original, indicando a versão alterada.\n"
+"\n"
+"A nomeação padrão fará com que o documento alterado se comporte da mesma "
+"forma que novos documentos."
 
 #. DocType: Document Naming Settings:1
 msgid ""
@@ -9628,7 +9647,7 @@ msgstr "Precisão de moeda"
 
 #. DocType: Address:1
 msgid "Current"
-msgstr "Atual"
+msgstr "Moeda"
 
 #. Option for a Select field in DocType 'Address'
 #: contacts/doctype/address/address.json
@@ -9754,13 +9773,13 @@ msgstr ""
 
 #. DocType: Social Login Key:1
 msgid "Custom Base URL"
-msgstr "URL Base Base"
+msgstr "URL de base personalizada"
 
 #. Label of a Check field in DocType 'Social Login Key'
 #: integrations/doctype/social_login_key/social_login_key.json
 msgctxt "Social Login Key"
 msgid "Custom Base URL"
-msgstr "URL Base Base"
+msgstr "URL de base personalizada"
 
 #. DocType: Workspace Custom Block:1
 msgid "Custom Block Name"
@@ -9821,7 +9840,7 @@ msgstr "DocPerm personalizado"
 #. Name of a DocType
 #: custom/onboarding_step/custom_doctype/custom_doctype.json
 msgid "Custom Doctype"
-msgstr "Customizar "
+msgstr "Personalizado "
 
 #. Title of a Module Onboarding
 #: custom/onboarding_step/custom_doctype/custom_doctype.json
@@ -14901,6 +14920,8 @@ msgstr ""
 msgctxt "Print Format"
 msgid "Enter the code based on the Print Format Type you selected above"
 msgstr ""
+"Digite o código com base no Tipo de Formato de Impressão que você selecionou "
+"acima"
 
 #. DocType: SMS Settings:1
 msgid "Enter url parameter for message"
@@ -15270,7 +15291,7 @@ msgstr "Excel"
 
 #: public/js/frappe/form/controls/password.js:91
 msgid "Excellent"
-msgstr ""
+msgstr "Excelente"
 
 #. DocType: Data Import Log:1
 msgid "Exception"
@@ -15531,23 +15552,23 @@ msgstr "Exportação não é permitida. Você precisa da função {0} para expor
 
 #. DocType: Data Export:1
 msgid "Export the data without any header notes and column descriptions"
-msgstr ""
+msgstr "Exportar os dados sem notas de cabeçalho e descrições de coluna"
 
 #. Description of a Check field in DocType 'Data Export'
 #: core/doctype/data_export/data_export.json
 msgctxt "Data Export"
 msgid "Export the data without any header notes and column descriptions"
-msgstr ""
+msgstr "Exportar os dados sem notas de cabeçalho e descrições de coluna"
 
 #. DocType: Data Export:1
 msgid "Export without main header"
-msgstr ""
+msgstr "Exportar sem o cabeçalho principal"
 
 #. Label of a Check field in DocType 'Data Export'
 #: core/doctype/data_export/data_export.json
 msgctxt "Data Export"
 msgid "Export without main header"
-msgstr ""
+msgstr "Exportar sem o cabeçalho principal"
 
 #: public/js/frappe/data_import/data_exporter.js:243
 msgid "Export {0} records"
@@ -15670,6 +15691,8 @@ msgstr "Transações com falha"
 #: utils/synchronization.py:46
 msgid "Failed to aquire lock: {}. Lock may be held by another process."
 msgstr ""
+"Falha ao adquirir um comando de bloqueio: {}. Algum processo pode está com o "
+"comando de bloqueio ativo."
 
 #: integrations/doctype/ldap_settings/ldap_settings.py:325
 msgid "Failed to change password."
@@ -15716,6 +15739,8 @@ msgstr "Falha ao obter o método para o comando {0} com {1}"
 #: model/virtual_doctype.py:64
 msgid "Failed to import virtual doctype {}, is controller file present?"
 msgstr ""
+"Falha ao importar o Tipo de Documento virtual {}, o arquivo do controlador "
+"está presente?"
 
 #: desk/doctype/notification_log/notification_log.py:21
 msgid "Failed to send notification email"
@@ -15947,7 +15972,7 @@ msgstr "Orientação do campo (de cima para baixo)"
 
 #: public/js/form_builder/components/Sidebar.vue:9
 msgid "Field Properties"
-msgstr ""
+msgstr "Propriedades de campo"
 
 #: public/js/print_format_builder/PrintFormatControls.vue:257
 #: public/js/print_format_builder/utils.js:69
@@ -15980,7 +16005,7 @@ msgstr "Tipo de Campo"
 
 #: public/js/form_builder/components/Sidebar.vue:9
 msgid "Field Types"
-msgstr ""
+msgstr "Tipos de campo"
 
 #: desk/reportview.py:165
 msgid "Field not permitted in query"
@@ -16020,7 +16045,7 @@ msgstr "O tipo de campo não pode ser alterado para {0}"
 
 #: database/database.py:794
 msgid "Field {0} does not exist on {1}"
-msgstr ""
+msgstr "O campo {0} não existe em {1}"
 
 #: desk/form/meta.py:201
 msgid "Field {0} is referring to non-existing doctype {1}."
@@ -16099,7 +16124,7 @@ msgstr "Nome do campo que será o Tipo de Documento para este campo link."
 
 #: public/js/form_builder/store.js:171
 msgid "Fieldname {0} appears multiple times"
-msgstr ""
+msgstr "O nome do campo {0} aparece várias vezes"
 
 #: database/schema.py:311
 msgid "Fieldname {0} cannot have special characters like {1}"
@@ -17017,13 +17042,13 @@ msgstr "Conteúdo do rodapé"
 
 #. DocType: Website Settings:1
 msgid "Footer Details"
-msgstr ""
+msgstr "Detalhes do rodapé"
 
 #. Label of a Section Break field in DocType 'Website Settings'
 #: website/doctype/website_settings/website_settings.json
 msgctxt "Website Settings"
 msgid "Footer Details"
-msgstr ""
+msgstr "Detalhes do rodapé"
 
 #. DocType: Letter Head:1
 msgid "Footer HTML"
@@ -17093,6 +17118,7 @@ msgstr "Valores de modelo de rodapé"
 #: printing/page/print/print.js:116
 msgid "Footer might not be visible as {0} option is disabled</div>"
 msgstr ""
+"O rodapé pode não estar visível porque a opção {0} está desativada</div>"
 
 #. DocType: Letter Head:1
 msgid "Footer will display correctly only in PDF"
@@ -17399,7 +17425,7 @@ msgstr "Formulário"
 #: custom/doctype/customize_form/customize_form.js:452
 #: desk/page/form_builder/form_builder.js:4 public/js/form_builder/store.js:141
 msgid "Form Builder"
-msgstr ""
+msgstr "Criador de formulários"
 
 #: public/js/frappe/recorder/RequestDetail.vue:207
 msgid "Form Dict"
@@ -17536,11 +17562,9 @@ msgid "Frappe Light"
 msgstr "Frappe Claro"
 
 #: utils/install.py:215
-#, fuzzy
-#| msgid "Frappe Light"
 msgctxt "Frappe NavBar"
 msgid "Frappe Support"
-msgstr "Suporte para Frappe"
+msgstr "Suporte para o Frappe"
 
 #: website/doctype/web_page/web_page.js:97
 msgid "Frappe page builder using components"
@@ -17847,7 +17871,7 @@ msgstr "Sexo"
 #. Title of a Module Onboarding
 #: custom/onboarding_step/report_builder/report_builder.json
 msgid "Generate Custom Reports"
-msgstr ""
+msgstr "Gerar relatórios personalizados"
 
 #. DocType: User:1
 msgid "Generate Keys"
@@ -17870,7 +17894,7 @@ msgstr "Gerar senha aleatória"
 #: public/js/frappe/ui/toolbar/toolbar.js:137
 #: public/js/frappe/utils/utils.js:1731
 msgid "Generate Tracking URL"
-msgstr ""
+msgstr "Gerar URL de rastreamento"
 
 #. DocType: Country:1
 msgid "Geo"
@@ -17934,13 +17958,13 @@ msgstr "Obter PDF"
 
 #. DocType: Document Naming Settings:1
 msgid "Get a preview of generated names with a series."
-msgstr ""
+msgstr "Obtenha uma prévia dos nomes gerados com uma série."
 
 #. Description of a Data field in DocType 'Document Naming Settings'
 #: core/doctype/document_naming_settings/document_naming_settings.json
 msgctxt "Document Naming Settings"
 msgid "Get a preview of generated names with a series."
-msgstr ""
+msgstr "Obtenha uma prévia dos nomes gerados com uma série."
 
 #. DocType: User:1
 msgid "Get your globally recognized avatar from Gravatar.com"
@@ -18027,11 +18051,11 @@ msgstr "Vá fazer barulho"
 
 #: public/js/form_builder/form_builder.bundle.js:70
 msgid "Go to Customize Form"
-msgstr ""
+msgstr "Ir para Personalizar formulário"
 
 #: public/js/form_builder/form_builder.bundle.js:67
 msgid "Go to DocType"
-msgstr ""
+msgstr "Ir para Tipo de Documento"
 
 #: website/doctype/web_form/web_form.js:240
 msgid "Go to Login Required field"
@@ -18053,7 +18077,7 @@ msgstr "Ir para página"
 
 #: public/js/workflow_builder/workflow_builder.bundle.js:39
 msgid "Go to Workflow"
-msgstr ""
+msgstr "Ir para o fluxo de trabalho"
 
 #: desk/doctype/workspace/workspace.js:18
 msgid "Go to Workspace"
@@ -18467,7 +18491,7 @@ msgstr "Verde"
 
 #: public/js/form_builder/components/controls/TableControl.vue:44
 msgid "Grid Empty State"
-msgstr ""
+msgstr "Estado vazio da grade"
 
 #: public/js/frappe/ui/keyboard.js:123
 msgid "Grid Shortcuts"
@@ -18838,13 +18862,13 @@ msgstr "Cabeçalho e breadcrumbs"
 
 #. DocType: Website Settings:1
 msgid "Header, Robots"
-msgstr ""
+msgstr "Cabeçalho, Robôs"
 
 #. Label of a Tab Break field in DocType 'Website Settings'
 #: website/doctype/website_settings/website_settings.json
 msgctxt "Website Settings"
 msgid "Header, Robots"
-msgstr ""
+msgstr "Cabeçalho, Robôs"
 
 #. DocType: Webhook:1
 msgid "Headers"
@@ -19038,7 +19062,7 @@ msgstr "Helvetica Neue"
 
 #: public/js/frappe/utils/utils.js:1728
 msgid "Here's your tracking URL"
-msgstr ""
+msgstr "Aqui está seu URL de rastreamento"
 
 #: www/qrcode.html:9
 msgid "Hi {0}"
@@ -19304,13 +19328,13 @@ msgstr "Ocultar segundos"
 
 #. DocType: DocType:1
 msgid "Hide Sidebar, Menu, and Comments"
-msgstr ""
+msgstr "Ocultar barra lateral, menu e comentários"
 
 #. Label of a Check field in DocType 'DocType'
 #: core/doctype/doctype/doctype.json
 msgctxt "DocType"
 msgid "Hide Sidebar, Menu, and Comments"
-msgstr ""
+msgstr "Ocultar barra lateral, menu e comentários"
 
 #. DocType: Portal Settings:1
 msgid "Hide Standard Menu"
@@ -20146,6 +20170,8 @@ msgid ""
 "If you have recently restored the site you may need to copy the site config "
 "contaning original Encryption Key."
 msgstr ""
+"Se você tiver restaurado o site recentemente, talvez seja necessário copiar "
+"a configuração do site que contém a chave de criptografia original."
 
 #: core/doctype/doctype/doctype.js:54
 msgid "If you just want to customize for your site, use {0} instead."
@@ -20558,7 +20584,7 @@ msgstr ""
 
 #: core/doctype/data_import/data_import.py:37
 msgid "Importing {0} is not allowed."
-msgstr ""
+msgstr "A importação de {0} não é permitida."
 
 #: integrations/doctype/google_contacts/google_contacts.js:19
 msgid "Importing {0} of {1}"
@@ -20833,7 +20859,7 @@ msgstr "A conta de e-mail recebida não é correta"
 
 #: model/virtual_doctype.py:81 model/virtual_doctype.py:94
 msgid "Incomplete Virtual Doctype Implementation"
-msgstr ""
+msgstr "Implementação incompleta do tipo de documento virtual"
 
 #: auth.py:233
 msgid "Incomplete login details"
@@ -21321,7 +21347,7 @@ msgstr "Tipo de documento inválido"
 
 #: database/query.py:95
 msgid "Invalid DocType: {0}"
-msgstr ""
+msgstr "Tipo de documento inválido: {0}"
 
 #: core/doctype/doctype/doctype.py:1076
 msgid "Invalid Fieldname"
@@ -21402,7 +21428,7 @@ msgstr "Nome do campo da tabela inválido"
 
 #: public/js/workflow_builder/store.js:178
 msgid "Invalid Transition"
-msgstr ""
+msgstr "Transição inválida"
 
 #: core/doctype/file/file.py:184
 #: public/js/frappe/file_uploader/FileUploader.vue:405
@@ -21418,7 +21444,7 @@ msgstr ""
 
 #: integrations/doctype/webhook/webhook.py:83
 msgid "Invalid Webhook Secret"
-msgstr ""
+msgstr "Segredo de webhook inválido"
 
 #: desk/reportview.py:150
 msgid "Invalid aggregate function"
@@ -21501,7 +21527,7 @@ msgstr "nome de usuário ou senha inválidos"
 #. Error message in web form
 #: public/js/frappe/web_form/web_form.js:229
 msgid "Invalid values for fields:"
-msgstr ""
+msgstr "Valores inválidos para os campos:"
 
 #: public/js/frappe/web_form/web_form.js:229
 msgctxt "Error message in web form"
@@ -21660,13 +21686,13 @@ msgstr "É Padrão"
 
 #. DocType: Webhook:1
 msgid "Is Dynamic URL?"
-msgstr ""
+msgstr "O URL é dinâmico?"
 
 #. Label of a Check field in DocType 'Webhook'
 #: integrations/doctype/webhook/webhook.json
 msgctxt "Webhook"
 msgid "Is Dynamic URL?"
-msgstr ""
+msgstr "O URL é dinâmico?"
 
 #. DocType: File:1
 msgid "Is Folder"
@@ -22044,7 +22070,7 @@ msgstr "Tipo de item"
 
 #: utils/nestedset.py:235
 msgid "Item cannot be added to its own descendants"
-msgstr ""
+msgstr "O item não pode ser adicionado a seus próprios descendentes"
 
 #. DocType: Print Format:1
 msgid "JS"
@@ -22188,13 +22214,13 @@ msgstr "ID do trabalho"
 
 #. DocType: Submission Queue:1
 msgid "Job Id"
-msgstr ""
+msgstr "Identificação do trabalho"
 
 #. Label of a Link field in DocType 'Submission Queue'
 #: core/doctype/submission_queue/submission_queue.json
 msgctxt "Submission Queue"
 msgid "Job Id"
-msgstr ""
+msgstr "Identificação do trabalho"
 
 #. DocType: RQ Job:1
 msgid "Job Info"
@@ -22242,7 +22268,7 @@ msgstr "Ir para o campo"
 #: public/js/frappe/utils/number_systems.js:17
 #: public/js/frappe/utils/number_systems.js:31
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: public/js/frappe/utils/number_systems.js:17
 #: public/js/frappe/utils/number_systems.js:31
@@ -22292,7 +22318,7 @@ msgstr "Nome do Painel Kanban"
 #. Button in kanban view menu
 #: public/js/frappe/views/kanban/kanban_view.js:262
 msgid "Kanban Settings"
-msgstr ""
+msgstr "Configurações do Kanban"
 
 #: public/js/frappe/views/kanban/kanban_view.js:262
 msgctxt "Button in kanban view menu"
@@ -22356,8 +22382,6 @@ msgid "Keyboard Shortcuts"
 msgstr "Atalhos do teclado"
 
 #: utils/install.py:214
-#, fuzzy
-#| msgid "Keyboard Shortcuts"
 msgctxt "Frappe NavBar"
 msgid "Keyboard Shortcuts"
 msgstr "Atalhos do teclado"
@@ -22383,12 +22407,12 @@ msgstr "Editor da Base de Conhecimento"
 #. Number system
 #: public/js/frappe/utils/number_systems.js:27
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #: public/js/frappe/utils/number_systems.js:27
 msgctxt "Number system"
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #. DocType: LDAP Settings:1
 msgid "LDAP Auth"
@@ -23078,12 +23102,14 @@ msgstr "Última sincronização {0}"
 
 #: custom/doctype/customize_form/customize_form.js:185
 msgid "Layout Reset"
-msgstr ""
+msgstr "Redefinição de layout"
 
 #: custom/doctype/customize_form/customize_form.js:177
 msgid ""
 "Layout will be reset to standard layout, are you sure you want to do this?"
 msgstr ""
+"O layout será redefinido para o layout padrão. Tem certeza de que deseja "
+"fazer isso?"
 
 #: desk/page/leaderboard/leaderboard.js:15
 #: desk/page/user_profile/user_profile_sidebar.html:55
@@ -23093,7 +23119,7 @@ msgstr "Placar"
 #. Label of a shortcut in the Build Workspace
 #: core/workspace/build/build.json
 msgid "Learn Frappe Framework"
-msgstr ""
+msgstr "Aprender sobre o Frappe Framework"
 
 #. Title of a Module Onboarding
 #: website/onboarding_step/web_page_tour/web_page_tour.json
@@ -23259,13 +23285,13 @@ msgstr "Vamos evitar palavras e caracteres repetidos"
 #: core/form_tour/user_list_tour/user_list_tour.json
 msgctxt "User List Tour"
 msgid "Let's create a new user."
-msgstr ""
+msgstr "Vamos criar um novo usuário."
 
 #. Description of a step of 'Letter Head' Form Tour
 #: printing/form_tour/letter_head/letter_head.json
 msgctxt "Letter Head"
 msgid "Let's name your first Letter Head with your company's name"
-msgstr ""
+msgstr "Vamos nomear seu primeiro cabeçalho de carta com o nome de sua empresa"
 
 #: desk/page/setup_wizard/setup_wizard.js:440
 msgid "Let's set up your account"
@@ -24017,6 +24043,9 @@ msgid ""
 "List view shows all the documents for a particular DocType. Here you can see "
 "all the current enabled users in the system. "
 msgstr ""
+"O modo de exibição em lista mostra todos os documentos de um Tipo de "
+"Documento específico. Aqui você pode ver todos os usuários habilitados "
+"atualmente no sistema. "
 
 #: public/js/frappe/ui/toolbar/search_utils.js:520
 msgid "Lists"
@@ -24043,8 +24072,6 @@ msgid "Load More Communications"
 msgstr "Carregar mais comunicações"
 
 #: public/js/frappe/form/footer/form_timeline.js:218
-#, fuzzy
-#| msgid "Load More Communications"
 msgctxt "Form timeline"
 msgid "Load More Communications"
 msgstr "Carregar mais comunicações"
@@ -24076,7 +24103,7 @@ msgstr "Carregando o perfil do usuário"
 
 #: public/js/frappe/ui/toolbar/about.js:26
 msgid "Loading versions..."
-msgstr ""
+msgstr "Carregando versões..."
 
 #: public/js/frappe/file_uploader/TreeNode.vue:27
 #: public/js/frappe/form/sidebar/share.js:47
@@ -24163,8 +24190,6 @@ msgid "Log out"
 msgstr "Sair da Conta"
 
 #: utils/install.py:212
-#, fuzzy
-#| msgid "Log out"
 msgctxt "Frappe NavBar"
 msgid "Log out"
 msgstr "Sair da Conta"
@@ -24443,7 +24468,7 @@ msgstr "Baixo"
 #. Number system
 #: public/js/frappe/utils/number_systems.js:13
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: public/js/frappe/utils/number_systems.js:13
 msgctxt "Number system"
@@ -24494,7 +24519,7 @@ msgstr "Seção Principal (Remarcação)"
 #. Title of a Form Tour
 #: desk/form_tour/main_workspace_tour/main_workspace_tour.json
 msgid "Main Workspace Tour"
-msgstr ""
+msgstr "Tour pela Área de Trabalho Principal"
 
 #. Name of a role
 #. DocType: Contact:1
@@ -24669,7 +24694,7 @@ msgstr "Os campos obrigatórios exigidos no {0}"
 #. Error message in web form
 #: public/js/frappe/web_form/web_form.js:234
 msgid "Mandatory fields required:"
-msgstr ""
+msgstr "Campos obrigatórios exigidos:"
 
 #: public/js/frappe/web_form/web_form.js:234
 msgctxt "Error message in web form"
@@ -24849,7 +24874,7 @@ msgstr "Marcado como spam"
 #. DocType: Marketing Campaign:1
 #: website/doctype/marketing_campaign/marketing_campaign.json
 msgid "Marketing Campaign"
-msgstr ""
+msgstr "Campanha de marketing"
 
 #. DocType: Bulk Update:1
 msgid "Max 500 records at a time"
@@ -25050,7 +25075,7 @@ msgstr "Atende às condições?"
 #: email/doctype/email_group/email_group.json
 msgctxt "Email Group"
 msgid "Members"
-msgstr ""
+msgstr "Membros"
 
 #. DocType: Notification Log:1
 msgid "Mention"
@@ -25784,7 +25809,7 @@ msgstr "Nome do perfil do módulo"
 
 #: desk/doctype/module_onboarding/module_onboarding.py:49
 msgid "Module onboarding progress reset"
-msgstr ""
+msgstr "Reinicialização do progresso da integração do módulo"
 
 #: custom/doctype/customize_form/customize_form.js:207
 msgid "Module to Export"
@@ -26039,15 +26064,15 @@ msgstr "Mover o cursor para a coluna anterior"
 
 #: public/js/form_builder/components/Column.vue:126
 msgid "Move the current column & the following columns to a new section"
-msgstr ""
+msgstr "Mover a coluna atual e as colunas seguintes para uma nova seção"
 
 #: public/js/form_builder/components/Field.vue:101
 msgid "Move the current field and the following fields to a new column"
-msgstr ""
+msgstr "Mover o campo atual e os seguintes campos para uma nova coluna"
 
 #: public/js/form_builder/components/Section.vue:128
 msgid "Move the current section and the following sections to a new tab"
-msgstr ""
+msgstr "Mover a seção atual e as seções seguintes para uma nova guia"
 
 #: public/js/frappe/form/grid_row.js:165
 msgid "Move to Row Number"
@@ -26174,8 +26199,6 @@ msgid "My Profile"
 msgstr "Meu Perfil"
 
 #: utils/install.py:205 utils/install.py:206
-#, fuzzy
-#| msgid "SMS Settings"
 msgctxt "Frappe NavBar"
 msgid "My Settings"
 msgstr "Minhas configurações"
@@ -26195,6 +26218,8 @@ msgid ""
 "NOTE: Avoid making changes to the states & transitions. It will not be "
 "reflected in the Workflow Builder."
 msgstr ""
+"OBSERVAÇÃO: Evite fazer alterações nos estados e transições. Elas não serão "
+"refletidas no Construtor de Fluxo de Trabalho."
 
 #. DocType: LDAP Settings:1
 msgid ""
@@ -26634,7 +26659,7 @@ msgstr "Novo Atalho"
 #: core/form_tour/user_list_tour/user_list_tour.json
 msgctxt "User List Tour"
 msgid "New User"
-msgstr ""
+msgstr "Novo usuário"
 
 #: core/doctype/version/version_view.html:14
 #: core/doctype/version/version_view.html:76
@@ -26643,7 +26668,7 @@ msgstr "Novo Valor"
 
 #: workflow/page/workflow_builder/workflow_builder.js:61
 msgid "New Workflow Name"
-msgstr ""
+msgstr "Novo nome do fluxo de trabalho"
 
 #: public/js/frappe/views/workspace/workspace.js:1111
 msgid "New Workspace"
@@ -27113,7 +27138,7 @@ msgstr "Nenhuma alteração foi feita na página"
 
 #: public/js/form_builder/store.js:215
 msgid "No changes to save"
-msgstr ""
+msgstr "Nenhuma alteração a ser salva"
 
 #: custom/doctype/doctype_layout/doctype_layout.js:59
 msgid "No changes to sync"
@@ -27129,7 +27154,7 @@ msgstr "Ainda não há comentários"
 
 #: templates/includes/comments/comments.html:4
 msgid "No comments yet. "
-msgstr ""
+msgstr "Ainda não há comentários. "
 
 #: public/js/frappe/form/templates/contact_list.html:52
 msgid "No contacts added yet."
@@ -27277,6 +27302,8 @@ msgstr "Nenhum(a) {0} encontrado(a)"
 #: public/js/frappe/list/list_view.js:463
 msgid "No {0} found with matching filters. Clear filters to see all {0}."
 msgstr ""
+"Nenhum {0} encontrado com filtros correspondentes. Limpe os filtros para ver "
+"todos os {0}."
 
 #: public/js/frappe/views/inbox/inbox_view.js:173
 msgid "No {0} mail"
@@ -28025,7 +28052,7 @@ msgstr "OK"
 
 #: public/js/form_builder/components/Tabs.vue:189
 msgid "OR"
-msgstr ""
+msgstr "OU"
 
 #. DocType: System Settings:1
 msgid "OTP App"
@@ -28152,6 +28179,7 @@ msgstr "Na autorização de pagamento"
 msgid ""
 "On checking this option, URL will be treated like a jinja template string"
 msgstr ""
+"Ao marcar essa opção, a URL será tratada como uma string de modelo jinja"
 
 #. Description of a Check field in DocType 'Webhook'
 #: integrations/doctype/webhook/webhook.json
@@ -28159,6 +28187,7 @@ msgctxt "Webhook"
 msgid ""
 "On checking this option, URL will be treated like a jinja template string"
 msgstr ""
+"Ao marcar essa opção, a URL será tratada como uma string de modelo jinja"
 
 #: public/js/frappe/views/communication.js:836
 msgid "On {0}, {1} wrote:"
@@ -28319,7 +28348,7 @@ msgstr ""
 
 #: modules/utils.py:67
 msgid "Only allowed to export customizations in developer mode"
-msgstr ""
+msgstr "Só é permitido exportar personalizações no modo de desenvolvedor"
 
 #. DocType: S3 Backup Settings:1
 msgid ""
@@ -28719,7 +28748,7 @@ msgstr ""
 
 #: public/js/form_builder/store.js:177
 msgid "Options is required for field {0} of type {1}"
-msgstr ""
+msgstr "As opções são obrigatórias para o campo {0} do tipo {1}"
 
 #: model/base_document.py:738
 msgid "Options not set for link field {0}"
@@ -29370,13 +29399,13 @@ msgstr "Sucesso parcial"
 
 #. DocType: Email Queue:1
 msgid "Partially Sent"
-msgstr ""
+msgstr "Parcialmente enviado"
 
 #. Option for a Select field in DocType 'Email Queue'
 #: email/doctype/email_queue/email_queue.json
 msgctxt "Email Queue"
 msgid "Partially Sent"
-msgstr ""
+msgstr "Parcialmente enviado"
 
 #. DocType: Event:1
 #: desk/doctype/event/event.js:30
@@ -30166,6 +30195,8 @@ msgid ""
 "Please enable atleast one Social Login Key or LDAP or Login With Email Link "
 "before disabling username/password based login."
 msgstr ""
+"Ative pelo menos uma chave de login social ou LDAP ou login com link de e-"
+"mail antes de desativar o login baseado em nome de usuário/senha."
 
 #: desk/doctype/notification_log/notification_log.js:41
 #: email/doctype/auto_email_report/auto_email_report.js:17
@@ -30234,7 +30265,7 @@ msgstr "Por favor digite a senha"
 #. Email Account
 #: public/js/frappe/desk.js:197
 msgid "Please enter the password for: <b>{0}</b>"
-msgstr ""
+msgstr "Por favor, digite a senha para: <b>{0}</b>"
 
 #: public/js/frappe/desk.js:197
 msgctxt "Email Account"
@@ -30426,7 +30457,7 @@ msgstr "Por favor, configure uma mensagem primeiro"
 
 #: email/doctype/email_account/email_account.py:328
 msgid "Please setup default Email Account from Settings > Email Account"
-msgstr ""
+msgstr "Configure a conta de e-mail padrão em Configurações > Conta de e-mail"
 
 #: core/doctype/user/user.py:293
 msgid ""
@@ -30797,19 +30828,19 @@ msgstr "Pré-visualização de HTML"
 
 #. DocType: Blog Category:1
 msgid "Preview Image"
-msgstr ""
+msgstr "Visualizar imagem"
 
 #. Label of a Attach Image field in DocType 'Blog Category'
 #: website/doctype/blog_category/blog_category.json
 msgctxt "Blog Category"
 msgid "Preview Image"
-msgstr ""
+msgstr "Visualizar imagem"
 
 #. Label of a Attach Image field in DocType 'Blog Settings'
 #: website/doctype/blog_settings/blog_settings.json
 msgctxt "Blog Settings"
 msgid "Preview Image"
-msgstr ""
+msgstr "Visualizar imagem"
 
 #. DocType: Auto Repeat:1
 msgid "Preview Message"
@@ -30823,7 +30854,7 @@ msgstr "Visualizar mensagem"
 
 #: public/js/form_builder/form_builder.bundle.js:163
 msgid "Preview Mode"
-msgstr ""
+msgstr "Modo de visualização"
 
 #. DocType: Document Naming Settings:1
 msgid "Preview of generated names"
@@ -30866,7 +30897,7 @@ msgstr "Hash anterior"
 
 #: public/js/frappe/form/form.js:2085
 msgid "Previous Submission"
-msgstr ""
+msgstr "Submissão anterior"
 
 #. DocType: Workflow State:1
 #: public/js/frappe/form/templates/address_list.html:8
@@ -30892,15 +30923,15 @@ msgstr "Cor primária"
 
 #: public/js/frappe/form/templates/contact_list.html:35
 msgid "Primary Email"
-msgstr ""
+msgstr "E-mail principal"
 
 #: public/js/frappe/form/templates/contact_list.html:23
 msgid "Primary Mobile"
-msgstr ""
+msgstr "Celular primário"
 
 #: public/js/frappe/form/templates/contact_list.html:20
 msgid "Primary Phone"
-msgstr ""
+msgstr "Telefone principal"
 
 #. Button in list view actions menu
 #. DocType: Custom DocPerm:1
@@ -31355,7 +31386,7 @@ msgstr "Perfil"
 #. Success Message of a Web Form
 #: core/web_form/edit_profile/edit_profile.json
 msgid "Profile updated successfully."
-msgstr ""
+msgstr "Perfil atualizado com sucesso."
 
 #: public/js/frappe/socketio_client.js:78
 msgid "Progress"
@@ -31704,7 +31735,7 @@ msgstr "Conexão da Bandeja QZ Ativo!"
 
 #: public/js/frappe/form/print_utils.js:204
 msgid "QZ Tray Failed: "
-msgstr "QZ Tray Failed:"
+msgstr "Falha na bandeja QZ: "
 
 #: public/js/frappe/views/gantt/gantt_view.js:162
 msgid "Quarter Day"
@@ -31818,19 +31849,19 @@ msgstr "Tipo(s) de fila"
 
 #. DocType: DocType:1
 msgid "Queue in Background"
-msgstr ""
+msgstr "Fila em segundo plano"
 
 #. Label of a Check field in DocType 'Customize Form'
 #: custom/doctype/customize_form/customize_form.json
 msgctxt "Customize Form"
 msgid "Queue in Background"
-msgstr ""
+msgstr "Fila em segundo plano"
 
 #. Label of a Check field in DocType 'DocType'
 #: core/doctype/doctype/doctype.json
 msgctxt "DocType"
 msgid "Queue in Background"
-msgstr ""
+msgstr "Fila em segundo plano"
 
 #: utils/background_jobs.py:408
 msgid "Queue should be one of {0}"
@@ -31891,7 +31922,7 @@ msgstr "Enfileirados por"
 
 #: core/doctype/submission_queue/submission_queue.py:156
 msgid "Queued for Submission. You can track the progress over {0}."
-msgstr ""
+msgstr "Na fila para envio. Você pode acompanhar o progresso em {0}."
 
 #: integrations/doctype/dropbox_settings/dropbox_settings.py:44
 #: integrations/doctype/google_drive/google_drive.py:139
@@ -31913,7 +31944,7 @@ msgstr "Enfileirando e-mails..."
 
 #: desk/doctype/bulk_update/bulk_update.py:49
 msgid "Queuing {0} for Submission"
-msgstr ""
+msgstr "Enfileirando {0} para envio"
 
 #. DocType: DocType:1
 msgid "Quick Entry"
@@ -31958,7 +31989,7 @@ msgstr "Listas rápidas"
 
 #: public/js/frappe/views/reports/report_utils.js:281
 msgid "Quoting must be between 0 and 3"
-msgstr ""
+msgstr "A cotação deve estar entre 0 e 3"
 
 #. DocType: Access Log:1
 msgid "RAW Information Log"
@@ -32008,23 +32039,23 @@ msgstr "Classificação"
 
 #. DocType: Server Script:1
 msgid "Rate Limiting"
-msgstr ""
+msgstr "Limitação de taxa"
 
 #. Label of a Section Break field in DocType 'Server Script'
 #: core/doctype/server_script/server_script.json
 msgctxt "Server Script"
 msgid "Rate Limiting"
-msgstr ""
+msgstr "Limitação de taxa"
 
 #. DocType: Blog Settings:1
 msgid "Rate Limits"
-msgstr ""
+msgstr "Limites de taxas"
 
 #. Label of a Section Break field in DocType 'Blog Settings'
 #: website/doctype/blog_settings/blog_settings.json
 msgctxt "Blog Settings"
 msgid "Rate Limits"
-msgstr ""
+msgstr "Limites de taxas"
 
 #. DocType: Communication:1
 msgid "Rating"
@@ -32107,11 +32138,11 @@ msgstr "Configurações de impressão bruta"
 
 #: core/doctype/patch_log/patch_log.js:8
 msgid "Re-Run Patch"
-msgstr ""
+msgstr "Executar novamente o patch"
 
 #: core/doctype/patch_log/patch_log.py:17
 msgid "Re-running patch is only allowed in developer mode."
-msgstr ""
+msgstr "A reexecução do patch só é permitida no modo de desenvolvedor."
 
 #: email/doctype/email_account/email_account.py:557
 msgid "Re:"
@@ -32271,7 +32302,7 @@ msgstr "Lido por destinatário ativado"
 
 #: desk/doctype/note/note.js:10
 msgid "Read mode"
-msgstr ""
+msgstr "Modo de leitura"
 
 #. DocType: Package:1
 msgid "Readme"
@@ -32499,13 +32530,13 @@ msgstr "Redirecionar URL"
 
 #. DocType: Website Settings:1
 msgid "Redirects"
-msgstr ""
+msgstr "Redirecionamentos"
 
 #. Label of a Tab Break field in DocType 'Website Settings'
 #: website/doctype/website_settings/website_settings.json
 msgctxt "Website Settings"
 msgid "Redirects"
-msgstr ""
+msgstr "Redirecionamentos"
 
 #: sessions.py:148
 msgid ""
@@ -33078,7 +33109,7 @@ msgstr "Rejeitado"
 #: core/doctype/package/package.json
 msgctxt "Package"
 msgid "Release"
-msgstr ""
+msgstr "Lançamento de Versão"
 
 #. DocType: Package Release:1
 msgid "Release Notes"
@@ -33121,8 +33152,6 @@ msgid "Reload"
 msgstr "Recarregar"
 
 #: utils/install.py:208
-#, fuzzy
-#| msgid "Reload"
 msgctxt "Frappe NavBar"
 msgid "Reload"
 msgstr "Recarregar"
@@ -33150,35 +33179,35 @@ msgstr "Lembrar última seleção"
 #. DocType: Reminder:1
 #: public/js/frappe/form/reminders.js:33
 msgid "Remind At"
-msgstr ""
+msgstr "Lembrar em"
 
 #. Label of a Datetime field in DocType 'Reminder'
 #: automation/doctype/reminder/reminder.json
 msgctxt "Reminder"
 msgid "Remind At"
-msgstr ""
+msgstr "Lembrar em"
 
 #: public/js/frappe/form/toolbar.js:429
 msgid "Remind Me"
-msgstr ""
+msgstr "Lembrar-me"
 
 #: public/js/frappe/form/reminders.js:13
 msgid "Remind Me In"
-msgstr ""
+msgstr "Lembrar-me em"
 
 #. Name of a DocType
 #. DocType: Reminder:1
 #: automation/doctype/reminder/reminder.json
 msgid "Reminder"
-msgstr ""
+msgstr "Lembrete"
 
 #: automation/doctype/reminder/reminder.py:23
 msgid "Reminder cannot be created in past."
-msgstr ""
+msgstr "O lembrete não pode ser criado no passado."
 
 #: public/js/frappe/form/reminders.js:96
 msgid "Reminder set at {0}"
-msgstr ""
+msgstr "Lembrete definido em {0}"
 
 #: public/js/frappe/form/templates/form_sidebar.html:13
 #: public/js/frappe/ui/filters/edit_filter.html:4
@@ -33188,7 +33217,7 @@ msgstr "Remover"
 
 #: public/js/form_builder/components/Column.vue:136
 msgid "Remove Column"
-msgstr ""
+msgstr "Remover Coluna"
 
 #: core/doctype/rq_job/rq_job_list.js:8
 msgid "Remove Failed Jobs"
@@ -33226,7 +33255,7 @@ msgstr "Remover seção"
 
 #: public/js/form_builder/components/Tabs.vue:155
 msgid "Remove selected tab"
-msgstr ""
+msgstr "Remover a guia selecionada"
 
 #: core/doctype/file/file.py:122
 msgid "Removed {0}"
@@ -33263,13 +33292,13 @@ msgstr "Repetir"
 #. DocType: Print Settings:1
 #: printing/page/print/print.js:117
 msgid "Repeat Header and Footer"
-msgstr ""
+msgstr "Repetir de cabeçalho e rodapé"
 
 #. Label of a Check field in DocType 'Print Settings'
 #: printing/doctype/print_settings/print_settings.json
 msgctxt "Print Settings"
 msgid "Repeat Header and Footer"
-msgstr ""
+msgstr "Repetir de cabeçalho e rodapé"
 
 #. DocType: Event:1
 msgid "Repeat On"
@@ -33656,7 +33685,7 @@ msgstr "Limite do relatório atingido"
 
 #: core/doctype/prepared_report/prepared_report.py:187
 msgid "Report timed out."
-msgstr ""
+msgstr "O relatório expirou."
 
 #: desk/query_report.py:504
 msgid "Report updated successfully"
@@ -33782,13 +33811,13 @@ msgstr "ID da solicitação"
 
 #. DocType: Server Script:1
 msgid "Request Limit"
-msgstr ""
+msgstr "Limite de solicitação"
 
 #. Label of a Int field in DocType 'Server Script'
 #: core/doctype/server_script/server_script.json
 msgctxt "Server Script"
 msgid "Request Limit"
-msgstr ""
+msgstr "Limite de solicitação"
 
 #. DocType: Webhook:1
 msgid "Request Method"
@@ -33838,7 +33867,7 @@ msgstr "URL do pedido"
 #. Title of a Web Form
 #: website/web_form/request_to_delete_data/request_to_delete_data.json
 msgid "Request for Account Deletion"
-msgstr ""
+msgstr "Solicitação de exclusão de conta"
 
 #. DocType: LDAP Settings:1
 msgid "Require Trusted Certificate"
@@ -33889,7 +33918,7 @@ msgstr "Redefinir"
 
 #: custom/doctype/customize_form/customize_form.js:138
 msgid "Reset All Customizations"
-msgstr ""
+msgstr "Redefinir todas as personalizações"
 
 #: public/js/form_builder/form_builder.bundle.js:49
 #: public/js/print_format_builder/print_format_builder.bundle.js:21
@@ -33915,7 +33944,7 @@ msgstr "Redefinir senha LDAP"
 
 #: custom/doctype/customize_form/customize_form.js:130
 msgid "Reset Layout"
-msgstr ""
+msgstr "Redefinir o layout"
 
 #: core/doctype/user/user.js:227
 msgid "Reset OTP Secret"
@@ -33948,13 +33977,13 @@ msgstr "Duração da expiração do link de redefinição de senha"
 
 #. DocType: System Settings:1
 msgid "Reset Password Template"
-msgstr ""
+msgstr "Modelo de redefinição de senha"
 
 #. Label of a Link field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "Reset Password Template"
-msgstr ""
+msgstr "Modelo de redefinição de senha"
 
 #: core/page/permission_manager/permission_manager.js:108
 msgid "Reset Permissions for {0}?"
@@ -34004,13 +34033,13 @@ msgstr "Resposta"
 
 #. DocType: Email Template:1
 msgid "Response "
-msgstr ""
+msgstr "Resposta "
 
 #. Label of a Code field in DocType 'Email Template'
 #: email/doctype/email_template/email_template.json
 msgctxt "Email Template"
 msgid "Response "
-msgstr ""
+msgstr "Resposta "
 
 #. DocType: OAuth Client:1
 msgid "Response Type"
@@ -34163,7 +34192,7 @@ msgstr "Repetir"
 
 #: email/doctype/email_queue/email_queue_list.js:49
 msgid "Retry Sending"
-msgstr ""
+msgstr "Repetir o envio"
 
 #: www/qrcode.html:15
 msgid ""
@@ -34592,13 +34621,13 @@ msgstr "Funções"
 
 #. DocType: User:1
 msgid "Roles & Permissions"
-msgstr ""
+msgstr "Funções e Permissões"
 
 #. Label of a Tab Break field in DocType 'User'
 #: core/doctype/user/user.json
 msgctxt "User"
 msgid "Roles & Permissions"
-msgstr ""
+msgstr "Funções e Permissões"
 
 #. DocType: Role Profile:1
 msgid "Roles Assigned"
@@ -34916,7 +34945,7 @@ msgstr "Nome da regra"
 #: core/doctype/doctype/doctype.json
 msgctxt "DocType"
 msgid "Rules"
-msgstr ""
+msgstr "Regras"
 
 #. DocType: Workflow:1
 msgid "Rules defining transition of state in the workflow."
@@ -35709,7 +35738,7 @@ msgstr "Pesquisar países..."
 
 #: public/js/frappe/icon_picker/icon_picker.js:19
 msgid "Search for icons..."
-msgstr ""
+msgstr "Procure por ícones..."
 
 #: public/js/frappe/ui/toolbar/awesome_bar.js:287
 #: public/js/frappe/ui/toolbar/awesome_bar.js:291
@@ -35804,7 +35833,7 @@ msgstr "Título da seção"
 #: public/js/form_builder/components/Column.vue:48
 #: public/js/form_builder/components/Column.vue:71
 msgid "Section must have at least one column"
-msgstr ""
+msgstr "A seção deve ter pelo menos uma coluna"
 
 #. DocType: System Settings:1
 msgid "Security"
@@ -35842,7 +35871,7 @@ msgstr "Veja no Site"
 #. Button in web form
 #: website/doctype/web_form/templates/web_form.html:146
 msgid "See previous responses"
-msgstr ""
+msgstr "Veja as respostas anteriores"
 
 #: integrations/doctype/slack_webhook_url/slack_webhook_url.py:36
 msgid "See the document at {0}"
@@ -36199,7 +36228,7 @@ msgstr "Selecionar transação"
 
 #: workflow/page/workflow_builder/workflow_builder.js:68
 msgid "Select Workflow"
-msgstr ""
+msgstr "Selecionar fluxo de trabalho"
 
 #. DocType: Form Tour:1
 msgid "Select Workspace"
@@ -36224,18 +36253,20 @@ msgstr "Selecione um tipo de documento para fazer um novo formato"
 msgctxt "Print Format"
 msgid "Select a Doctype for which you want to create a Print Format"
 msgstr ""
+"Selecione um Tipo de Documento para o qual você deseja criar um Formato de "
+"Impressão"
 
 #. Description of a step of 'Custom Field' Form Tour
 #: custom/form_tour/custom_field/custom_field.json
 msgctxt "Custom Field"
 msgid "Select a Document for which you want the Custom Field"
-msgstr ""
+msgstr "Selecione um Documento para o qual você deseja o Campo Personalizado"
 
 #. Description of a step of 'Doctype' Form Tour
 #: core/form_tour/doctype/doctype.json
 msgctxt "Doctype"
 msgid "Select a Module to which this DocType would belong"
-msgstr ""
+msgstr "Selecione um Módulo ao qual esse Tipo de Documento pertenceria"
 
 #: integrations/doctype/webhook/webhook.py:97
 msgid "Select a document to check if it meets conditions."
@@ -36265,7 +36296,7 @@ msgstr "Selecione uma imagem"
 #: custom/form_tour/custom_field/custom_field.json
 msgctxt "Custom Field"
 msgid "Select an appropriate Field Type that suits your requirements"
-msgstr ""
+msgstr "Selecione um Tipo de Campo apropriado que atenda a seus requisitos"
 
 #: printing/page/print_format_builder/print_format_builder_start.html:2
 msgid "Select an existing format to edit or start a new format."
@@ -36331,7 +36362,7 @@ msgstr "Seleciona registros para a atribuição"
 #: printing/form_tour/letter_head/letter_head.json
 msgctxt "Letter Head"
 msgid "Select the image containing only header part of your letter Head."
-msgstr ""
+msgstr "Selecione a imagem que contém apenas a parte do cabeçalho de sua carta."
 
 #. DocType: Custom Field:1
 msgid "Select the label after which you want to insert new field."
@@ -36349,7 +36380,7 @@ msgstr "Selecione a etiqueta após a qual você deseja inserir um novo campo."
 #: printing/form_tour/print_format/print_format.json
 msgctxt "Print Format"
 msgid "Select the type of Print Format"
-msgstr ""
+msgstr "Selecione o tipo de Formato de Impressão"
 
 #: public/js/frappe/utils/diffview.js:98
 msgid "Select two versions to view the diff."
@@ -37005,8 +37036,6 @@ msgid "Session Defaults"
 msgstr "Padrões de Sessão"
 
 #: utils/install.py:207
-#, fuzzy
-#| msgid "Session Defaults"
 msgctxt "Frappe NavBar"
 msgid "Session Defaults"
 msgstr "Padrões de Sessão"
@@ -37338,7 +37367,7 @@ msgstr "Configuração&gt; Permissões do Usuário"
 #. Title of a Module Onboarding
 #: custom/onboarding_step/workflows/workflows.json
 msgid "Setup Approval Workflows"
-msgstr ""
+msgstr "Configurar Fluxos de Trabalho de aprovação"
 
 #: public/js/frappe/views/reports/query_report.js:1603
 #: public/js/frappe/views/reports/report_view.js:1539
@@ -37359,12 +37388,12 @@ msgstr "Instalação concluída"
 #. Title of a Module Onboarding
 #: custom/onboarding_step/role_permissions/role_permissions.json
 msgid "Setup Limited Access for a User"
-msgstr ""
+msgstr "Configurar os limites de acesso de um usuário"
 
 #. Title of a Module Onboarding
 #: custom/onboarding_step/naming_series/naming_series.json
 msgid "Setup Naming Series"
-msgstr ""
+msgstr "Configurar série de nomes"
 
 #. DocType: Document Naming Settings:1
 msgid "Setup Series for transactions"
@@ -37495,13 +37524,13 @@ msgstr "mostrar"
 
 #. DocType: Blog Settings:1
 msgid "Show \"Call to Action\" in Blog"
-msgstr ""
+msgstr "Mostrar \"Chamada para ação\" no blog"
 
 #. Label of a Check field in DocType 'Blog Settings'
 #: website/doctype/blog_settings/blog_settings.json
 msgctxt "Blog Settings"
 msgid "Show \"Call to Action\" in Blog"
-msgstr ""
+msgstr "Mostrar \"Chamada para ação\" no blog"
 
 #. DocType: Print Format:1
 msgid "Show Absolute Values"
@@ -37586,7 +37615,7 @@ msgstr "Mostrar logs com falha"
 
 #: public/js/frappe/form/layout.js:540
 msgid "Show Fieldname (click to copy on clipboard)"
-msgstr ""
+msgstr "Mostrar Nome do Campo (clique para copiar para a área de transferência)"
 
 #. DocType: Form Tour:1
 msgid "Show First Document Tour"
@@ -38093,6 +38122,9 @@ msgid ""
 "Site is running in read only mode for maintenance or site update, this "
 "action can not be performed right now. Please try again later."
 msgstr ""
+"O site está sendo executado no modo somente leitura para manutenção ou "
+"atualização do site, essa ação não pode ser executada no momento. Tente "
+"novamente mais tarde."
 
 #: public/js/frappe/views/file/file_view.js:320
 msgid "Size"
@@ -38124,13 +38156,13 @@ msgstr "Pular etapa"
 
 #. DocType: Patch Log:1
 msgid "Skipped"
-msgstr ""
+msgstr "Ignorado"
 
 #. Label of a Check field in DocType 'Patch Log'
 #: core/doctype/patch_log/patch_log.json
 msgctxt "Patch Log"
 msgid "Skipped"
-msgstr ""
+msgstr "Ignorado"
 
 #: core/doctype/data_import/importer.py:912
 msgid "Skipping Duplicate Column {0}"
@@ -38147,6 +38179,8 @@ msgstr "Ignorando a coluna {0}"
 #: modules/utils.py:163
 msgid "Skipping fixture syncing for doctype {0} from file {1}"
 msgstr ""
+"Ignorando a sincronização de dispositivos para o tipo de documento {0} do "
+"arquivo {1}"
 
 #: core/doctype/data_import/data_import.js:39
 msgid "Skipping {0} of {1}, {2}"
@@ -38590,7 +38624,7 @@ msgstr "Padrão"
 
 #: model/delete_doc.py:79
 msgid "Standard DocType can not be deleted."
-msgstr ""
+msgstr "O Tipo de Documento padrão não pode ser excluído."
 
 #: core/doctype/doctype/doctype.py:134
 msgid "Standard DocType cannot have default print format, use Customize Form"
@@ -39119,7 +39153,7 @@ msgstr "Retire as tags EXIF das imagens enviadas"
 
 #: public/js/frappe/form/controls/password.js:90
 msgid "Strong"
-msgstr ""
+msgstr "Forte"
 
 #. DocType: Web Page:1
 msgid "Style"
@@ -39304,7 +39338,7 @@ msgstr ""
 #. DocType: Submission Queue:1
 #: core/doctype/submission_queue/submission_queue.json
 msgid "Submission Queue"
-msgstr ""
+msgstr "Fila de envio"
 
 #. Submit password for Email Account
 #. Button in list view actions menu
@@ -39408,7 +39442,7 @@ msgstr "Enviar um problema"
 #. Button in web form
 #: website/doctype/web_form/templates/web_form.html:149
 msgid "Submit another response"
-msgstr ""
+msgstr "Enviar outra resposta"
 
 #. DocType: Auto Repeat:1
 msgid "Submit on Creation"
@@ -39469,6 +39503,8 @@ msgid ""
 "Submitted document cannot be converted back to draft while transitioning "
 "from <b>{0} State</b> to <b>{1} State</b>"
 msgstr ""
+"O documento enviado não pode ser convertido de volta para rascunho durante a "
+"transição do <b>Estado {0} </b> para o <b>Estado {1}</b>"
 
 #. Freeze message while submitting a document
 #: public/js/frappe/form/save.js:10
@@ -39660,11 +39696,11 @@ msgstr "Registros {0} importados com sucesso."
 
 #: core/doctype/patch_log/patch_log.py:20
 msgid "Successfully re-ran patch: {0}"
-msgstr ""
+msgstr "Reexecução bem-sucedida do patch: {0}"
 
 #: desk/doctype/form_tour/form_tour.py:56
 msgid "Successfully reset onboarding status for all users."
-msgstr ""
+msgstr "Redefinição bem-sucedida do status de integração de todos os usuários."
 
 #: public/js/frappe/views/translation_manager.js:22
 msgid "Successfully updated translations"
@@ -39783,11 +39819,11 @@ msgstr "Ir para o Desktop"
 
 #: public/js/form_builder/form_builder.bundle.js:60
 msgid "Switch to Customize"
-msgstr ""
+msgstr "Mudar para Personalizar"
 
 #: public/js/form_builder/form_builder.bundle.js:63
 msgid "Switch to DocType"
-msgstr ""
+msgstr "Mudar para Tipo de Documento"
 
 #: public/js/frappe/ui/capture.js:270
 msgid "Switching Camera"
@@ -40103,7 +40139,7 @@ msgstr "Gerentes de sistema são permitidos por padrão"
 #. Number system
 #: public/js/frappe/utils/number_systems.js:5
 msgid "T"
-msgstr ""
+msgstr "T"
 
 #: public/js/frappe/utils/number_systems.js:5
 msgctxt "Number system"
@@ -40134,7 +40170,7 @@ msgstr "Quebra de tabulação"
 
 #: public/js/form_builder/components/Tabs.vue:134
 msgid "Tab Label"
-msgstr ""
+msgstr "Rótulo da guia"
 
 #. DocType: DocField:1
 #: core/doctype/data_export/exporter.py:23
@@ -40765,13 +40801,13 @@ msgstr "A próximo tour começará de onde o usuário parou."
 
 #. DocType: Webhook:1
 msgid "The number of seconds until the request expires"
-msgstr ""
+msgstr "O número de segundos até a expiração da solicitação"
 
 #. Description of a Int field in DocType 'Webhook'
 #: integrations/doctype/webhook/webhook.json
 msgctxt "Webhook"
 msgid "The number of seconds until the request expires"
-msgstr ""
+msgstr "O número de segundos até a expiração da solicitação"
 
 #: www/404.html:18
 msgid "The page you are looking for has gone missing."
@@ -41006,6 +41042,7 @@ msgstr "Não há nada aqui"
 msgctxt "User List Tour"
 msgid "These are filters. You can use them to narrow down list of records."
 msgstr ""
+"Esses são filtros. Você pode usá-los para restringir a lista de registros."
 
 #. Description of a step of 'Main Workspace Tour' Form Tour
 #: desk/form_tour/main_workspace_tour/main_workspace_tour.json
@@ -41018,6 +41055,13 @@ msgid ""
 "\n"
 "Tip: You can build custom workspaces for your needs."
 msgstr ""
+"Esses são as áreas de trabalho. Cada área de trabalho do módulo fornece "
+"informações detalhadas e atalhos em uma página. \n"
+"\n"
+"<br><br>\n"
+"\n"
+"Dica: você pode criar áreas de trabalho personalizadas para suas "
+"necessidades."
 
 #. DocType: LDAP Settings:1
 msgid "These settings are required if 'Custom' LDAP Directory is used"
@@ -41188,6 +41232,11 @@ msgid ""
 "eval:doc.myfield=='My Value'\n"
 "eval:doc.age&gt;18"
 msgstr ""
+"Esse campo aparecerá somente se o nome do campo definido aqui tiver valor OU "
+"se as regras forem verdadeiras (exemplos): \n"
+"meucampo\n"
+"eval:doc.meucampo=='Meu valor'\n"
+"eval:doc.idade&gt;18"
 
 #. Description of a Code field in DocType 'Customize Form Field'
 #: custom/doctype/customize_form_field/customize_form_field.json
@@ -41199,6 +41248,11 @@ msgid ""
 "eval:doc.myfield=='My Value'\n"
 "eval:doc.age&gt;18"
 msgstr ""
+"Esse campo aparecerá somente se o nome do campo definido aqui tiver valor OU "
+"se as regras forem verdadeiras (exemplos): \n"
+"meucampo\n"
+"eval:doc.meucampo=='Meu valor'\n"
+"eval:doc.idade&gt;18"
 
 #: public/js/frappe/form/form.js:1123
 msgid "This form has been modified after you have loaded it"
@@ -41235,6 +41289,9 @@ msgid ""
 "This is Awesomebar, it helps you to navigate anywhere in the system, find "
 "documents, reports, settings, create new records and many more things."
 msgstr ""
+"Esta é a Awesomebar, que o ajuda a navegar em qualquer lugar do sistema, "
+"localizar documentos, relatórios, configurações, criar novos registros e "
+"muitas outras coisas."
 
 #. Description of a step of 'Users Workspace Tour' Form Tour
 #: desk/form_tour/users_workspace_tour/users_workspace_tour.json
@@ -41263,6 +41320,10 @@ msgid ""
 "\n"
 "Let's Click on the User shortcut to explore all users in System."
 msgstr ""
+"Este é um atalho para Tipo de Documento Usuário. \n"
+"<br>\n"
+"\n"
+"Vamos clicar no atalho Usuário para explorar todos os usuários no Sistema."
 
 #: utils/password_strength.py:156
 msgid "This is a top-10 common password."
@@ -41565,13 +41626,13 @@ msgstr "Tempo gasto"
 
 #. DocType: Server Script:1
 msgid "Time Window (Seconds)"
-msgstr ""
+msgstr "Janela de tempo (segundos)"
 
 #. Label of a Int field in DocType 'Server Script'
 #: core/doctype/server_script/server_script.json
 msgctxt "Server Script"
 msgid "Time Window (Seconds)"
-msgstr ""
+msgstr "Janela de tempo (segundos)"
 
 #. DocType: System Settings:1
 #: desk/page/setup_wizard/setup_wizard.js:384
@@ -41982,6 +42043,9 @@ msgid ""
 "\n"
 "<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>"
 msgstr ""
+"Para adicionar um assunto dinâmico, use tags jinja como\n"
+"\n"
+"<div><pre><code>Novo {{ doc.doctype }} #{{ doc.name }}</code></pre></div>"
 
 #. Description of a Data field in DocType 'Auto Repeat'
 #: automation/doctype/auto_repeat/auto_repeat.json
@@ -41991,6 +42055,9 @@ msgid ""
 "\n"
 "<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>"
 msgstr ""
+"Para adicionar um assunto dinâmico, use tags jinja como\n"
+"\n"
+"<div><pre><code>Novo {{ doc.doctype }} #{{ doc.name }}</code></pre></div>"
 
 #. DocType: Notification:1
 msgid ""
@@ -41998,6 +42065,9 @@ msgid ""
 "\n"
 "<div><pre><code>{{ doc.name }} Delivered</code></pre></div>"
 msgstr ""
+"Para adicionar um assunto dinâmico, use tags jinja como\n"
+"\n"
+"<div><pre><code>{{ doc.name }} Entregue</code></pre></div>"
 
 #. Description of a Data field in DocType 'Notification'
 #: email/doctype/notification/notification.json
@@ -42007,6 +42077,9 @@ msgid ""
 "\n"
 "<div><pre><code>{{ doc.name }} Delivered</code></pre></div>"
 msgstr ""
+"Para adicionar um assunto dinâmico, use tags jinja como\n"
+"\n"
+"<div><pre><code>{{ doc.name }} Entregue</code></pre></div>"
 
 #. DocType: Webhook:1
 msgid ""
@@ -42125,6 +42198,8 @@ msgid ""
 "To use Slack Channel, add a <a href=\"#List/Slack%20Webhook%20URL/List"
 "\">Slack Webhook URL</a>."
 msgstr ""
+"Para usar o canal do Slack, adicione um URL do webhook do <a href=\"#List/"
+"Slack%20Webhook%20URL/List\">Slack</a>."
 
 #. Description of a Link field in DocType 'Notification'
 #: email/doctype/notification/notification.json
@@ -42133,6 +42208,8 @@ msgid ""
 "To use Slack Channel, add a <a href=\"#List/Slack%20Webhook%20URL/List"
 "\">Slack Webhook URL</a>."
 msgstr ""
+"Para usar o canal do Slack, adicione um URL do webhook do <a href=\"#List/"
+"Slack%20Webhook%20URL/List\">Slack</a>."
 
 #: public/js/frappe/utils/diffview.js:39
 msgid "To version"
@@ -42170,8 +42247,6 @@ msgid "Toggle Chart"
 msgstr "Tabela de alternância"
 
 #: utils/install.py:210
-#, fuzzy
-#| msgid "Full Width"
 msgctxt "Frappe NavBar"
 msgid "Toggle Full Width"
 msgstr "Alternar largura total"
@@ -42192,11 +42267,9 @@ msgid "Toggle Sidebar"
 msgstr "Mostrar/Ocultar Barra Lateral"
 
 #: utils/install.py:211
-#, fuzzy
-#| msgid "Toggle Chart"
 msgctxt "Frappe NavBar"
 msgid "Toggle Theme"
-msgstr "Alternar tema"
+msgstr "Alternar Tema"
 
 #. DocType: OAuth Client:1
 msgid "Token"
@@ -42402,13 +42475,13 @@ msgstr "Total de Assinantes"
 
 #. DocType: Newsletter:1
 msgid "Total Views"
-msgstr ""
+msgstr "Total de visualizações"
 
 #. Label of a Int field in DocType 'Newsletter'
 #: email/doctype/newsletter/newsletter.json
 msgctxt "Newsletter"
 msgid "Total Views"
-msgstr ""
+msgstr "Total de visualizações"
 
 #. DocType: RQ Worker:1
 msgid "Total Working Time"
@@ -42423,14 +42496,16 @@ msgstr "Tempo total de trabalho"
 #. DocType: Email Account:1
 msgid "Total number of emails to sync in initial sync process "
 msgstr ""
-"número total de e-mails para sincronizar no processo de sincronização inicial"
+"Número total de e-mails a serem sincronizados no processo de sincronização "
+"inicial "
 
 #. Description of a Select field in DocType 'Email Account'
 #: email/doctype/email_account/email_account.json
 msgctxt "Email Account"
 msgid "Total number of emails to sync in initial sync process "
 msgstr ""
-"número total de e-mails para sincronizar no processo de sincronização inicial"
+"Número total de e-mails a serem sincronizados no processo de sincronização "
+"inicial "
 
 #: public/js/print_format_builder/ConfigureColumns.vue:12
 msgid "Total:"
@@ -42559,7 +42634,7 @@ msgstr "Acompanhe os marcos de qualquer documento"
 
 #: public/js/frappe/utils/utils.js:1725
 msgid "Tracking URL generated and copied to clipboard"
-msgstr ""
+msgstr "URL de rastreamento gerado e copiado para a área de transferência"
 
 #. DocType: Transaction Log:1
 msgid "Transaction Hash"
@@ -42745,29 +42820,29 @@ msgstr "Tente novamente"
 
 #. DocType: DocType:1
 msgid "Try Form Builder HTML"
-msgstr ""
+msgstr "Experimente o Criador de formulários HTML"
 
 #. Label of a HTML field in DocType 'Customize Form'
 #: custom/doctype/customize_form/customize_form.json
 msgctxt "Customize Form"
 msgid "Try Form Builder HTML"
-msgstr ""
+msgstr "Experimente o Criador de formulários HTML"
 
 #. Label of a HTML field in DocType 'DocType'
 #: core/doctype/doctype/doctype.json
 msgctxt "DocType"
 msgid "Try Form Builder HTML"
-msgstr ""
+msgstr "Experimente o Criador de formulários HTML"
 
 #. DocType: Document Naming Settings:1
 msgid "Try a Naming Series"
-msgstr ""
+msgstr "Experimente uma série de nomes"
 
 #. Label of a Data field in DocType 'Document Naming Settings'
 #: core/doctype/document_naming_settings/document_naming_settings.json
 msgctxt "Document Naming Settings"
 msgid "Try a Naming Series"
-msgstr ""
+msgstr "Experimente uma série de nomes"
 
 #: printing/page/print/print.js:190
 msgid "Try the new Print Format Builder"
@@ -43133,6 +43208,8 @@ msgid ""
 "Unable to send mail because of a missing email account. Please setup default "
 "Email Account from Settings > Email Account"
 msgstr ""
+"Não é possível enviar e-mails devido à falta de uma conta de e-mail. "
+"Configure a conta de e-mail padrão em Configurações > Conta de e-mail"
 
 #: public/js/frappe/views/calendar/calendar.js:436
 msgid "Unable to update event"
@@ -43203,7 +43280,7 @@ msgstr "Único"
 
 #: website/report/website_analytics/website_analytics.js:60
 msgid "Unknown"
-msgstr ""
+msgstr "Desconhecido"
 
 #: public/js/frappe/model/model.js:199
 msgid "Unknown Column: {0}"
@@ -43225,7 +43302,7 @@ msgstr ""
 
 #: core/doctype/submission_queue/submission_queue.js:7
 msgid "Unlock Reference Document"
-msgstr ""
+msgstr "Desbloquear documento de referência"
 
 #: website/doctype/blog_post/blog_post.js:36
 #: website/doctype/web_form/web_form.js:76
@@ -43366,13 +43443,13 @@ msgstr "Atualizar"
 
 #. DocType: Document Naming Settings:1
 msgid "Update Amendment Naming"
-msgstr ""
+msgstr "Atualizar o nome da emenda"
 
 #. Label of a Button field in DocType 'Document Naming Settings'
 #: core/doctype/document_naming_settings/document_naming_settings.json
 msgctxt "Document Naming Settings"
 msgid "Update Amendment Naming"
-msgstr ""
+msgstr "Atualizar o nome da emenda"
 
 #: public/js/frappe/views/workspace/workspace.js:560
 msgid "Update Details"
@@ -43410,7 +43487,7 @@ msgstr "Ordem de atualização"
 #. Title of a Web Form
 #: core/web_form/edit_profile/edit_profile.json
 msgid "Update Profile"
-msgstr ""
+msgstr "Atualizar perfil"
 
 #. DocType: Document Naming Settings:1
 msgid "Update Series Counter"
@@ -43511,6 +43588,8 @@ msgid ""
 "Updating Email Queue Statuses. The emails will be picked up in the next "
 "scheduled run."
 msgstr ""
+"Atualização do status da fila de e-mails. Os e-mails serão coletados na "
+"próxima execução programada."
 
 #: core/doctype/document_naming_rule/document_naming_rule.js:17
 msgid ""
@@ -43577,14 +43656,14 @@ msgstr "Carregado no Google Drive"
 #. DocType: Onboarding Step:1
 #, python-format
 msgid "Use % for any non empty value."
-msgstr ""
+msgstr "Use % para qualquer valor não vazio."
 
 #. Description of a Data field in DocType 'Onboarding Step'
 #: desk/doctype/onboarding_step/onboarding_step.json
 #, python-format
 msgctxt "Onboarding Step"
 msgid "Use % for any non empty value."
-msgstr ""
+msgstr "Use % para qualquer valor não vazio."
 
 #. DocType: Email Account:1
 msgid "Use ASCII encoding for password"
@@ -43599,10 +43678,14 @@ msgstr "Use codificação ASCII para senha"
 #: custom/doctype/customize_form/customize_form.js:439
 msgid "Use Form Builder to visually customize your form layout"
 msgstr ""
+"Use o Construtor de Formulários para personalizar visualmente o layout do "
+"formulário"
 
 #: core/doctype/doctype/doctype.js:121
 msgid "Use Form Builder to visually edit your form layout"
 msgstr ""
+"Use o Construtor de Formulários para editar visualmente o layout do "
+"formulário"
 
 #. DocType: Email Template:1
 msgid "Use HTML"
@@ -43722,7 +43805,7 @@ msgstr "O uso de subconsulta ou função é restrito"
 
 #: core/doctype/doctype/doctype_list.js:11
 msgid "Use the form builder to create a new DocType"
-msgstr ""
+msgstr "Use o Construtor de formulários para criar um novo Tipo de Documento"
 
 #: printing/page/print/print.js:272
 msgid "Use the new Print Format Builder"
@@ -43932,12 +44015,12 @@ msgstr "User &#39;{0}&#39; já tem o papel &#39;{1}&#39;"
 #. Name of a DocType
 #: core/doctype/report/user_activity_report.json
 msgid "User Activity Report"
-msgstr ""
+msgstr "Relatório de atividades do usuário"
 
 #. Name of a DocType
 #: core/doctype/report/user_activity_report_without_sort.json
 msgid "User Activity Report Without Sort"
-msgstr ""
+msgstr "Relatório de atividade do usuário sem classificação"
 
 #. DocType: Web Page View:1
 msgid "User Agent"
@@ -43981,13 +44064,13 @@ msgstr "Padrões de Perfil"
 
 #. DocType: User:1
 msgid "User Details"
-msgstr ""
+msgstr "Detalhes do Usuario"
 
 #. Label of a Tab Break field in DocType 'User'
 #: core/doctype/user/user.json
 msgctxt "User"
 msgid "User Details"
-msgstr ""
+msgstr "Detalhes do Usuario"
 
 #. Name of a DocType
 #. DocType: User Document Type:1
@@ -44109,7 +44192,7 @@ msgstr "Imagem do Usuário"
 #. Title of a Form Tour
 #: core/form_tour/user_list_tour/user_list_tour.json
 msgid "User List Tour"
-msgstr ""
+msgstr "Tour da lista de usuários"
 
 #. DocType: Personal Data Download Request:1
 msgid "User Name"
@@ -44385,25 +44468,25 @@ msgstr "Usuários"
 #: core/form_tour/user_list_tour/user_list_tour.json
 msgctxt "User List Tour"
 msgid "Users List"
-msgstr ""
+msgstr "Lista de usuários"
 
 #. Title of a step of 'Users Workspace Tour' Form Tour
 #: desk/form_tour/users_workspace_tour/users_workspace_tour.json
 msgctxt "Users Workspace Tour"
 msgid "Users Shortcut"
-msgstr ""
+msgstr "Atalho para usuários"
 
 #. Title of a step of 'Main Workspace Tour' Form Tour
 #: desk/form_tour/main_workspace_tour/main_workspace_tour.json
 msgctxt "Main Workspace Tour"
 msgid "Users Workspace"
-msgstr ""
+msgstr "Área de trabalho dos usuários"
 
 #. Name of a DocType
 #. Title of a Form Tour
 #: desk/form_tour/users_workspace_tour/users_workspace_tour.json
 msgid "Users Workspace Tour"
-msgstr ""
+msgstr "Tour da Área de trabalho dos usuários"
 
 #. DocType: Energy Point Rule:1
 msgid "Users assigned to the reference document will get points."
@@ -44433,13 +44516,13 @@ msgstr ""
 
 #. DocType: RQ Worker:1
 msgid "Utilization %"
-msgstr ""
+msgstr "% de utilização"
 
 #. Label of a Percent field in DocType 'RQ Worker'
 #: core/doctype/rq_worker/rq_worker.json
 msgctxt "RQ Worker"
 msgid "Utilization %"
-msgstr ""
+msgstr "% de utilização"
 
 #. DocType: OAuth Authorization Code:1
 msgid "Valid"
@@ -44856,7 +44939,7 @@ msgstr "Veja isto no seu navegador"
 #. Button in web form
 #: public/js/frappe/web_form/web_form.js:452
 msgid "View your response"
-msgstr ""
+msgstr "Veja sua resposta"
 
 #: automation/doctype/auto_repeat/auto_repeat.js:43
 #: desk/doctype/calendar_view/calendar_view_list.js:10
@@ -44898,11 +44981,15 @@ msgstr "Virtual"
 #: model/virtual_doctype.py:78
 msgid "Virtual DocType {} requires a static method called {} found {}"
 msgstr ""
+"O Tipo de Documento virtual {} requer um método estático chamado {} mas foi "
+"encontrado {}"
 
 #: model/virtual_doctype.py:91
 msgid ""
 "Virtual DocType {} requires overriding an instance method called {} found {}"
 msgstr ""
+"O tipo de documento virtual {} requer a substituição de um método de "
+"instância chamado {} mas foi encontrado {}"
 
 #. DocType: DocField:1
 msgid "Visibility"
@@ -44930,13 +45017,13 @@ msgstr "Visitar página da Web"
 
 #. DocType: Web Page View:1
 msgid "Visitor ID"
-msgstr ""
+msgstr "Identificação do visitante"
 
 #. Label of a Data field in DocType 'Web Page View'
 #: website/doctype/web_page_view/web_page_view.json
 msgctxt "Web Page View"
 msgid "Visitor ID"
-msgstr ""
+msgstr "Identificação do visitante"
 
 #: templates/discussions/reply_section.html:37
 msgid "Want to discuss?"
@@ -45028,7 +45115,7 @@ msgstr ""
 
 #: public/js/frappe/form/controls/password.js:88
 msgid "Weak"
-msgstr ""
+msgstr "Fraco"
 
 #. Name of a DocType
 #. DocType: Web Form:1
@@ -45109,7 +45196,7 @@ msgstr "Tour pela página da Web"
 
 #: public/js/frappe/utils/utils.js:1678
 msgid "Web Page URL"
-msgstr ""
+msgstr "URL da página da Web"
 
 #. Name of a DocType
 #. DocType: Web Page View:1
@@ -45693,6 +45780,8 @@ msgstr ""
 msgctxt "User List Tour"
 msgid "When standard filters are not enough you can use advance filters. "
 msgstr ""
+"Quando os filtros padrão não forem suficientes, você poderá usar filtros "
+"avançados. "
 
 #: core/page/permission_manager/permission_manager_help.html:18
 msgid ""
@@ -45755,7 +45844,7 @@ msgstr "Largura"
 
 #: printing/page/print_format_builder/print_format_builder_column_selector.html:2
 msgid "Widths can be set in px or %."
-msgstr ""
+msgstr "As larguras podem ser definidas em px ou %."
 
 #. DocType: Report Filter:1
 msgid "Wildcard Filter"
@@ -45769,13 +45858,13 @@ msgstr "Filtro Wildcard"
 
 #. DocType: Report Filter:1
 msgid "Will add \"%\" before and after the query"
-msgstr ""
+msgstr "Adicionará \"%\" antes e depois da consulta"
 
 #. Description of a Check field in DocType 'Report Filter'
 #: core/doctype/report_filter/report_filter.json
 msgctxt "Report Filter"
 msgid "Will add \"%\" before and after the query"
-msgstr ""
+msgstr "Adicionará \"%\" antes e depois da consulta"
 
 #. DocType: Blogger:1
 msgid "Will be used in url (usually first name)."
@@ -45925,7 +46014,7 @@ msgstr "A ação do fluxo de trabalho não é criada para estados opcionais"
 #: workflow/doctype/workflow/workflow.js:34
 #: workflow/page/workflow_builder/workflow_builder.js:4
 msgid "Workflow Builder"
-msgstr ""
+msgstr "Criador de fluxo de trabalho"
 
 #: workflow/doctype/workflow/workflow.js:11
 msgid ""
@@ -45933,16 +46022,19 @@ msgid ""
 "drop states and link them to create transitions. Also you can update thieir "
 "properties from the sidebar."
 msgstr ""
+"O Criador de fluxo de trabalho permite que você crie fluxos de trabalho "
+"visualmente. Você pode arrastar e soltar estados e vinculá-los para criar "
+"transições. Também é possível atualizar suas propriedades na barra lateral."
 
 #. DocType: Workflow:1
 msgid "Workflow Data"
-msgstr ""
+msgstr "Dados do fluxo de trabalho"
 
 #. Label of a JSON field in DocType 'Workflow'
 #: workflow/doctype/workflow/workflow.json
 msgctxt "Workflow"
 msgid "Workflow Data"
-msgstr ""
+msgstr "Dados do fluxo de trabalho"
 
 #. Name of a DocType
 #. DocType: Workflow Document State:1
@@ -46014,7 +46106,7 @@ msgstr ""
 #. Name of a DocType
 #: custom/onboarding_step/workflows/workflows.json
 msgid "Workflows"
-msgstr ""
+msgstr "Fluxos de trabalho"
 
 #. Name of a DocType
 #. DocType: Workspace:1
@@ -46064,7 +46156,7 @@ msgstr "Link da área de trabalho"
 #: desk/form_tour/main_workspace_tour/main_workspace_tour.json
 msgctxt "Main Workspace Tour"
 msgid "Workspace List"
-msgstr ""
+msgstr "Lista de Áreas de trabalho"
 
 #. Name of a role
 #. DocType: Custom HTML Block:1
@@ -46356,12 +46448,12 @@ msgstr "Você"
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:465
 msgid "You Liked"
-msgstr ""
+msgstr "Você gostou"
 
 #: public/js/frappe/form/footer/form_timeline.js:465
 msgctxt "Form timeline"
 msgid "You Liked"
-msgstr ""
+msgstr "Você gostou"
 
 #: public/js/frappe/dom.js:410
 msgid "You are connected to internet."
@@ -46372,12 +46464,16 @@ msgid ""
 "You are not allowed to access this {0} record because it is linked to {1} "
 "'{2}' in field {3}"
 msgstr ""
+"Você não tem permissão para acessar esse registro {0} porque ele está "
+"vinculado a {1} '{2}' no campo {3}"
 
 #: permissions.py:330
 msgid ""
 "You are not allowed to access this {0} record because it is linked to {1} "
 "'{2}' in row {3}, field {4}"
 msgstr ""
+"Você não tem permissão para acessar esse registro {0} porque ele está "
+"vinculado a {1} '{2}' na linha {3}, campo {4}"
 
 #: public/js/frappe/views/kanban/kanban_board.bundle.js:69
 msgid "You are not allowed to create columns"
@@ -46455,18 +46551,20 @@ msgstr ""
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:416
 msgid "You attached {0}"
-msgstr ""
+msgstr "Você anexou {0}"
 
 #: public/js/frappe/form/footer/form_timeline.js:416
 msgctxt "Form timeline"
 msgid "You attached {0}"
-msgstr ""
+msgstr "Você anexou {0}"
 
 #. Description of a step of 'Print Format' Form Tour
 #: printing/form_tour/print_format/print_format.json
 msgctxt "Print Format"
 msgid "You can add custom css for your Print Format from this section"
 msgstr ""
+"Você pode adicionar css personalizado para o seu Formato de Impressão nesta "
+"seção"
 
 #: printing/page/print_format_builder/print_format_builder.js:740
 msgid ""
@@ -46481,7 +46579,7 @@ msgstr "Você também pode copiar e colar o seguinte link em seu navegador"
 
 #: templates/emails/download_data.html:9
 msgid "You can also copy-paste this "
-msgstr "Você também pode copiar e colar"
+msgstr "Você também pode copiar e colar o seguinte "
 
 #: templates/emails/delete_data_confirmation.html:11
 msgid "You can also copy-paste this {0} to your browser"
@@ -46508,6 +46606,9 @@ msgid ""
 "and columns to organize your form and update field properties all from one "
 "screen."
 msgstr ""
+"É possível arrastar e soltar campos para criar o layout do formulário, "
+"adicionar guias, seções e colunas para organizar o formulário e atualizar as "
+"propriedades do campo, tudo em uma única tela."
 
 #: utils/synchronization.py:48
 msgid "You can manually remove the lock if you think it's safe: {}"
@@ -46517,13 +46618,13 @@ msgstr "Você pode remover manualmente o bloqueio se achar que é seguro: {}"
 #: printing/form_tour/letter_head/letter_head.json
 msgctxt "Letter Head"
 msgid "You can mark the Letter Head as default"
-msgstr ""
+msgstr "Você pode marcar o cabeçalho da carta como padrão"
 
 #. Description of a step of 'Print Format' Form Tour
 #: printing/form_tour/print_format/print_format.json
 msgctxt "Print Format"
 msgid "You can modify the style of the Print Format from this section"
-msgstr ""
+msgstr "É possível modificar o estilo do Formato de Impressão nesta seção"
 
 #: public/js/frappe/form/controls/markdown_editor.js:74
 msgid "You can only insert images in Markdown fields"
@@ -46561,7 +46662,7 @@ msgstr ""
 
 #: public/js/frappe/form/link_selector.js:29
 msgid "You can use wildcard %"
-msgstr ""
+msgstr "Você pode usar o curinga %"
 
 #: custom/doctype/customize_form/customize_form.py:327
 msgid "You can't set 'Options' for field {0}"
@@ -46574,22 +46675,22 @@ msgstr "Você não pode configurar &#39;Traduzível&#39; para o campo {0}"
 #. Form timeline
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:74
 msgid "You cancelled this document"
-msgstr ""
+msgstr "Você cancelou este documento"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:74
 msgctxt "Form timeline"
 msgid "You cancelled this document"
-msgstr ""
+msgstr "Você cancelou este documento"
 
 #. Form timeline
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:61
 msgid "You cancelled this document {1}"
-msgstr ""
+msgstr "Você cancelou este documento há {1}"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:61
 msgctxt "Form timeline"
 msgid "You cancelled this document {1}"
-msgstr ""
+msgstr "Você cancelou este documento há {1}"
 
 #: desk/doctype/dashboard_chart/dashboard_chart.py:378
 msgid "You cannot create a dashboard chart from single DocTypes"
@@ -46607,24 +46708,24 @@ msgstr "Você não pode desabilitar \"Somente leitura\" para o campo {0}"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:121
 msgid "You changed the value of {0}"
-msgstr ""
+msgstr "Você alterou o valor de {0}"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:110
 msgid "You changed the value of {0} {1}"
-msgstr ""
+msgstr "Você alterou o valor de {0} há {1}"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:183
 msgid "You changed the values for {0}"
-msgstr ""
+msgstr "Você alterou os valores de {0}"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:172
 msgid "You changed the values for {0} {1}"
-msgstr ""
+msgstr "Você alterou os valores de {0} há {1}"
 
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:445
 msgid "You changed {0} to {1}"
-msgstr ""
+msgstr "Você alterou {0} para {1}"
 
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:135
@@ -46699,7 +46800,7 @@ msgstr "Você ganhou {0} pontos"
 
 #: templates/emails/new_message.html:1
 msgid "You have a new message from: "
-msgstr "Você tem uma nova mensagem de:"
+msgstr "Você tem uma nova mensagem de: "
 
 #: handler.py:129
 msgid "You have been successfully logged out"
@@ -46708,6 +46809,7 @@ msgstr "Você saiu do sistema com sucesso"
 #: custom/doctype/customize_form/customize_form.py:180
 msgid "You have hit the row size limit on database table: {0}"
 msgstr ""
+"Você atingiu o limite de tamanho de linha na tabela do banco de dados: {0}"
 
 #: public/js/frappe/list/bulk_operations.js:335
 msgid "You have not entered a value. The field will be set to empty."
@@ -46751,12 +46853,12 @@ msgstr ""
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:148
 msgid "You last edited this"
-msgstr ""
+msgstr "Você editou isto pela última vez"
 
 #: public/js/frappe/form/footer/form_timeline.js:148
 msgctxt "Form timeline"
 msgid "You last edited this"
-msgstr ""
+msgstr "Você editou isto pela última vez"
 
 #: public/js/frappe/widgets/widget_dialog.js:299
 msgid "You must add atleast one link."
@@ -46799,7 +46901,7 @@ msgstr "Você precisa estar logado para acessar esta {0}."
 
 #: public/js/frappe/widgets/links_widget.js:53
 msgid "You need to create these first: "
-msgstr "Você precisa criar estes primeiro:"
+msgstr "Você precisa criar estes primeiro: "
 
 #: www/login.html:76
 msgid "You need to enable JavaScript for your app to work."
@@ -46828,12 +46930,12 @@ msgstr "Você precisa da permissão {0} para obter valores de {1} {2}"
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:421
 msgid "You removed attachment {0}"
-msgstr ""
+msgstr "Você removeu o anexo há {0}"
 
 #: public/js/frappe/form/footer/form_timeline.js:421
 msgctxt "Form timeline"
 msgid "You removed attachment {0}"
-msgstr ""
+msgstr "Você removeu o anexo há {0}"
 
 #: public/js/frappe/widgets/onboarding_widget.js:507
 msgid "You seem good to go!"
@@ -46854,22 +46956,22 @@ msgstr "Você selecionou documentos preliminares ou cancelados"
 #. Form timeline
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:48
 msgid "You submitted this document"
-msgstr ""
+msgstr "Você enviou este documento"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:48
 msgctxt "Form timeline"
 msgid "You submitted this document"
-msgstr ""
+msgstr "Você enviou este documento"
 
 #. Form timeline
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:35
 msgid "You submitted this document {0}"
-msgstr ""
+msgstr "Você enviou este documento há {0}"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:35
 msgctxt "Form timeline"
 msgid "You submitted this document {0}"
-msgstr ""
+msgstr "Você enviou este documento há {0}"
 
 #: public/js/frappe/form/sidebar/document_follow.js:144
 msgid "You unfollowed this document"
@@ -46966,7 +47068,7 @@ msgstr "Sua sessão expirou, faça o login novamente para continuar."
 
 #: public/js/frappe/ui/toolbar/navbar.html:10
 msgid "Your site is undergoing maintenance or being updated."
-msgstr ""
+msgstr "Seu site está passando por manutenção ou sendo atualizado."
 
 #: templates/emails/verification_code.html:1
 msgid "Your verification code is {0}"
@@ -47013,7 +47115,7 @@ msgstr "_relatório"
 
 #: utils/background_jobs.py:91
 msgid "`job_id` paramater is required for deduplication."
-msgstr ""
+msgstr "O parâmetro `job_id` é necessário para a deduplicação."
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:195
 msgid "added"
@@ -47402,7 +47504,7 @@ msgstr "comentado"
 #. Days (Field: Duration)
 #: public/js/frappe/utils/utils.js:1130
 msgid "d"
-msgstr ""
+msgstr "d"
 
 #: public/js/frappe/utils/utils.js:1130
 msgctxt "Days (Field: Duration)"
@@ -47573,7 +47675,7 @@ msgstr "editar"
 #. Name of a Web Form
 #: core/web_form/edit_profile/edit_profile.json
 msgid "edit-profile"
-msgstr ""
+msgstr "edit-profile"
 
 #. DocType: Workflow State:1
 msgid "eject"
@@ -47851,7 +47953,7 @@ msgstr "globo"
 #. Hours (Field: Duration)
 #: public/js/frappe/utils/utils.js:1134
 msgid "h"
-msgstr ""
+msgstr "h"
 
 #: public/js/frappe/utils/utils.js:1134
 msgctxt "Hours (Field: Duration)"
@@ -48117,7 +48219,7 @@ msgstr "long"
 #. Minutes (Field: Duration)
 #: public/js/frappe/utils/utils.js:1138
 msgid "m"
-msgstr ""
+msgstr "m"
 
 #: public/js/frappe/utils/utils.js:1138
 msgctxt "Minutes (Field: Duration)"
@@ -48151,7 +48253,7 @@ msgstr "{0} Foi Mesclado com {1}"
 #: website/doctype/blog_post/templates/blog_post.html:25
 #: website/doctype/blog_post/templates/blog_post_row.html:36
 msgid "min read"
-msgstr ""
+msgstr "leitura mínima"
 
 #. DocType: Workflow State:1
 msgid "minus"
@@ -48261,13 +48363,13 @@ msgstr "nenhum"
 
 #. DocType: Reminder:1
 msgid "notified"
-msgstr ""
+msgstr "notificado"
 
 #. Label of a Check field in DocType 'Reminder'
 #: automation/doctype/reminder/reminder.json
 msgctxt "Reminder"
 msgid "notified"
-msgstr ""
+msgstr "notificado"
 
 #: public/js/frappe/utils/pretty_date.js:25
 msgid "now"
@@ -48634,12 +48736,12 @@ msgstr "repetir"
 #. Name of a Web Form
 #: website/web_form/request_data/request_data.json
 msgid "request-data"
-msgstr ""
+msgstr "request-data"
 
 #. Name of a Web Form
 #: website/web_form/request_to_delete_data/request_to_delete_data.json
 msgid "request-to-delete-data"
-msgstr ""
+msgstr "request-to-delete-data"
 
 #. DocType: Workflow State:1
 msgid "resize-full"
@@ -48718,7 +48820,7 @@ msgstr "estrada"
 #. Seconds (Field: Duration)
 #: public/js/frappe/utils/utils.js:1142
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #: public/js/frappe/utils/utils.js:1142
 msgctxt "Seconds (Field: Duration)"
@@ -49107,7 +49209,7 @@ msgstr "upload"
 
 #: public/js/frappe/ui/filters/filter.js:337
 msgid "use % as wildcard"
-msgstr ""
+msgstr "usar % como curinga"
 
 #. DocType: Workflow State:1
 msgid "user"
@@ -49277,7 +49379,7 @@ msgstr "{0} ({1}) (1 linha obrigatória)"
 
 #: public/js/frappe/views/gantt/gantt_view.js:53
 msgid "{0} ({1}) - {2}%"
-msgstr ""
+msgstr "{0} ({1}) - {2}%"
 
 #: public/js/frappe/ui/toolbar/awesome_bar.js:331
 #: public/js/frappe/ui/toolbar/awesome_bar.js:334
@@ -49369,12 +49471,12 @@ msgstr "Árvore de {0}"
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:121
 msgid "{0} Web page views"
-msgstr ""
+msgstr "{0} Visualizações de página da Web"
 
 #: public/js/frappe/form/footer/form_timeline.js:121
 msgctxt "Form timeline"
 msgid "{0} Web page views"
-msgstr ""
+msgstr "{0} Visualizações de página da Web"
 
 #: public/js/frappe/form/link_selector.js:221
 msgid "{0} added"
@@ -49441,7 +49543,7 @@ msgstr "{0} atribuído {1}: {2}"
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:417
 msgid "{0} attached {1}"
-msgstr ""
+msgstr "{0} anexado à {1}"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:75
 msgid "{0} cancelled this document"
@@ -49459,23 +49561,23 @@ msgstr "{0} cancelou esse documento há {1}"
 
 #: public/js/form_builder/store.js:184 public/js/form_builder/store.js:186
 msgid "{0} cannot be hidden and mandatory without any default value"
-msgstr ""
+msgstr "{0} não pode ser oculto e é obrigatório sem nenhum valor padrão"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:124
 msgid "{0} changed the value of {1}"
-msgstr ""
+msgstr "{0} alterou o valor de {1}"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:115
 msgid "{0} changed the value of {1} {2}"
-msgstr ""
+msgstr "{0} alterou o valor de {1} {2}"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:186
 msgid "{0} changed the values for {1}"
-msgstr ""
+msgstr "{0} alterou os valores de {1}"
 
 #: public/js/frappe/form/footer/version_timeline_content_builder.js:177
 msgid "{0} changed the values for {1} {2}"
-msgstr ""
+msgstr "{0} alterou os valores de {1} {2}"
 
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:446
@@ -49721,12 +49823,12 @@ msgstr "{0} itens selecionados"
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:149
 msgid "{0} last edited this"
-msgstr ""
+msgstr "{0} editou isto pela última vez"
 
 #: public/js/frappe/form/footer/form_timeline.js:149
 msgctxt "Form timeline"
 msgid "{0} last edited this"
-msgstr ""
+msgstr "{0} editou isto pela última vez"
 
 #: core/doctype/activity_log/feed.py:13
 msgid "{0} logged in"
@@ -49827,7 +49929,7 @@ msgstr "{0} registros serão exportados"
 #. Form timeline
 #: public/js/frappe/form/footer/form_timeline.js:422
 msgid "{0} removed attachment {1}"
-msgstr ""
+msgstr "{0} removido o anexo {1}"
 
 #: desk/doctype/todo/todo.py:35
 msgid "{0} removed their assignment."
