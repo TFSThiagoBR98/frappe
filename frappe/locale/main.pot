@@ -1086,6 +1086,38 @@ msgid ""
 "as_string=True, as_datetime=True) </code></pre><p></p>"
 msgstr ""
 
+#. Workspace Header Text
+#: automation/workspace/tools/tools.json
+msgid "<span class=\"h4\"><b>Documents</b></span>"
+msgstr ""
+
+#. Workspace Header Text
+#: core/workspace/build/build.json
+msgid "<span class=\"h4\"><b>Elements</b></span>"
+msgstr ""
+
+#. Workspace Header Text
+#: core/workspace/users/users.json website/workspace/website/website.json
+msgid "<span class=\"h4\"><b>Reports & Masters</b></span>"
+msgstr ""
+
+#. Workspace Header Text
+#: core/workspace/settings/settings.json
+#: integrations/workspace/integrations/integrations.json
+msgid "<span class=\"h4\"><b>Reports &amp; Masters</b></span>"
+msgstr ""
+
+#. Workspace Header Text
+#: core/workspace/settings/settings.json
+msgid "<span class=\"h4\"><b>Settings</b></span>"
+msgstr ""
+
+#. Workspace Header Text
+#: automation/workspace/tools/tools.json core/workspace/build/build.json
+#: core/workspace/users/users.json website/workspace/website/website.json
+msgid "<span class=\"h4\"><b>Your Shortcuts</b></span>"
+msgstr ""
+
 #: custom/doctype/custom_field/custom_field.js:38
 msgid ""
 "<strong>Warning:</strong> This field is system generated and may be "
@@ -30769,6 +30801,7 @@ msgid "Print Format {0} is disabled"
 msgstr ""
 
 #. Name of a DocType
+#. DocType: Print Heading:1
 #: printing/doctype/print_heading/print_heading.json
 msgid "Print Heading"
 msgstr ""

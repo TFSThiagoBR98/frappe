@@ -905,6 +905,16 @@ def babel_extract_workspace_json(fileobj, *args, **kwargs):
 
 	workspace_name = data.get("label")
 
+	content = data.get("content")
+	if (type(content) is str):
+		dict_content = json.loads(content)
+		for line in dict_content:
+			ltyp = line.get('type')
+			if ltyp == 'header':
+				dt = line.get('data')
+				text = dt.get('text')
+				yield None, "_", text, ["Workspace Header Text"]
+
 	yield None, "_", workspace_name, ["Name of a Workspace"]
 	yield from (
 		(None, "_", chart.get("label"), [f"Label of a chart in the {workspace_name} Workspace"])
