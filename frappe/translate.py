@@ -269,7 +269,7 @@ def generate_pot(target_app: str | None = None):
 	apps = [target_app] if target_app else frappe.get_all_apps(with_internal_apps=True)
 	method_map = [
 		("**.py", "frappe.translate.babel_extract_python"),
-		("**.js", "frappe.translate.babel_extract_generic"),
+		("**.js", "frappe.translate.babel_extract_javascript"),
 		("**/doctype/*/*.json", "frappe.translate.babel_extract_doctype_json"),
 		("**/form_tour/*/*.json", "frappe.translate.babel_extract_form_tour_json"),
 		("**/module_onboarding/*/*.json", "frappe.translate.babel_extract_module_onboarding_json"),
@@ -785,6 +785,7 @@ def extract_messages_from_code(code):
 
 def babel_extract_generic(fileobj, keywords, comment_tags, options):
 	try:
+		fileobj.seek(0)
 		file_contents = fileobj.read().decode('utf-8')
 	except Exception:
 		print(f"Could not scan file for translation")
@@ -825,6 +826,13 @@ def babel_extract_javascript(fileobj, keywords, comment_tags, options):
 			else:
 				messages = messages[0]
 
+		yield lineno, funcname, messages, comments
+
+	## Recheck an second time for missing extracted string from babel native extractor
+	## This extractor do not work with multiliner strings
+	for lineno, funcname, messages, comments in babel_extract_generic(
+		fileobj, keywords, comment_tags, options
+	):
 		yield lineno, funcname, messages, comments
 
 
