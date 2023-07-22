@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Frappe Framework VERSION\n"
 "Report-Msgid-Bugs-To: developers@frappe.io\n"
 "POT-Creation-Date: 2023-07-22 17:12+0000\n"
-"PO-Revision-Date: 2023-07-22 16:41+0000\n"
+"PO-Revision-Date: 2023-07-22 18:06+0000\n"
 "Last-Translator: Weblate Admin <admin@tfs.dev.br>\n"
 "Language-Team: Portuguese (Brazil) <http://localhost:4755/projects/frappe/"
 "frappe-framework/pt_BR/>\n"
@@ -1968,7 +1968,7 @@ msgstr "Adicionar borda na parte superior"
 
 #: public/js/frappe/views/reports/query_report.js:193
 msgid "Add Chart to Dashboard"
-msgstr "Adicionar gráfico ao Dashboard"
+msgstr "Adicionar gráfico ao Painel de Controle"
 
 #: public/js/frappe/views/treeview.js:258
 msgid "Add Child"
@@ -2234,7 +2234,7 @@ msgstr "Adicionar seção acima"
 #: public/js/frappe/utils/dashboard_utils.js:263
 #: public/js/frappe/views/reports/query_report.js:234
 msgid "Add to Dashboard"
-msgstr "Adicionar ao Dashboard"
+msgstr "Adicionar ao Painel de Controle"
 
 #: public/js/frappe/form/sidebar/assign_to.js:98
 msgid "Add to ToDo"
@@ -2609,7 +2609,8 @@ msgstr "Função agregada com base em"
 #: desk/doctype/dashboard_chart/dashboard_chart.py:371
 msgid "Aggregate Function field is required to create a dashboard chart"
 msgstr ""
-"O campo Função Agregada é necessário para criar um gráfico de dashboard"
+"O campo Função Agregada é necessário para criar um gráfico do Painel de "
+"Controle"
 
 #. DocType: Notification Log:1
 msgid "Alert"
@@ -10404,61 +10405,61 @@ msgstr "Tema escuro"
 #: desk/doctype/dashboard/dashboard.json
 #: public/js/frappe/ui/toolbar/search_utils.js:540
 msgid "Dashboard"
-msgstr "Área de Trabalho"
+msgstr "Painel de Controle"
 
 #. Label of a Link in the Build Workspace
 #: core/workspace/build/build.json
 msgctxt "Dashboard"
 msgid "Dashboard"
-msgstr "Área de Trabalho"
+msgstr "Painel de Controle"
 
 #. Option for a Select field in DocType 'Form Tour'
 #: desk/doctype/form_tour/form_tour.json
 msgctxt "Form Tour"
 msgid "Dashboard"
-msgstr "Área de Trabalho"
+msgstr "Painel de Controle"
 
 #. Label of a Check field in DocType 'Role'
 #: core/doctype/role/role.json
 msgctxt "Role"
 msgid "Dashboard"
-msgstr "Área de Trabalho"
+msgstr "Painel de Controle"
 
 #. Option for a Select field in DocType 'Workspace Shortcut'
 #: desk/doctype/workspace_shortcut/workspace_shortcut.json
 msgctxt "Workspace Shortcut"
 msgid "Dashboard"
-msgstr "Área de Trabalho"
+msgstr "Painel de Controle"
 
 #. Name of a DocType
 #. DocType: Dashboard Chart:1
 #: desk/doctype/dashboard_chart/dashboard_chart.json
 msgid "Dashboard Chart"
-msgstr "Gráfico da Área de Trabalho"
+msgstr "Gráfico do Painel de Controle"
 
 #. Label of a Link in the Build Workspace
 #: core/workspace/build/build.json
 msgctxt "Dashboard Chart"
 msgid "Dashboard Chart"
-msgstr "Gráfico da Área de Trabalho"
+msgstr "Gráfico do Painel de Controle"
 
 #. Name of a DocType
 #. DocType: Dashboard Chart Field:1
 #: desk/doctype/dashboard_chart_field/dashboard_chart_field.json
 msgid "Dashboard Chart Field"
-msgstr "Campo do Gráfico da Área de Trabalho"
+msgstr "Campo do Gráfico do Painel de Controle"
 
 #. Name of a DocType
 #. DocType: Dashboard Chart Link:1
 #: desk/doctype/dashboard_chart_link/dashboard_chart_link.json
 msgid "Dashboard Chart Link"
-msgstr "Link do Gráfico da Área de Trabalho"
+msgstr "Link do Gráfico do Painel de Controle"
 
 #. Name of a DocType
 #. DocType: Dashboard Chart Source:1
 #: desk/doctype/dashboard_chart_source/dashboard_chart_source.json
 msgid "Dashboard Chart Source"
-msgstr "Origem do Gráfico da Área de Trabalho"
+msgstr "Origem do Gráfico do Painel de Controle"
 
 #. Name of a role
 #. DocType: Dashboard:1
@@ -10466,37 +10467,37 @@ msgstr "Origem do Gráfico da Área de Trabalho"
 #: desk/doctype/dashboard_chart/dashboard_chart.json
 #: desk/doctype/number_card/number_card.json
 msgid "Dashboard Manager"
-msgstr "Gerenciador de Área de Trabalho"
+msgstr "Gerenciador do Painel de Controle"
 
 #. DocType: Dashboard:1
 msgid "Dashboard Name"
-msgstr "Nome do Dashboard"
+msgstr "Nome do Painel de Controle"
 
 #. Label of a Data field in DocType 'Dashboard'
 #: desk/doctype/dashboard/dashboard.json
 msgctxt "Dashboard"
 msgid "Dashboard Name"
-msgstr "Nome do Dashboard"
+msgstr "Nome do Painel de Controle"
 
 #. Name of a DocType
 #. DocType: Dashboard Settings:1
 #: desk/doctype/dashboard_settings/dashboard_settings.json
 msgid "Dashboard Settings"
-msgstr "Configurações do Dashboard"
+msgstr "Configurações do Painel de Controle"
 
 #: public/js/frappe/list/base_list.js:202
 msgid "Dashboard View"
-msgstr "Visualização do painel"
+msgstr "Visualização do Painel de Controle"
 
 #. DocType: Workspace:1
 msgid "Dashboards"
-msgstr "Dashboards"
+msgstr "Painéis de Controle"
 
 #. Label of a Tab Break field in DocType 'Workspace'
 #: desk/doctype/workspace/workspace.json
 msgctxt "Workspace"
 msgid "Dashboards"
-msgstr "Dashboards"
+msgstr "Painéis de Controle"
 
 #. Label of a Card Break in the Tools Workspace
 #. Label of a Card Break in the Settings Workspace
@@ -17539,7 +17540,7 @@ msgstr "Frappe Claro"
 #| msgid "Frappe Light"
 msgctxt "Frappe NavBar"
 msgid "Frappe Support"
-msgstr "Frappe Claro"
+msgstr "Suporte para Frappe"
 
 #: website/doctype/web_page/web_page.js:97
 msgid "Frappe page builder using components"
@@ -26168,19 +26169,16 @@ msgid "My Device"
 msgstr "Meu dispositivo"
 
 #: utils/install.py:204
-#, fuzzy
-#| msgctxt "User"
-#| msgid "Profile"
 msgctxt "Frappe NavBar"
 msgid "My Profile"
-msgstr "Perfil"
+msgstr "Meu Perfil"
 
 #: utils/install.py:205 utils/install.py:206
 #, fuzzy
 #| msgid "SMS Settings"
 msgctxt "Frappe NavBar"
 msgid "My Settings"
-msgstr "Configurações de SMS"
+msgstr "Minhas configurações"
 
 #. DocType: DocType:1
 msgid "MyISAM"
@@ -29332,7 +29330,9 @@ msgstr "Tabela Pai"
 
 #: desk/doctype/dashboard_chart/dashboard_chart.py:365
 msgid "Parent document type is required to create a dashboard chart"
-msgstr "O tipo de documento pai é necessário para criar um gráfico de painel"
+msgstr ""
+"O tipo de documento pai é necessário para criar um gráfico do Painel de "
+"Controle"
 
 #: core/doctype/data_export/exporter.py:239
 msgid "Parent is the name of the document to which the data will get added to."
@@ -30099,7 +30099,8 @@ msgstr "Por favor, verifique o URL de configuração do OpenID"
 #: utils/dashboard.py:58
 msgid "Please check the filter values set for Dashboard Chart: {}"
 msgstr ""
-"Verifique os valores de filtro definidos para o gráfico do dashboard: {}"
+"Verifique os valores de filtro definidos para o gráfico do Painel de "
+"Controle: {}"
 
 #: model/base_document.py:807
 msgid "Please check the value of \"Fetch From\" set for field {0}"
@@ -30404,7 +30405,8 @@ msgstr "Por favor, defina o nome do documento"
 
 #: desk/doctype/dashboard/dashboard.py:115
 msgid "Please set the following documents in this Dashboard as standard first."
-msgstr "Defina os seguintes documentos neste Dashboard como padrão primeiro."
+msgstr ""
+"Defina os seguintes documentos neste Painel de Controle como padrão primeiro."
 
 #: core/doctype/document_naming_settings/document_naming_settings.py:100
 msgid "Please set the series to be used."
@@ -36000,13 +36002,13 @@ msgstr "Selecione a Moeda"
 #. DocType: Form Tour:1
 #: public/js/frappe/utils/dashboard_utils.js:240
 msgid "Select Dashboard"
-msgstr "Selecionar Dashboard"
+msgstr "Selecionar Painel de Controle"
 
 #. Label of a Link field in DocType 'Form Tour'
 #: desk/doctype/form_tour/form_tour.json
 msgctxt "Form Tour"
 msgid "Select Dashboard"
-msgstr "Selecionar Dashboard"
+msgstr "Selecionar Painel de Controle"
 
 #. DocType: Dashboard Chart:1
 msgid "Select Date Range"
@@ -37067,8 +37069,8 @@ msgid ""
 "Set Default Options for all charts on this Dashboard (Ex: \"colors\": "
 "[\"#d1d8dd\", \"#ff5858\"])"
 msgstr ""
-"Defina as opções padrão para todos os gráficos neste Dashboard (Ex: &quot;"
-"cores&quot;: [&quot;# d1d8dd&quot;, &quot;# ff5858&quot;])"
+"Defina as opções padrão para todos os gráficos neste Painel de Controle (Ex: "
+"&quot;cores&quot;: [&quot;# d1d8dd&quot;, &quot;# ff5858&quot;])"
 
 #. Description of a Code field in DocType 'Dashboard'
 #: desk/doctype/dashboard/dashboard.json
@@ -37077,8 +37079,8 @@ msgid ""
 "Set Default Options for all charts on this Dashboard (Ex: \"colors\": "
 "[\"#d1d8dd\", \"#ff5858\"])"
 msgstr ""
-"Defina as opções padrão para todos os gráficos neste Dashboard (Ex: &quot;"
-"cores&quot;: [&quot;# d1d8dd&quot;, &quot;# ff5858&quot;])"
+"Defina as opções padrão para todos os gráficos neste Painel de Controle (Ex: "
+"&quot;cores&quot;: [&quot;# d1d8dd&quot;, &quot;# ff5858&quot;])"
 
 #: desk/doctype/dashboard_chart/dashboard_chart.js:463
 #: desk/doctype/number_card/number_card.js:403
@@ -37554,13 +37556,13 @@ msgstr "Mostrar Dashboard"
 #: custom/doctype/customize_form_field/customize_form_field.json
 msgctxt "Customize Form Field"
 msgid "Show Dashboard"
-msgstr "Mostrar Dashboard"
+msgstr "Mostrar Painel de Controle"
 
 #. Label of a Check field in DocType 'DocField'
 #: core/doctype/docfield/docfield.json
 msgctxt "DocField"
 msgid "Show Dashboard"
-msgstr "Mostrar Dashboard"
+msgstr "Mostrar Painel de Controle"
 
 #. DocType: Access Log:1
 msgid "Show Document"
@@ -41136,6 +41138,9 @@ msgid ""
 "This document allows you to edit limited fields. For all kinds of workspace "
 "customization, use the Edit button located on the workspace page"
 msgstr ""
+"Este documento permite que você edite campos limitados. Para todos os tipos "
+"de personalização da área de trabalho, use o botão Editar localizado na "
+"página da área de trabalho"
 
 #: social/doctype/energy_point_log/energy_point_log.py:71
 msgid "This document cannot be reverted"
@@ -41636,7 +41641,7 @@ msgstr ""
 msgid "Time series based on is required to create a dashboard chart"
 msgstr ""
 "As séries cronológicas baseadas em são necessárias para criar um gráfico de "
-"dashboard"
+"Painel de Controle"
 
 #: public/js/frappe/form/controls/time.js:104
 msgid "Time {0} must be in format: {1}"
@@ -42169,7 +42174,7 @@ msgstr "Tabela de alternância"
 #| msgid "Full Width"
 msgctxt "Frappe NavBar"
 msgid "Toggle Full Width"
-msgstr "Largura completa"
+msgstr "Alternar largura total"
 
 #: public/js/frappe/views/file/file_view.js:33
 msgid "Toggle Grid View"
@@ -42191,7 +42196,7 @@ msgstr "Mostrar/Ocultar Barra Lateral"
 #| msgid "Toggle Chart"
 msgctxt "Frappe NavBar"
 msgid "Toggle Theme"
-msgstr "Tabela de alternância"
+msgstr "Alternar tema"
 
 #. DocType: OAuth Client:1
 msgid "Token"
@@ -44832,11 +44837,9 @@ msgid "View Website"
 msgstr "Ver  Site"
 
 #: utils/install.py:209
-#, fuzzy
-#| msgid "View Website"
 msgctxt "Frappe NavBar"
 msgid "View Website"
-msgstr "Ver  Site"
+msgstr "Ver Site"
 
 #: www/confirm_workflow_action.html:12
 msgid "View document"
