@@ -3,6 +3,7 @@
 import getpass
 
 import frappe
+from frappe import _
 from frappe.geo.doctype.country.country import import_country_and_currency
 from frappe.utils.password import update_password
 
@@ -196,6 +197,23 @@ def add_standard_navbar_items():
 	# don't add settings/help options if they're already present
 	if navbar_settings.settings_dropdown and navbar_settings.help_dropdown:
 		return
+
+	# Do not remove
+	# Translation records
+	[
+		_("My Profile", context='Frappe NavBar'),
+		_("My Settings", context='Frappe NavBar'),
+		_("My Settings", context='Frappe NavBar'),
+		_("Session Defaults", context='Frappe NavBar'),
+		_("Reload", context='Frappe NavBar'),
+		_("View Website", context='Frappe NavBar'),
+		_("Toggle Full Width", context='Frappe NavBar'),
+		_("Toggle Theme", context='Frappe NavBar'),
+		_("Log out", context='Frappe NavBar'),
+		_("About", context='Frappe NavBar'),
+		_("Keyboard Shortcuts", context='Frappe NavBar'),
+		_("Frappe Support", context='Frappe NavBar')
+	]
 
 	standard_navbar_items = [
 		{
