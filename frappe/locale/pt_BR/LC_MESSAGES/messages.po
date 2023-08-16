@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Frappe Framework VERSION\n"
 "Report-Msgid-Bugs-To: developers@frappe.io\n"
 "POT-Creation-Date: 2023-07-22 17:12+0000\n"
-"PO-Revision-Date: 2023-07-23 00:27+0000\n"
+"PO-Revision-Date: 2023-08-17 17:58+0000\n"
 "Last-Translator: Weblate Admin <admin@tfs.dev.br>\n"
 "Language-Team: Portuguese (Brazil) <http://localhost:4755/projects/frappe/"
 "frappe-framework/pt_BR/>\n"
@@ -35015,9 +35015,10 @@ msgstr "Configurações de Backup S3"
 
 #. Label of a Link in the Integrations Workspace
 #: integrations/workspace/integrations/integrations.json
+#, fuzzy
 msgctxt "S3 Backup Settings"
 msgid "S3 Backup Settings"
-msgstr "Configurações de Backup S3"
+msgstr "Configurações de backup do S3"
 
 #: integrations/doctype/s3_backup_settings/s3_backup_settings.js:18
 msgid "S3 Backup complete!"
@@ -35079,6 +35080,7 @@ msgstr "Configurações de SMS"
 
 #. Label of a Link in the Integrations Workspace
 #: integrations/workspace/integrations/integrations.json
+#, fuzzy
 msgctxt "SMS Settings"
 msgid "SMS Settings"
 msgstr "Configurações de SMS"
