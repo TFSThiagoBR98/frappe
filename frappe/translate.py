@@ -281,7 +281,7 @@ def generate_pot(target_app: str | None = None):
 	]
 
 	for app in apps:
-		app_path = frappe.get_pymodule_path(app)
+		app_path = frappe.get_app_path(app)
 		catalog = get_catalog(app)
 
 		method_map.extend(get_extra_include_js_files(app))
@@ -479,7 +479,7 @@ def f(msg: str, context: str = None, lang: str = DEFAULT_LANG) -> str:
 	apps = frappe.get_all_apps(with_internal_apps=True)
 
 	for app in apps:
-		app_path = frappe.get_pymodule_path(app)
+		app_path = frappe.get_app_path(app)
 		locale_path = os.path.join(app_path, LOCALE_DIR)
 		has_context = context is not None
 
@@ -598,7 +598,7 @@ def get_translations_from_apps(lang, apps=None):
 	translations = {}
 
 	for app in apps or frappe.get_all_apps(with_internal_apps=True):
-		app_path = frappe.get_pymodule_path(app)
+		app_path = frappe.get_app_path(app)
 		localedir = os.path.join(app_path, LOCALE_DIR)
 		mo_files = gettext.find(TRANSLATION_DOMAIN, localedir, (lang.replace("-", "_"),), True)
 
@@ -688,9 +688,7 @@ def deduplicate_messages(messages):
 	ret = []
 	op = operator.itemgetter(1)
 	messages = sorted(messages, key=op)
-	for k, g in itertools.groupby(messages, op):
-		ret.append(next(g))
-	return ret
+	return [next(g) for k, g in itertools.groupby(messages, op)]
 
 
 def escape_percent(s: str):
@@ -749,11 +747,7 @@ def get_messages(language, start=0, page_length=100, search_text=""):
 	from frappe.frappeclient import FrappeClient
 
 	translator = FrappeClient(get_translator_url())
-	translated_dict = translator.post_api(
-		"translator.api.get_strings_for_translation", params=locals()
-	)
-
-	return translated_dict
+	return translator.post_api("translator.api.get_strings_for_translation", params=locals())
 
 def extract_messages_from_code(code):
 	"""
@@ -1102,10 +1096,7 @@ def extract_messages_from_doctype(name):
 			messages.append(d.options)
 
 	# translations of roles
-	for d in meta.get("permissions"):
-		if d.role:
-			messages.append(d.role)
-
+	messages.extend(d.role for d in meta.get("permissions") if d.role)
 	messages = [message for message in messages if message]
 	messages = [("DocType: " + name, message) for message in messages if is_translatable(message)]
 
@@ -1226,10 +1217,11 @@ def extract_messages_from_custom_fields(app_name):
 				continue
 			messages.append(("Custom Field - {}: {}".format(prop, cf["name"]), cf[prop]))
 		if cf["fieldtype"] == "Selection" and cf.get("options"):
-			for option in cf["options"].split("\n"):
-				if option and "icon" not in option and is_translatable(option):
-					messages.append(("Custom Field - Description: " + cf["name"], option))
-
+			messages.extend(
+				("Custom Field - Description: " + cf["name"], option)
+				for option in cf["options"].split("\n")
+				if option and "icon" not in option and is_translatable(option)
+			)
 	return messages
 
 def extract_messages_from_report(name):
@@ -1283,11 +1275,10 @@ def get_contribution_status(message_id):
 
 	doc = frappe.get_doc("Translation", message_id)
 	translator = FrappeClient(get_translator_url())
-	contributed_translation = translator.get_api(
+	return translator.get_api(
 		"translator.api.get_contribution_status",
 		params={"translation_id": doc.contribution_docname},
 	)
-	return contributed_translation
 
 
 def get_translator_url():
