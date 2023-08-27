@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Frappe Framework VERSION\n"
 "Report-Msgid-Bugs-To: developers@frappe.io\n"
 "POT-Creation-Date: 2023-08-26 23:01+0000\n"
-"PO-Revision-Date: 2023-08-27 17:32+0000\n"
+"PO-Revision-Date: 2023-08-28 02:36+0000\n"
 "Last-Translator: Weblate Admin <admin@tfs.dev.br>\n"
 "Language-Team: Portuguese (Brazil) <http://localhost:4755/projects/frappe/"
 "frappe-framework/pt_BR/>\n"
@@ -1417,10 +1417,8 @@ msgstr ""
 
 #. Workspace Header Text
 #: core/workspace/welcome_workspace/welcome_workspace.json
-#, fuzzy
-#| msgid "<span class=\"h4\"><b>Settings</b></span>"
 msgid "<span class=\"h2\">Hi,</span>"
-msgstr "<span class=\"h4\"><b>Configurações</b></span>"
+msgstr "<span class=\"h2\">Olá,</span>"
 
 #. Workspace Header Text
 #: automation/workspace/tools/tools.json
@@ -1485,8 +1483,8 @@ msgid ""
 "A DocType's name should start with a letter and can only consist of letters, "
 "numbers, spaces, underscores and hyphens"
 msgstr ""
-"O nome de um tipo de documento deve começar com uma letra e só pode ser "
-"composto por letras, números, espaços, sublinhados e hífens"
+"O nome de um Tipo de Documento deve começar com uma letra e só pode ser "
+"composto por letras, números, espaços, sublinhados e hifens"
 
 #. Description of a step of 'Doctype' Form Tour
 #: core/form_tour/doctype/doctype.json
@@ -1755,7 +1753,7 @@ msgstr "A chave de API não pode ser gerada novamente"
 
 #. DocType: Server Script:1
 msgid "API Method"
-msgstr "Método API"
+msgstr "Método da API"
 
 #. Label of a Data field in DocType 'Server Script'
 #: core/doctype/server_script/server_script.json
@@ -7738,10 +7736,8 @@ msgid "Child Doctype"
 msgstr "Tipo de Tipo de documento filho"
 
 #: core/doctype/doctype/doctype.py:1558
-#, fuzzy
-#| msgid "Could not map column {0} to field {1}"
 msgid "Child Table {0} for field {1}"
-msgstr "Não foi possível mapear a coluna {0} para o campo {1}"
+msgstr "Tabela filha {0} para o campo {1}"
 
 #. DocType: DocType:1
 msgid "Child Tables are shown as a Grid in other DocTypes"
@@ -8139,10 +8135,8 @@ msgstr "Fechado"
 #: templates/discussions/comment_box.html:25
 #: templates/discussions/reply_section.html:53
 #: templates/discussions/topic_modal.html:11
-#, fuzzy
-#| msgid "Ctrl+Enter to add comment"
 msgid "Cmd+Enter to add comment"
-msgstr "Ctrl+Enter para adicionar comentário"
+msgstr "Cmd+Enter para adicionar comentário"
 
 #. DocType: DocField:1
 msgid "Code"
@@ -8219,7 +8213,7 @@ msgstr "Colapso"
 #: public/js/frappe/views/reports/query_report.js:1895
 #: public/js/frappe/views/treeview.js:101
 msgid "Collapse All"
-msgstr "Recolher todos"
+msgstr "Recolher Todos"
 
 #. DocType: DocField:1
 msgid "Collapsible"
@@ -10472,8 +10466,6 @@ msgstr "DELETE"
 
 #. Option for a Select field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "DELETE"
 msgctxt "Recorder"
 msgid "DELETE"
 msgstr "DELETE"
@@ -12588,10 +12580,8 @@ msgid "DocType must be a string"
 msgstr "Tipo de documento deve ser uma sequência de caracteres"
 
 #: public/js/form_builder/store.js:133
-#, fuzzy
-#| msgid "Section must have at least one column"
 msgid "DocType must have atleast one field"
-msgstr "A seção deve ter pelo menos uma coluna"
+msgstr "O Tipo de Documento deve ter pelo menos um campo"
 
 #: core/doctype/log_settings/log_settings.py:70
 msgid "DocType not supported by Log Settings."
@@ -13585,16 +13575,12 @@ msgstr "Duração"
 
 #. Label of a Float field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "Duration"
 msgctxt "Recorder"
 msgid "Duration"
 msgstr "Duração"
 
 #. Label of a Float field in DocType 'Recorder Query'
 #: core/doctype/recorder_query/recorder_query.json
-#, fuzzy
-#| msgid "Duration"
 msgctxt "Recorder Query"
 msgid "Duration"
 msgstr "Duração"
@@ -15334,10 +15320,8 @@ msgid "Error in Notification"
 msgstr "Erro na notificação"
 
 #: utils/pdf.py:52
-#, fuzzy
-#| msgid "Error: Value missing for {0}: {1}"
 msgid "Error in print format on line {0}: {1}"
-msgstr "Erro: Falta valor para {0}: {1}"
+msgstr "Erro no formato de impressão na linha {0}: {1}"
 
 #: email/doctype/email_account/email_account.py:574
 msgid "Error while connecting to email account {0}"
@@ -15461,8 +15445,6 @@ msgstr "Cópias exatas"
 
 #. Label of a Int field in DocType 'Recorder Query'
 #: core/doctype/recorder_query/recorder_query.json
-#, fuzzy
-#| msgid "Exact Copies"
 msgctxt "Recorder Query"
 msgid "Exact Copies"
 msgstr "Cópias exatas"
@@ -15708,10 +15690,8 @@ msgid "Expiry time of QR Code Image Page"
 msgstr "Tempo de expiração da página de imagem de código QR"
 
 #: public/js/frappe/form/templates/form_sidebar.html:61
-#, fuzzy
-#| msgid "Import File"
 msgid "Explore Files"
-msgstr "Importar arquivo"
+msgstr "Explorar arquivos"
 
 #. Button in list view actions menu
 #. DocType: Custom DocPerm:1
@@ -16651,8 +16631,6 @@ msgstr "Tipo de arquivo"
 
 #. Label of a Data field in DocType 'File'
 #: core/doctype/file/file.json
-#, fuzzy
-#| msgid "File Type"
 msgctxt "File"
 msgid "File Type"
 msgstr "Tipo de arquivo"
@@ -16936,10 +16914,8 @@ msgstr ""
 "code>"
 
 #: public/js/frappe/views/reports/report_view.js:1349
-#, fuzzy
-#| msgid "Filters"
 msgid "Filters:"
-msgstr "Filtros"
+msgstr "Filtros:"
 
 #: public/js/frappe/ui/toolbar/search_utils.js:550
 msgid "Find '{0}' in ..."
@@ -17688,16 +17664,12 @@ msgstr "Formulário"
 
 #. Label of a Tab Break field in DocType 'Customize Form'
 #: custom/doctype/customize_form/customize_form.json
-#, fuzzy
-#| msgid "Form"
 msgctxt "Customize Form"
 msgid "Form"
 msgstr "Formulário"
 
 #. Label of a Tab Break field in DocType 'DocType'
 #: core/doctype/doctype/doctype.json
-#, fuzzy
-#| msgid "Form"
 msgctxt "DocType"
 msgid "Form"
 msgstr "Formulário"
@@ -17721,16 +17693,12 @@ msgstr "Criador de formulários"
 
 #. Label of a HTML field in DocType 'Customize Form'
 #: custom/doctype/customize_form/customize_form.json
-#, fuzzy
-#| msgid "Form Builder"
 msgctxt "Customize Form"
 msgid "Form Builder"
 msgstr "Criador de formulários"
 
 #. Label of a HTML field in DocType 'DocType'
 #: core/doctype/doctype/doctype.json
-#, fuzzy
-#| msgid "Form Builder"
 msgctxt "DocType"
 msgid "Form Builder"
 msgstr "Criador de formulários"
@@ -17741,8 +17709,6 @@ msgstr "Dicionário de formulário"
 
 #. Label of a Code field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "Form Dict"
 msgctxt "Recorder"
 msgid "Form Dict"
 msgstr "Dicionário de formulário"
@@ -19947,8 +19913,6 @@ msgstr "Endereço de IP"
 
 #. Label of a Data field in DocType 'Activity Log'
 #: core/doctype/activity_log/activity_log.json
-#, fuzzy
-#| msgid "IP Address"
 msgctxt "Activity Log"
 msgid "IP Address"
 msgstr "Endereço de IP"
@@ -21086,10 +21050,8 @@ msgid "In seconds"
 msgstr "Em segundos"
 
 #: core/doctype/recorder/recorder_list.js:107
-#, fuzzy
-#| msgid "Active"
 msgid "Inactive"
-msgstr "Ativo"
+msgstr "Inativo"
 
 #: public/js/frappe/ui/field_group.js:130
 msgid "Inavlid Values"
@@ -21242,8 +21204,6 @@ msgstr "Índice"
 
 #. Label of a Int field in DocType 'Recorder Query'
 #: core/doctype/recorder_query/recorder_query.json
-#, fuzzy
-#| msgid "Index"
 msgctxt "Recorder Query"
 msgid "Index"
 msgstr "Índice"
@@ -22590,10 +22550,8 @@ msgid "Job Status"
 msgstr "Estado do trabalho"
 
 #: core/doctype/rq_job/rq_job.js:24
-#, fuzzy
-#| msgid "Compiled Successfully"
 msgid "Job Stopped Successfully"
-msgstr "Compilado com sucesso"
+msgstr "Trabalho interrompido com sucesso"
 
 #: core/doctype/rq_job/rq_job.py:119
 msgid "Job is not running."
@@ -22631,8 +22589,6 @@ msgstr "Kanban"
 
 #. Option for a Select field in DocType 'Workspace Shortcut'
 #: desk/doctype/workspace_shortcut/workspace_shortcut.json
-#, fuzzy
-#| msgid "Kanban"
 msgctxt "Workspace Shortcut"
 msgid "Kanban"
 msgstr "Kanban"
@@ -22651,11 +22607,9 @@ msgstr "Painel Kanban"
 
 #. Label of a Link field in DocType 'Workspace Shortcut'
 #: desk/doctype/workspace_shortcut/workspace_shortcut.json
-#, fuzzy
-#| msgid "Kanban Board"
 msgctxt "Workspace Shortcut"
 msgid "Kanban Board"
-msgstr "Painel Kanban"
+msgstr "Quadro Kanban"
 
 #. Name of a DocType
 #. DocType: Kanban Board Column:1
@@ -25747,8 +25701,6 @@ msgstr "Método"
 
 #. Label of a Select field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "Method"
 msgctxt "Recorder"
 msgid "Method"
 msgstr "Método"
@@ -26637,8 +26589,8 @@ msgid ""
 "Name of the Document Type (DocType) you want this field to be linked to. e."
 "g. Customer"
 msgstr ""
-"Nome do Tipo de Documento (DocType) pretende que este campo a ser vinculado. "
-"por exemplo, o Cliente"
+"Nome do Tipo de Documento ao qual você deseja que esse campo seja vinculado. "
+"Por exemplo, Cliente"
 
 #: printing/page/print_format_builder/print_format_builder.js:117
 msgid "Name of the new Print Format"
@@ -27027,10 +26979,8 @@ msgid "New Workspace"
 msgstr "Nova Área de Trabalho"
 
 #: www/update-password.html:58
-#, fuzzy
-#| msgid "Password cannot be filtered"
 msgid "New password cannot be same as old password"
-msgstr "A senha não pode ser filtrada"
+msgstr "A nova senha não pode ser igual à senha antiga"
 
 #: utils/change_log.py:308
 msgid "New updates are available"
@@ -28272,8 +28222,6 @@ msgstr "Número de consultas"
 
 #. Label of a Int field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "Number of Queries"
 msgctxt "Recorder"
 msgid "Number of Queries"
 msgstr "Número de consultas"
@@ -28283,10 +28231,8 @@ msgid "Number of attachment fields are more than {}, limit updated to {}."
 msgstr "O número de campos de anexo é maior que {}, limite atualizado para {}."
 
 #: core/doctype/system_settings/system_settings.py:149
-#, fuzzy
-#| msgid "Number of DB backups cannot be less than 1"
 msgid "Number of backups must be greater than zero."
-msgstr "Número de backups de banco de dados não pode ser menor que 1"
+msgstr "O número de backups deve ser maior que zero."
 
 #. DocType: Customize Form Field:1
 msgid ""
@@ -29307,18 +29253,14 @@ msgid "Owner"
 msgstr "Proprietário"
 
 #. DocType: Recorder:1
-#, fuzzy
-#| msgid "SWATCHES"
 msgid "PATCH"
-msgstr "AMOSTRAS (SWATCHES)"
+msgstr "PATCH"
 
 #. Option for a Select field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "SWATCHES"
 msgctxt "Recorder"
 msgid "PATCH"
-msgstr "AMOSTRAS (SWATCHES)"
+msgstr "PATCH"
 
 #: printing/page/print/print.js:71
 #: public/js/frappe/form/templates/print_layout.html:44
@@ -29394,8 +29336,6 @@ msgstr "POST"
 
 #. Option for a Select field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "POST"
 msgctxt "Recorder"
 msgid "POST"
 msgstr "POST"
@@ -29412,8 +29352,6 @@ msgstr "PUT"
 
 #. Option for a Select field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "PUT"
 msgctxt "Recorder"
 msgid "PUT"
 msgstr "PUT"
@@ -30006,8 +29944,6 @@ msgstr "Caminho"
 
 #. Label of a Data field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "Path"
 msgctxt "Recorder"
 msgid "Path"
 msgstr "Caminho"
@@ -30289,10 +30225,10 @@ msgid ""
 "rights like Read, Write, Create, Delete, Submit, Cancel, Amend, Report, "
 "Import, Export, Print, Email and Set User Permissions."
 msgstr ""
-"As permissões são definidas em Funções e Tipos de Documentos (chamados "
-"Doctypes) , definindo direitos como Ler, Escrever, Criar, Deletar, Enviar, "
-"Cancelar, Corrigir, Reportar, Importar, Exportar, Imprimir, Email e Definir "
-"Permissões de Usuário."
+"As permissões são definidas em Funções e Tipos de Documentos, definindo "
+"direitos como Ler, Escrever, Criar, Deletar, Enviar, Cancelar, Corrigir, "
+"Reportar, Importar, Exportar, Imprimir, Email e Definir Permissões de "
+"Usuário."
 
 #: core/page/permission_manager/permission_manager_help.html:26
 msgid ""
@@ -31463,10 +31399,8 @@ msgid "Print Format Builder Beta"
 msgstr "Construtor de formatos de impressão Beta"
 
 #: utils/pdf.py:56
-#, fuzzy
-#| msgid "Print Format"
 msgid "Print Format Error"
-msgstr "Formato de Impressão"
+msgstr "Erro de formato de impressão"
 
 #. Name of a DocType
 #. DocType: Print Format Field Template:1
@@ -32196,8 +32130,6 @@ msgstr "Consulta"
 
 #. Label of a Data field in DocType 'Recorder Query'
 #: core/doctype/recorder_query/recorder_query.json
-#, fuzzy
-#| msgid "Query"
 msgctxt "Recorder Query"
 msgid "Query"
 msgstr "Consulta"
@@ -32886,10 +32818,8 @@ msgstr "Gravador"
 #. Name of a DocType
 #. DocType: Recorder Query:1
 #: core/doctype/recorder_query/recorder_query.json
-#, fuzzy
-#| msgid "Recorder"
 msgid "Recorder Query"
-msgstr "Gravador"
+msgstr "Consulta ao registrador"
 
 #: core/doctype/user_permission/user_permission_help.html:2
 msgid "Records for following doctypes will be filtered"
@@ -34054,13 +33984,13 @@ msgstr ""
 
 #. DocType: Onboarding Step:1
 msgid "Report Reference Doctype"
-msgstr "Report Reference Doctype"
+msgstr "Tipo de documento de referência do relatório"
 
 #. Label of a Data field in DocType 'Onboarding Step'
 #: desk/doctype/onboarding_step/onboarding_step.json
 msgctxt "Onboarding Step"
 msgid "Report Reference Doctype"
-msgstr "Report Reference Doctype"
+msgstr "Tipo de documento de referência do relatório"
 
 #. DocType: Report:1
 msgid "Report Type"
@@ -34229,8 +34159,6 @@ msgstr "Cabeçalhos da solicitação"
 
 #. Label of a Code field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "Request Headers"
 msgctxt "Recorder"
 msgid "Request Headers"
 msgstr "Cabeçalhos da solicitação"
@@ -35450,7 +35378,6 @@ msgstr "Configurações de Backup S3"
 
 #. Label of a Link in the Integrations Workspace
 #: integrations/workspace/integrations/integrations.json
-#, fuzzy
 msgctxt "S3 Backup Settings"
 msgid "S3 Backup Settings"
 msgstr "Configurações de backup do S3"
@@ -35515,7 +35442,6 @@ msgstr "Configurações de SMS"
 
 #. Label of a Link in the Integrations Workspace
 #: integrations/workspace/integrations/integrations.json
-#, fuzzy
 msgctxt "SMS Settings"
 msgid "SMS Settings"
 msgstr "Configurações de SMS"
@@ -35569,8 +35495,6 @@ msgstr "Explicação do SQL"
 
 #. Label of a HTML field in DocType 'Recorder Query'
 #: core/doctype/recorder_query/recorder_query.json
-#, fuzzy
-#| msgid "SQL Explain"
 msgctxt "Recorder Query"
 msgid "SQL Explain"
 msgstr "Explicação do SQL"
@@ -35591,8 +35515,6 @@ msgstr "Consultas SQL"
 
 #. Label of a Table field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "SQL Queries"
 msgctxt "Recorder"
 msgid "SQL Queries"
 msgstr "Consultas SQL"
@@ -37752,16 +37674,12 @@ msgstr "Configurações"
 
 #. Label of a Tab Break field in DocType 'Customize Form'
 #: custom/doctype/customize_form/customize_form.json
-#, fuzzy
-#| msgid "Settings"
 msgctxt "Customize Form"
 msgid "Settings"
 msgstr "Configurações"
 
 #. Label of a Tab Break field in DocType 'DocType'
 #: core/doctype/doctype/doctype.json
-#, fuzzy
-#| msgid "Settings"
 msgctxt "DocType"
 msgid "Settings"
 msgstr "Configurações"
@@ -38017,10 +37935,8 @@ msgid "Show Account Deletion Link in My Account Page"
 msgstr "Mostrar link de exclusão de conta na página Minha Conta"
 
 #: public/js/frappe/form/templates/form_sidebar.html:89
-#, fuzzy
-#| msgid "Show Title"
 msgid "Show All"
-msgstr "Mostrar Título"
+msgstr "Mostrar tudo"
 
 #. DocType: Web Form:1
 msgid "Show Attachments"
@@ -39053,8 +38969,6 @@ msgstr "Rastreamento de pilha (Stack Trace)"
 
 #. Label of a HTML field in DocType 'Recorder Query'
 #: core/doctype/recorder_query/recorder_query.json
-#, fuzzy
-#| msgid "Stack Trace"
 msgctxt "Recorder Query"
 msgid "Stack Trace"
 msgstr "Rastreamento de pilha (Stack Trace)"
@@ -41944,13 +41858,11 @@ msgstr ""
 "Isso redefinirá esse tour e o mostrará a todos os usuários. Tem certeza?"
 
 #: core/doctype/rq_job/rq_job.js:15
-#, fuzzy
-#| msgid "This will reset this tour and show it to all users. Are you sure?"
 msgid ""
 "This will terminate the job immediately and might be dangerous, are you "
 "sure? "
 msgstr ""
-"Isso redefinirá esse tour e o mostrará a todos os usuários. Tem certeza?"
+"Isso encerrará o trabalho imediatamente e pode ser perigoso, tem certeza? "
 
 #: core/doctype/user/user.py:1197
 msgid "Throttled"
@@ -42025,8 +41937,6 @@ msgstr "Tempo"
 
 #. Label of a Datetime field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "Time"
 msgctxt "Recorder"
 msgid "Time"
 msgstr "Tempo"
@@ -42153,18 +42063,14 @@ msgid "Time format"
 msgstr "Formato da hora"
 
 #. DocType: Recorder:1
-#, fuzzy
-#| msgid "Time in Queries (ms)"
 msgid "Time in Queries"
-msgstr "Tempo gasto em consultas (ms)"
+msgstr "Tempo gasto em consultas"
 
 #. Label of a Float field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
-#, fuzzy
-#| msgid "Time in Queries (ms)"
 msgctxt "Recorder"
 msgid "Time in Queries"
-msgstr "Tempo gasto em consultas (ms)"
+msgstr "Tempo gasto em consultas"
 
 #. DocType: System Settings:1
 msgid ""
@@ -43410,8 +43316,6 @@ msgstr "Tipo"
 
 #. Label of a Data field in DocType 'Console Log'
 #: desk/doctype/console_log/console_log.json
-#, fuzzy
-#| msgid "Type"
 msgctxt "Console Log"
 msgid "Type"
 msgstr "Tipo"
@@ -45421,10 +45325,8 @@ msgid "View document"
 msgstr "Ver documento"
 
 #: core/doctype/file/file.js:24
-#, fuzzy
-#| msgid "View All"
 msgid "View file"
-msgstr "Ver tudo"
+msgstr "Ver arquivo"
 
 #: templates/emails/auto_email_report.html:60
 msgid "View report in your browser"
@@ -46243,10 +46145,8 @@ msgstr "Modelo de email de boas-vindas"
 
 #. Name of a Workspace
 #: core/workspace/welcome_workspace/welcome_workspace.json desk/desktop.py:468
-#, fuzzy
-#| msgid "Delete Workspace"
 msgid "Welcome Workspace"
-msgstr "Excluir área de trabalho"
+msgstr "Área de trabalho de boas-vindas"
 
 #: core/doctype/user/user.py:360
 msgid "Welcome email sent"
@@ -46662,10 +46562,8 @@ msgid "Workspace"
 msgstr "Área de trabalho"
 
 #: public/js/frappe/router.js:189
-#, fuzzy
-#| msgid "DocType {0} does not exist."
 msgid "Workspace <b>{0}</b> does not exist"
-msgstr "O Tipo de documento {0} não existe."
+msgstr "A Área de trabalho <b>{0}</b> não existe"
 
 #. Name of a DocType
 #. DocType: Workspace Chart:1
@@ -47494,10 +47392,8 @@ msgid "You unfollowed this document"
 msgstr "Você deixou de seguir este documento"
 
 #: public/js/frappe/form/footer/form_timeline.js:177
-#, fuzzy
-#| msgid "You viewed this {0}"
 msgid "You viewed this"
-msgstr "Você visualizou isso há {0}"
+msgstr "Você viu isso"
 
 #: desk/page/setup_wizard/setup_wizard.js:377
 msgid "Your Country"
@@ -49803,10 +49699,8 @@ msgid "volume-up"
 msgstr "aumentar volume"
 
 #: templates/includes/oauth_confirmation.html:5
-#, fuzzy
-#| msgid "{} wants to access the following details from your account"
 msgid "wants to access the following details from your account"
-msgstr "{} deseja acessar os seguintes detalhes de sua conta"
+msgstr "deseja acessar os seguintes detalhes de sua conta"
 
 #. DocType: Workflow State:1
 msgid "warning-sign"
@@ -50217,10 +50111,8 @@ msgid "{0} hours ago"
 msgstr "{0} horas atrás"
 
 #: website/doctype/web_form/templates/web_form.html:145
-#, fuzzy
-#| msgid "Click on this {0} if you are not redirected within 5 seconds"
 msgid "{0} if you are not redirected within {1} seconds"
-msgstr "Clique neste {0} se você não for redirecionado em 5 segundos"
+msgstr "{0} se você não for redirecionado em {1} segundos"
 
 #: website/doctype/website_settings/website_settings.py:100
 #: website/doctype/website_settings/website_settings.py:120
@@ -50244,10 +50136,8 @@ msgid "{0} is an invalid email address in 'Recipients'"
 msgstr "{0} é um endereço de e-mail inválido em &#39;Destinatários&#39;"
 
 #: public/js/frappe/views/reports/report_view.js:1390
-#, fuzzy
-#| msgid "{0}: {1} in {2}"
 msgid "{0} is between {1} and {2}"
-msgstr "{0}: {1} em {2}"
+msgstr "{0} está entre {1} e {2}"
 
 #: public/js/frappe/form/sidebar/form_sidebar_users.js:41
 #: public/js/frappe/form/sidebar/form_sidebar_users.js:69
@@ -50255,40 +50145,28 @@ msgid "{0} is currently {1}"
 msgstr "{0} atualmente é {1}"
 
 #: public/js/frappe/views/reports/report_view.js:1359
-#, fuzzy
-#| msgid "{0} to {1}"
 msgid "{0} is equal to {1}"
-msgstr "{0} para {1}"
+msgstr "{0} é igual a {1}"
 
 #: public/js/frappe/views/reports/report_view.js:1379
-#, fuzzy
-#| msgid "The {0} is already on auto repeat {1}"
 msgid "{0} is greater than or equal to {1}"
-msgstr "O {0} já está em repetição automática {1}"
+msgstr "{0} é maior ou igual a {1}"
 
 #: public/js/frappe/views/reports/report_view.js:1369
-#, fuzzy
-#| msgid "{0} created this {1}"
 msgid "{0} is greater than {1}"
-msgstr "{0} criou isso há {1}"
+msgstr "{0} é maior que {1}"
 
 #: public/js/frappe/views/reports/report_view.js:1384
-#, fuzzy
-#| msgid "The {0} is already on auto repeat {1}"
 msgid "{0} is less than or equal to {1}"
-msgstr "O {0} já está em repetição automática {1}"
+msgstr "{0} é menor ou igual a {1}"
 
 #: public/js/frappe/views/reports/report_view.js:1374
-#, fuzzy
-#| msgid "{0} edited this {1}"
 msgid "{0} is less than {1}"
-msgstr "{0} editou isso há {1}"
+msgstr "{0} é menor que {1}"
 
 #: public/js/frappe/views/reports/report_view.js:1409
-#, fuzzy
-#| msgid "{0} is currently {1}"
 msgid "{0} is like {1}"
-msgstr "{0} atualmente é {1}"
+msgstr "{0} é como {1}"
 
 #: email/doctype/email_account/email_account.py:169
 msgid "{0} is mandatory"
@@ -50351,38 +50229,28 @@ msgid "{0} is not a zip file"
 msgstr "{0} não é um arquivo zip"
 
 #: public/js/frappe/views/reports/report_view.js:1364
-#, fuzzy
-#| msgid "{0} is not a field of doctype {1}"
 msgid "{0} is not equal to {1}"
-msgstr "{0} não é um campo do tipo de documento {1}"
+msgstr "{0} não é igual a {1}"
 
 #: public/js/frappe/views/reports/report_view.js:1411
-#, fuzzy
-#| msgid "{0} is currently {1}"
 msgid "{0} is not like {1}"
-msgstr "{0} atualmente é {1}"
+msgstr "{0} não é como {1}"
 
 #: public/js/frappe/views/reports/report_view.js:1405
-#, fuzzy
-#| msgid "{0} must be one of {1}"
 msgid "{0} is not one of {1}"
-msgstr "{0} deve fazer parte de {1}"
+msgstr "{0} não é um de {1}"
 
 #: public/js/frappe/views/reports/report_view.js:1415
-#, fuzzy
-#| msgid "Folder {0} is not empty"
 msgid "{0} is not set"
-msgstr "Pasta {0} não está vazio"
+msgstr "{0} não está definido"
 
 #: printing/doctype/print_format/print_format.py:164
 msgid "{0} is now default print format for {1} doctype"
 msgstr "{0} agora é o formato de impressão padrão para o Tipo de Documento {1}"
 
 #: public/js/frappe/views/reports/report_view.js:1398
-#, fuzzy
-#| msgid "{0} must be one of {1}"
 msgid "{0} is one of {1}"
-msgstr "{0} deve fazer parte de {1}"
+msgstr "{0} é um de {1}"
 
 #: email/doctype/email_account/email_account.py:266 model/naming.py:216
 #: printing/doctype/print_format/print_format.py:91 utils/csvutils.py:131
@@ -50390,16 +50258,12 @@ msgid "{0} is required"
 msgstr "{0} é necessário"
 
 #: public/js/frappe/views/reports/report_view.js:1414
-#, fuzzy
-#| msgid "{0} List"
 msgid "{0} is set"
-msgstr "Lista de {0}"
+msgstr "{0} está definido"
 
 #: public/js/frappe/views/reports/report_view.js:1393
-#, fuzzy
-#| msgid "{0} edited this {1}"
 msgid "{0} is within {1}"
-msgstr "{0} editou isso há {1}"
+msgstr "{0} está dentro de {1}"
 
 #: public/js/frappe/list/list_view.js:1505
 msgid "{0} items selected"
@@ -50604,10 +50468,8 @@ msgid "{0} values selected"
 msgstr "{0} valores selecionados"
 
 #: public/js/frappe/form/footer/form_timeline.js:178
-#, fuzzy
-#| msgid "{0} viewed this {1}"
 msgid "{0} viewed this"
-msgstr "{0} visualizou isso há {1}"
+msgstr "{0} visualizou isso"
 
 #: public/js/frappe/utils/pretty_date.js:35
 msgid "{0} w"
