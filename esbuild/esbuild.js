@@ -448,6 +448,7 @@ function run_build_command_for_apps(apps) {
 			if (scripts && scripts.build) {
 				log("\nRunning build command for", chalk.bold(app));
 				process.chdir(root_app_path);
+				execSync("yarn install", { encoding: "utf8", stdio: "inherit" });
 				execSync("yarn build", { encoding: "utf8", stdio: "inherit" });
 			}
 		}
