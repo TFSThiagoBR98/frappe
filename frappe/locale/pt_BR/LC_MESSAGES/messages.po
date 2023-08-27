@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Frappe Framework VERSION\n"
 "Report-Msgid-Bugs-To: developers@frappe.io\n"
 "POT-Creation-Date: 2023-08-26 23:01+0000\n"
-"PO-Revision-Date: 2023-08-17 17:58+0000\n"
+"PO-Revision-Date: 2023-08-27 17:32+0000\n"
 "Last-Translator: Weblate Admin <admin@tfs.dev.br>\n"
 "Language-Team: Portuguese (Brazil) <http://localhost:4755/projects/frappe/"
 "frappe-framework/pt_BR/>\n"
@@ -650,6 +650,33 @@ msgid ""
 ".section-break:last-child { padding-bottom: 0px; border-bottom: 0px;  }</"
 "code></pre>\n"
 msgstr ""
+"<h3>Ajuda do CSS personalizado</h3>\n"
+"\n"
+"<p>Observações:</p>\n"
+"\n"
+"<ol>\n"
+"<li>Todos os grupos de campos (rótulo + valor) são definidos como atributos "
+"<code>data-fieldtype</code> e <code>data-fieldname</code></li>\n"
+"<li>Todos os valores recebem a classe <code>value</code></li>\n"
+"<li>Todas as quebras de seção recebem a classe <code>section-"
+"break</code></li>\n"
+"<li>Todas as quebras de coluna recebem a classe <code>column-"
+"break</code></li>\n"
+"</ol>\n"
+"\n"
+"<h4>Exemplos</h4>\n"
+"\n"
+"<p>1. Alinhar inteiros à esquerda</p>\n"
+"\n"
+"<pre><code> [data-fieldtype=\"Int\"] .value { text-align: left; "
+"}</code></pre>\n"
+"\n"
+"<p>1. Adicionar borda às seções, exceto à última seção</p>\n"
+"\n"
+"<pre><code> .section-break { padding: 30px 0px; border-bottom: 1px solid "
+"#eee; }\n"
+".section-break:last-child { padding-bottom: 0px; border-bottom: 0px; "
+"}</code></pre>\n"
 
 #. Content of an HTML field in DocType 'Print Format'
 #: printing/doctype/print_format/print_format.json
@@ -681,6 +708,33 @@ msgid ""
 ".section-break:last-child { padding-bottom: 0px; border-bottom: 0px;  }</"
 "code></pre>\n"
 msgstr ""
+"<h3>Ajuda do CSS personalizado</h3>\n"
+"\n"
+"<p>Observações:</p>\n"
+"\n"
+"<ol>\n"
+"<li>Todos os grupos de campos (rótulo + valor) são definidos como atributos "
+"<code>data-fieldtype</code> e <code>data-fieldname</code></li>\n"
+"<li>Todos os valores recebem a classe <code>value</code></li>\n"
+"<li>Todas as quebras de seção recebem a classe <code>section-"
+"break</code></li>\n"
+"<li>Todas as quebras de coluna recebem a classe <code>column-"
+"break</code></li>\n"
+"</ol>\n"
+"\n"
+"<h4>Exemplos</h4>\n"
+"\n"
+"<p>1. Alinhar inteiros à esquerda</p>\n"
+"\n"
+"<pre><code> [data-fieldtype=\"Int\"] .value { text-align: left; "
+"}</code></pre>\n"
+"\n"
+"<p>1. Adicionar borda às seções, exceto à última seção</p>\n"
+"\n"
+"<pre><code> .section-break { padding: 30px 0px; border-bottom: 1px solid "
+"#eee; }\n"
+".section-break:last-child { padding-bottom: 0px; border-bottom: 0px; "
+"}</code></pre>\n"
 
 #. DocType: Print Format:1
 #, python-format
@@ -765,6 +819,86 @@ msgid ""
 "\t</tbody>\n"
 "</table>\n"
 msgstr ""
+"<h3>Ajuda para o formato de impressão</h3>\n"
+"<hr>\n"
+"<h4>Introdução</h4>\n"
+"<p>Os formatos de impressão são renderizados no lado do servidor usando a "
+"linguagem de modelagem Jinja. Todos os formulários têm acesso ao objeto "
+"<code>doc</code> que contém informações sobre o documento que está sendo "
+"formatado. Você também pode acessar utilitários comuns por meio do módulo "
+"<code>frappe</code>.</p>\n"
+"<p>Para estilização, a estrutura Boostrap CSS é fornecida e você pode "
+"aproveitar toda a gama de classes.</p>\n"
+"<hr>\n"
+"<h4>Referências</h4>\n"
+"<ol>\n"
+"\t<li><a href=\"http://jinja.pocoo.org/docs/templates/\" target=\"_blank\""
+">Linguagem de modelagem Jinja</a></li>\n"
+"\t<li><a href=\"http://getbootstrap.com\" target=\"_blank\">Bootstrap CSS "
+"Framework</a></li>\n"
+"</ol>\n"
+"<hr>\n"
+"<h4>Exemplo</h4>\n"
+"<pre><code>&lt;h3&gt;{{ doc.select_print_heading or \"Invoice\" }}&lt;/h3&gt;"
+"\n"
+"&lt;div class=\"row\"&gt;\n"
+" &lt;div class=\"col-md-3 text-right\"&gt;Customer Name&lt;/div&gt;\n"
+" &lt;div class=\"col-md-9\"&gt;{{ doc.customer_name }}&lt;/div&gt;\n"
+"&lt;/div&gt;\n"
+"&lt;div class=\"row\"&gt;\n"
+" &lt;div class=\"col-md-3 text-right\"&gt;Date&lt;/div&gt;\n"
+" &lt;div class=\"col-md-9\"&gt;{{ doc.get_formatted(\"invoice_date\") "
+"}}&lt;/div&gt;\n"
+"&lt;/div&gt;\n"
+"&lt;table class=\"table table-bordered\"&gt;\n"
+" &lt;tbody&gt;\n"
+"  &lt;tr&gt;\n"
+"   &lt;th&gt;Sr&lt;/th&gt;\n"
+"   &lt;th&gt;Item Name&lt;/th&gt;\n"
+"   &lt;th&gt;Description&lt;/th&gt;\n"
+"   &lt;th class=\"text-right\"&gt;Qty&lt;/th&gt;\n"
+"   &lt;th class=\"text-right\"&gt;Rate&lt;/th&gt;\n"
+"   &lt;th class=\"text-right\"&gt;Amount&lt;/th&gt;\n"
+"  &lt;/tr&gt;\n"
+"  {%- for row in doc.items -%}\n"
+"  &lt;tr&gt;\n"
+"   &lt;td style=\"width: 3%;\"&gt;{{ row.idx }}&lt;/td&gt;\n"
+"   &lt;td style=\"width: 20%;\"&gt;\n"
+"    {{ row.item_name }}\n"
+"    {% if row.item_code != row.item_name -%}\n"
+"    &lt;br&gt;Item Code: {{ row.item_code}}\n"
+"    {%- endif %}\n"
+"   &lt;/td&gt;\n"
+"   &lt;td style=\"width: 37%;\"&gt;\n"
+"    &lt;div style=\"border: 0px;\"&gt;{{ row.description "
+"}}&lt;/div&gt;&lt;/td&gt;\n"
+"   &lt;td style=\"width: 10%; text-align: right;\"&gt;{{ row.qty }} {{ "
+"row.uom or row.stock_uom }}&lt;/td&gt;\n"
+"   &lt;td style=\"width: 15%; text-align: right;\"&gt;{{\n"
+"    row.get_formatted(\"rate\", doc) }}&lt;/td&gt;\n"
+"   &lt;td style=\"width: 15%; text-align: right;\"&gt;{{\n"
+"    row.get_formatted(\"amount\", doc) }}&lt;/td&gt;\n"
+"  &lt;/tr&gt;\n"
+"  {%- endfor -%}\n"
+" &lt;/tbody&gt;\n"
+"&lt;/table&gt;</code></pre>\n"
+"<hr>\n"
+"<h4>Funções comuns</h4>\n"
+"<table class=\"table table-bordered\">\n"
+"\t<tbody>\n"
+"\t\t<tr>\n"
+"\t\t\t<td style=\"width: 30%;\"><code>doc.get_formatted(\"[fieldname]\", "
+"[parent_doc])</code></td>\n"
+"\t\t\t<td>Obter o valor do documento formatado como Data, Moeda, etc. Passe "
+"o <code>doc</code> pai para campos do tipo moeda.</td>\n"
+"\t\t</tr>\n"
+"\t\t<tr>\n"
+"\t\t\t<td style=\"width: 30%;\"><code>frappe.db.get_value(\"[doctype]\", \""
+"[name]\", \"fieldname\")</code></td>\n"
+"\t\t\t<td>Obter valor de outro documento.</td>\n"
+"\t\t</tr>\n"
+"\t</tbody>\n"
+"</table>\n"
 
 #. Content of an HTML field in DocType 'Print Format'
 #: printing/doctype/print_format/print_format.json
@@ -851,6 +985,86 @@ msgid ""
 "\t</tbody>\n"
 "</table>\n"
 msgstr ""
+"<h3>Ajuda para o formato de impressão</h3>\n"
+"<hr>\n"
+"<h4>Introdução</h4>\n"
+"<p>Os formatos de impressão são renderizados no lado do servidor usando a "
+"linguagem de modelagem Jinja. Todos os formulários têm acesso ao objeto "
+"<code>doc</code> que contém informações sobre o documento que está sendo "
+"formatado. Você também pode acessar utilitários comuns por meio do módulo "
+"<code>frappe</code>.</p>\n"
+"<p>Para estilização, a estrutura Boostrap CSS é fornecida e você pode "
+"aproveitar toda a gama de classes.</p>\n"
+"<hr>\n"
+"<h4>Referências</h4>\n"
+"<ol>\n"
+"\t<li><a href=\"http://jinja.pocoo.org/docs/templates/\" target=\"_blank\""
+">Linguagem de modelagem Jinja</a></li>\n"
+"\t<li><a href=\"http://getbootstrap.com\" target=\"_blank\">Bootstrap CSS "
+"Framework</a></li>\n"
+"</ol>\n"
+"<hr>\n"
+"<h4>Exemplo</h4>\n"
+"<pre><code>&lt;h3&gt;{{ doc.select_print_heading or \"Invoice\" }}&lt;/h3&gt;"
+"\n"
+"&lt;div class=\"row\"&gt;\n"
+" &lt;div class=\"col-md-3 text-right\"&gt;Customer Name&lt;/div&gt;\n"
+" &lt;div class=\"col-md-9\"&gt;{{ doc.customer_name }}&lt;/div&gt;\n"
+"&lt;/div&gt;\n"
+"&lt;div class=\"row\"&gt;\n"
+" &lt;div class=\"col-md-3 text-right\"&gt;Date&lt;/div&gt;\n"
+" &lt;div class=\"col-md-9\"&gt;{{ doc.get_formatted(\"invoice_date\") "
+"}}&lt;/div&gt;\n"
+"&lt;/div&gt;\n"
+"&lt;table class=\"table table-bordered\"&gt;\n"
+" &lt;tbody&gt;\n"
+"  &lt;tr&gt;\n"
+"   &lt;th&gt;Sr&lt;/th&gt;\n"
+"   &lt;th&gt;Item Name&lt;/th&gt;\n"
+"   &lt;th&gt;Description&lt;/th&gt;\n"
+"   &lt;th class=\"text-right\"&gt;Qty&lt;/th&gt;\n"
+"   &lt;th class=\"text-right\"&gt;Rate&lt;/th&gt;\n"
+"   &lt;th class=\"text-right\"&gt;Amount&lt;/th&gt;\n"
+"  &lt;/tr&gt;\n"
+"  {%- for row in doc.items -%}\n"
+"  &lt;tr&gt;\n"
+"   &lt;td style=\"width: 3%;\"&gt;{{ row.idx }}&lt;/td&gt;\n"
+"   &lt;td style=\"width: 20%;\"&gt;\n"
+"    {{ row.item_name }}\n"
+"    {% if row.item_code != row.item_name -%}\n"
+"    &lt;br&gt;Item Code: {{ row.item_code}}\n"
+"    {%- endif %}\n"
+"   &lt;/td&gt;\n"
+"   &lt;td style=\"width: 37%;\"&gt;\n"
+"    &lt;div style=\"border: 0px;\"&gt;{{ row.description "
+"}}&lt;/div&gt;&lt;/td&gt;\n"
+"   &lt;td style=\"width: 10%; text-align: right;\"&gt;{{ row.qty }} {{ "
+"row.uom or row.stock_uom }}&lt;/td&gt;\n"
+"   &lt;td style=\"width: 15%; text-align: right;\"&gt;{{\n"
+"    row.get_formatted(\"rate\", doc) }}&lt;/td&gt;\n"
+"   &lt;td style=\"width: 15%; text-align: right;\"&gt;{{\n"
+"    row.get_formatted(\"amount\", doc) }}&lt;/td&gt;\n"
+"  &lt;/tr&gt;\n"
+"  {%- endfor -%}\n"
+" &lt;/tbody&gt;\n"
+"&lt;/table&gt;</code></pre>\n"
+"<hr>\n"
+"<h4>Funções comuns</h4>\n"
+"<table class=\"table table-bordered\">\n"
+"\t<tbody>\n"
+"\t\t<tr>\n"
+"\t\t\t<td style=\"width: 30%;\"><code>doc.get_formatted(\"[fieldname]\", "
+"[parent_doc])</code></td>\n"
+"\t\t\t<td>Obter o valor do documento formatado como Data, Moeda, etc. Passe "
+"o <code>doc</code> pai para campos do tipo moeda.</td>\n"
+"\t\t</tr>\n"
+"\t\t<tr>\n"
+"\t\t\t<td style=\"width: 30%;\"><code>frappe.db.get_value(\"[doctype]\", \""
+"[name]\", \"fieldname\")</code></td>\n"
+"\t\t\t<td>Obter valor de outro documento.</td>\n"
+"\t\t</tr>\n"
+"\t</tbody>\n"
+"</table>\n"
 
 #. DocType: Address Template:1
 #, python-format
@@ -1024,6 +1238,9 @@ msgid ""
 "40000\n"
 "</pre>"
 msgstr ""
+"<p><strong>Exemplos de condições:</strong></p>\n"
+"<pre>doc.status==\"Open\"<br>doc.due_date==nowdate()<br>doc.total > 40000\n"
+"</pre>"
 
 #. Content of an HTML field in DocType 'Webhook'
 #: integrations/doctype/webhook/webhook.json
@@ -1034,6 +1251,9 @@ msgid ""
 "40000\n"
 "</pre>"
 msgstr ""
+"<p><strong>Exemplos de condições:</strong></p>\n"
+"<pre>doc.status==\"Open\"<br>doc.due_date==nowdate()<br>doc.total > 40000\n"
+"</pre>"
 
 #. DocType: Notification:1
 msgid ""
@@ -1042,6 +1262,10 @@ msgid ""
 "40000\n"
 "</pre>\n"
 msgstr ""
+"<p><strong>Exemplos de condições:</strong></p>\n"
+"<pre>doc.status==\"Open\"<br>doc.due_date==nowdate()<br>doc.total &gt; "
+"40000\n"
+"</pre>\n"
 
 #. Content of an HTML field in DocType 'Notification'
 #: email/doctype/notification/notification.json
@@ -1052,6 +1276,10 @@ msgid ""
 "40000\n"
 "</pre>\n"
 msgstr ""
+"<p><strong>Exemplos de condições:</strong></p>\n"
+"<pre>doc.status==\"Open\"<br>doc.due_date==nowdate()<br>doc.total &gt; "
+"40000\n"
+"</pre>\n"
 
 #. DocType: Web Form:1
 msgid ""
@@ -1063,6 +1291,13 @@ msgid ""
 " field named year in doctype and add a condition <b>doc.year==\"2023\"</b></"
 "p>\n"
 msgstr ""
+"<p>Vários formulários da Web podem ser criados para um único Tipo de "
+"Documento. Escreva uma condição específica para esse formulário da Web para "
+"exibir o registro correto após o envio.</p><p>Por exemplo:</p>\n"
+"<p>Se você criar um formulário da Web separado, todos os anos, para obter "
+"feedback dos funcionários, \n"
+"adicione um campo chamado year no Tipo de Documento e adicione uma condição "
+"<b>doc.year==\"2023\".</b></p>\n"
 
 #. Content of an HTML field in DocType 'Web Form'
 #: website/doctype/web_form/web_form.json
@@ -1076,6 +1311,13 @@ msgid ""
 " field named year in doctype and add a condition <b>doc.year==\"2023\"</b></"
 "p>\n"
 msgstr ""
+"<p>Vários formulários da Web podem ser criados para um único Tipo de "
+"Documento. Escreva uma condição específica para esse formulário da Web para "
+"exibir o registro correto após o envio.</p><p>Por exemplo:</p>\n"
+"<p>Se você criar um formulário da Web separado, todos os anos, para obter "
+"feedback dos funcionários, \n"
+"adicione um campo chamado year no Tipo de Documento e adicione uma condição "
+"<b>doc.year==\"2023\".</b></p>\n"
 
 #. DocType: Web Page:1
 msgid ""
@@ -15743,7 +15985,7 @@ msgstr "Falha ao avaliar as condições: {}"
 
 #: types/exporter.py:191
 msgid "Failed to export python type hints"
-msgstr ""
+msgstr "Falha ao exportar os Type Hints do Python"
 
 #: core/doctype/document_naming_settings/document_naming_settings.py:253
 msgid "Failed to generate names from the series"
@@ -17417,13 +17659,13 @@ msgstr "Forçar usuário a redefinir a senha"
 
 #. DocType: System Settings:1
 msgid "Force Web Capture Mode for Uploads"
-msgstr ""
+msgstr "Forçar o modo de captura da Web para envios de arquivo"
 
 #. Label of a Check field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
 msgctxt "System Settings"
 msgid "Force Web Capture Mode for Uploads"
-msgstr ""
+msgstr "Forçar o modo de captura da Web para envios de arquivo"
 
 #: www/login.html:164
 msgid "Forgot Password"
@@ -17875,13 +18117,13 @@ msgstr "Fw: {0}"
 
 #. DocType: Recorder:1
 msgid "GET"
-msgstr ""
+msgstr "GET"
 
 #. Option for a Select field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
 msgctxt "Recorder"
 msgid "GET"
-msgstr ""
+msgstr "GET"
 
 #. DocType: Email Account:1
 msgid "GMail"
@@ -18649,13 +18891,13 @@ msgstr "Convidado"
 
 #. DocType: Recorder:1
 msgid "HEAD"
-msgstr ""
+msgstr "HEAD"
 
 #. Option for a Select field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
 msgctxt "Recorder"
 msgid "HEAD"
-msgstr ""
+msgstr "HEAD"
 
 #. DocType: System Settings:1
 msgid "HH:mm"
@@ -27456,23 +27698,23 @@ msgstr "Nenhum: Fim do fluxo de trabalho"
 
 #. DocType: Recorder Query:1
 msgid "Normalized Copies"
-msgstr ""
+msgstr "Cópias Normalizadas"
 
 #. Label of a Int field in DocType 'Recorder Query'
 #: core/doctype/recorder_query/recorder_query.json
 msgctxt "Recorder Query"
 msgid "Normalized Copies"
-msgstr ""
+msgstr "Cópias Normalizadas"
 
 #. DocType: Recorder Query:1
 msgid "Normalized Query"
-msgstr ""
+msgstr "Consulta Normalizada"
 
 #. Label of a Data field in DocType 'Recorder Query'
 #: core/doctype/recorder_query/recorder_query.json
 msgctxt "Recorder Query"
 msgid "Normalized Query"
-msgstr ""
+msgstr "Consulta Normalizada"
 
 #: core/doctype/user/user.py:961 templates/includes/login/login.js:256
 #: utils/oauth.py:270
@@ -28190,13 +28432,13 @@ msgstr "OK"
 
 #. DocType: Recorder:1
 msgid "OPTIONS"
-msgstr ""
+msgstr "OPTIONS"
 
 #. Option for a Select field in DocType 'Recorder'
 #: core/doctype/recorder/recorder.json
 msgctxt "Recorder"
 msgid "OPTIONS"
-msgstr ""
+msgstr "OPTIONS"
 
 #: public/js/form_builder/components/Tabs.vue:190
 msgid "OR"
@@ -28557,7 +28799,7 @@ msgstr ""
 
 #: desk/form/assign_to.py:170
 msgid "Only the assignee can complete this to-do."
-msgstr ""
+msgstr "Somente o responsável pode concluir essa tarefa."
 
 #: public/js/frappe/form/sidebar/review.js:54
 msgid "Only users involved in the document are listed"
@@ -32324,7 +32566,7 @@ msgstr "Configurações de impressão bruta"
 
 #: desk/doctype/console_log/console_log.js:6
 msgid "Re-Run in Console"
-msgstr ""
+msgstr "Executar novamente no console"
 
 #: email/doctype/email_account/email_account.py:618
 msgid "Re:"
@@ -41553,6 +41795,7 @@ msgstr "Essa é uma senha muito comum."
 #: core/doctype/rq_job/rq_job.js:9
 msgid "This is a virtual doctype and data is cleared periodically."
 msgstr ""
+"Esse é um Tipo de Documento virtual e os dados são limpos periodicamente."
 
 #: templates/emails/auto_reply.html:5
 msgid "This is an automatically generated reply"
@@ -42332,6 +42575,12 @@ msgid ""
 "</pre>\n"
 "</div>"
 msgstr ""
+"Para adicionar valores dinâmicos do documento, use tags jinja como\n"
+"\n"
+"<div>\n"
+"<pre><code>{ \"id\": \"{{ doc.name }}\" }</code>\n"
+"</pre>\n"
+"</div>"
 
 #. Description of a Code field in DocType 'Webhook'
 #: integrations/doctype/webhook/webhook.json
@@ -42344,6 +42593,12 @@ msgid ""
 "</pre>\n"
 "</div>"
 msgstr ""
+"Para adicionar valores dinâmicos do documento, use tags jinja como\n"
+"\n"
+"<div>\n"
+"<pre><code>{ \"id\": \"{{ doc.name }}\" }</code>\n"
+"</pre>\n"
+"</div>"
 
 #: email/doctype/auto_email_report/auto_email_report.py:101
 msgid "To allow more reports update limit in System Settings."
@@ -43243,7 +43498,7 @@ msgstr "Título do tipo"
 
 #: templates/discussions/discussions.js:341
 msgid "Type your reply here..."
-msgstr ""
+msgstr "Digite sua resposta aqui..."
 
 #: core/doctype/data_export/exporter.py:143
 msgid "Type:"
@@ -46039,6 +46294,9 @@ msgid ""
 "is unchecked, the default behavior is to use the mobile native camera when "
 "use from a mobile is detected."
 msgstr ""
+"Ao fazer envio de arquivos, força o uso da captura de imagens baseada na "
+"Web. Se essa opção não estiver marcada, o comportamento padrão será usar a "
+"câmera nativa do celular quando o uso de um celular for detectado."
 
 #. Description of a Check field in DocType 'System Settings'
 #: core/doctype/system_settings/system_settings.json
@@ -46048,6 +46306,9 @@ msgid ""
 "is unchecked, the default behavior is to use the mobile native camera when "
 "use from a mobile is detected."
 msgstr ""
+"Ao fazer envio de arquivos, força o uso da captura de imagens baseada na "
+"Web. Se essa opção não estiver marcada, o comportamento padrão será usar a "
+"câmera nativa do celular quando o uso de um celular for detectado."
 
 #: core/page/permission_manager/permission_manager_help.html:18
 msgid ""
@@ -47297,7 +47558,7 @@ msgstr "Sua nova senha foi definida com sucesso."
 
 #: www/update-password.html:126
 msgid "Your old password is incorrect."
-msgstr ""
+msgstr "Sua senha antiga está incorreta."
 
 #. DocType: System Settings:1
 msgid "Your organization name and address for the email footer."
@@ -50295,7 +50556,7 @@ msgstr "{0} compartilhou este documento com {1}"
 
 #: core/doctype/doctype/doctype.py:314
 msgid "{0} should be indexed because it's referred in dashboard connections"
-msgstr ""
+msgstr "{0} deve ser indexado porque é referido nas conexões do painel"
 
 #: automation/doctype/auto_repeat/auto_repeat.py:136
 msgid "{0} should not be same as {1}"
