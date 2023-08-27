@@ -382,12 +382,12 @@ def compile(target_app: str | None = None, locale: str | None = None):
 	for app in apps:
 		locales = [locale] if locale else get_locales(app)
 		for locale in locales:
-			catalog = get_catalog(app, locale)
 			try:
+				catalog = get_catalog(app, locale)
 				mo_path = write_binary(app, catalog, locale)
 				print(f"MO file created at {mo_path}")
 			except Exception:
-				print(f"Failed to create a MO file at {mo_path}")
+				print(f"Failed to create a MO file for {locale} in app {app}")
 				continue
 
 
